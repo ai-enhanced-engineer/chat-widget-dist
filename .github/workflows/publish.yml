@@ -28,7 +28,7 @@ jobs:
 
           # Download the widget JavaScript file
           curl -L -o dist/assistant-widget.js \
-            -H "Authorization: Bearer ${{ secrets.CROSS_REPO_DOWNLOAD_TOKEN }}" \
+            -H "Authorization: Bearer ${{ secrets.RELEASE_TOKEN }}" \
             "${{ github.event.client_payload.artifacts.widget_js }}"
 
           # Verify download
