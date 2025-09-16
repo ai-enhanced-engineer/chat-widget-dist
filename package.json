@@ -1,0 +1,17 @@
+{
+  "name": "@ai-enhanced/chat-widget",
+  "version": "0.0.0-development",
+  "description": "Embeddable AI Assistant Widget - Zero-code integration",
+  "main": "dist/assistant-widget.js",
+  "files": ["dist"],
+  "keywords": ["ai", "chat", "widget", "assistant", "embeddable"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ai-enhanced-engineer/chat-widget-dist.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

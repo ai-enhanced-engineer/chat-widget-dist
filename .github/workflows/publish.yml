@@ -1,0 +1,80 @@
+name: Publish Release
+
+on:
+  repository_dispatch:
+    types: [publish-release]
+
+permissions:
+  contents: write
+  packages: write
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Download widget artifact
+        run: |
+          mkdir -p dist
+
+          # Download the widget JavaScript file
+          curl -L -o dist/assistant-widget.js \
+            -H "Authorization: Bearer ${{ secrets.CROSS_REPO_DOWNLOAD_TOKEN }}" \
+            "${{ github.event.client_payload.artifacts.widget_js }}"
+
+          # Verify download
+          if [ ! -f "dist/assistant-widget.js" ] || [ ! -s "dist/assistant-widget.js" ]; then
+            echo "Error: Failed to download widget file"
+            exit 1
+          fi
+
+          echo "Widget downloaded successfully"
+          ls -la dist/
+
+      - name: Update version
+        run: |
+          npm version ${{ github.event.client_payload.version }} --no-git-tag-version
+          echo "Updated to version ${{ github.event.client_payload.version }}"
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --provenance --access public
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ github.event.client_payload.version }}
+          name: v${{ github.event.client_payload.version }}
+          body: |
+            ${{ github.event.client_payload.notes }}
+
+            ### Installation
+
+            **CDN:**
+            ```html
+            <script src="https://cdn.jsdelivr.net/gh/ai-enhanced-engineer/chat-widget-dist@${{ github.event.client_payload.version }}/dist/assistant-widget.js"></script>
+            ```
+
+            **npm:**
+            ```bash
+            npm install @ai-enhanced/chat-widget@${{ github.event.client_payload.version }}
+            ```
+          files: dist/assistant-widget.js
+
+      - name: Commit version update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add package.json
+          git commit -m "chore: release v${{ github.event.client_payload.version }}" || echo "No changes to commit"
+          git push
