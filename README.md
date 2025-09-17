@@ -12,11 +12,11 @@ Zero-code embeddable AI chat widget for any website. Add intelligent support wit
 
 ### npm
 ```bash
-npm install @ai-enhanced/chat-widget
+npm install @bot-brewers/chat-widget
 ```
 
 ```javascript
-import '@ai-enhanced/chat-widget';
+import '@bot-brewers/chat-widget';
 ```
 
 ## Configuration
@@ -36,6 +36,25 @@ import '@ai-enhanced/chat-widget';
 | `title` | string | "AI Assistant" | Widget header title |
 | `position` | string | "bottom-right" | Widget position: `bottom-right`, `bottom-left` |
 | `accent-color` | string | "#6366f1" | Primary widget color |
+
+## For Maintainers: Manual Release
+
+To manually publish a new version:
+
+1. Go to the [Actions tab](https://github.com/ai-enhanced-engineer/chat-widget-dist/actions)
+2. Select "Publish Release" workflow
+3. Click "Run workflow"
+4. Fill in the required inputs:
+   - **Version**: The version to publish (e.g., "1.0.0")
+   - **Widget URL**: Direct download URL for the widget file from the main repository release
+   - **Release notes**: Optional description of the release
+5. Click "Run workflow" to start the release process
+
+The workflow will:
+- Download the widget file
+- Publish to npm as `@bot-brewers/chat-widget`
+- Create a GitHub release
+- Update the package version
 
 ## Browser Support
 
