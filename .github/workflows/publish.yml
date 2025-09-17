@@ -3,6 +3,19 @@ name: Publish Release
 on:
   repository_dispatch:
     types: [publish-release]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g., 1.0.0)'
+        required: true
+        default: '1.0.0'
+      widget_url:
+        description: 'URL to download widget JS file'
+        required: true
+      release_notes:
+        description: 'Release notes'
+        required: false
+        default: 'Manual release'
 
 permissions:
   contents: write
@@ -12,6 +25,10 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ github.event.inputs.version || github.event.client_payload.version }}
+      WIDGET_URL: ${{ github.event.inputs.widget_url || github.event.client_payload.artifacts.widget_js }}
+      RELEASE_NOTES: ${{ github.event.inputs.release_notes || github.event.client_payload.notes }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -29,7 +46,7 @@ jobs:
           # Download the widget JavaScript file
           curl -L -o dist/assistant-widget.js \
             -H "Authorization: Bearer ${{ secrets.RELEASE_TOKEN }}" \
-            "${{ github.event.client_payload.artifacts.widget_js }}"
+            "$WIDGET_URL"
 
           # Verify download
           if [ ! -f "dist/assistant-widget.js" ] || [ ! -s "dist/assistant-widget.js" ]; then
@@ -42,8 +59,8 @@ jobs:
 
       - name: Update version
         run: |
-          npm version ${{ github.event.client_payload.version }} --no-git-tag-version
-          echo "Updated to version ${{ github.event.client_payload.version }}"
+          npm version $VERSION --no-git-tag-version
+          echo "Updated to version $VERSION"
 
       - name: Publish to npm
         env:
@@ -53,21 +70,21 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v${{ github.event.client_payload.version }}
-          name: v${{ github.event.client_payload.version }}
+          tag_name: v${{ env.VERSION }}
+          name: v${{ env.VERSION }}
           body: |
-            ${{ github.event.client_payload.notes }}
+            ${{ env.RELEASE_NOTES }}
 
             ### Installation
 
             **CDN:**
             ```html
-            <script src="https://cdn.jsdelivr.net/gh/ai-enhanced-engineer/chat-widget-dist@${{ github.event.client_payload.version }}/dist/assistant-widget.js"></script>
+            <script src="https://cdn.jsdelivr.net/gh/ai-enhanced-engineer/chat-widget-dist@${{ env.VERSION }}/dist/assistant-widget.js"></script>
             ```
 
             **npm:**
             ```bash
-            npm install @bot-brewers/chat-widget@${{ github.event.client_payload.version }}
+            npm install @bot-brewers/chat-widget@${{ env.VERSION }}
             ```
           files: dist/assistant-widget.js
 
@@ -76,5 +93,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add package.json
-          git commit -m "chore: release v${{ github.event.client_payload.version }}" || echo "No changes to commit"
+          git commit -m "chore: release v$VERSION" || echo "No changes to commit"
           git push
