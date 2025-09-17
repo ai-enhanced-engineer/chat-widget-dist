@@ -1,10 +1,18 @@
 {
   "name": "@bot-brewers/chat-widget",
-  "version": "0.0.0-development",
+  "version": "1.0.1",
   "description": "Embeddable AI Assistant Widget - Zero-code integration",
   "main": "dist/assistant-widget.js",
-  "files": ["dist"],
-  "keywords": ["ai", "chat", "widget", "assistant", "embeddable"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "ai",
+    "chat",
+    "widget",
+    "assistant",
+    "embeddable"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
