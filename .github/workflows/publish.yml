@@ -67,7 +67,7 @@ jobs:
 
             **npm:**
             ```bash
-            npm install @ai-enhanced/chat-widget@${{ github.event.client_payload.version }}
+            npm install @bot-brewers/chat-widget@${{ github.event.client_payload.version }}
             ```
           files: dist/assistant-widget.js
 

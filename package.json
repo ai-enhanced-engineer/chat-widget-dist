@@ -1,5 +1,5 @@
 {
-  "name": "@ai-enhanced/chat-widget",
+  "name": "@bot-brewers/chat-widget",
   "version": "0.0.0-development",
   "description": "Embeddable AI Assistant Widget - Zero-code integration",
   "main": "dist/assistant-widget.js",
