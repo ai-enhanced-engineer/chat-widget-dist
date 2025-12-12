@@ -9,8 +9,15 @@ on:
         description: 'Version to publish (e.g., 1.0.0)'
         required: true
         default: '1.0.0'
-      widget_url:
-        description: 'URL to download widget JS file'
+      source_repo:
+        description: 'Source repository (owner/repo)'
+        required: true
+        default: 'ai-enhanced-engineer/ai-assistant-widget'
+      run_id:
+        description: 'Workflow run ID from source repo'
+        required: true
+      artifact_name:
+        description: 'Artifact name to download'
         required: true
       release_notes:
         description: 'Release notes'
@@ -21,13 +28,16 @@ permissions:
   contents: write
   packages: write
   id-token: write
+  actions: read
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     env:
       VERSION: ${{ github.event.inputs.version || github.event.client_payload.version }}
-      WIDGET_URL: ${{ github.event.inputs.widget_url || github.event.client_payload.artifacts.widget_js }}
+      SOURCE_REPO: ${{ github.event.inputs.source_repo || github.event.client_payload.source_repo }}
+      RUN_ID: ${{ github.event.inputs.run_id || github.event.client_payload.run_id }}
+      ARTIFACT_NAME: ${{ github.event.inputs.artifact_name || github.event.client_payload.artifact_name }}
       RELEASE_NOTES: ${{ github.event.inputs.release_notes || github.event.client_payload.notes }}
     steps:
       - uses: actions/checkout@v4
@@ -40,23 +50,45 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Download widget artifact
+      - name: Download widget artifacts from source repo
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: dist/
+          github-token: ${{ secrets.RELEASE_TOKEN }}
+          repository: ${{ env.SOURCE_REPO }}
+          run-id: ${{ env.RUN_ID }}
+
+      - name: Verify downloaded artifacts
         run: |
-          mkdir -p dist
+          echo "=== Downloaded artifacts ==="
+          ls -la dist/
 
-          # Download the widget JavaScript file
-          curl -L -o dist/assistant-widget.js \
-            -H "Authorization: Bearer ${{ secrets.RELEASE_TOKEN }}" \
-            "$WIDGET_URL"
-
-          # Verify download
-          if [ ! -f "dist/assistant-widget.js" ] || [ ! -s "dist/assistant-widget.js" ]; then
-            echo "Error: Failed to download widget file"
+          # Verify assistant-widget.js exists and has content
+          if [ ! -f "dist/assistant-widget.js" ]; then
+            echo "Error: assistant-widget.js not found"
             exit 1
           fi
 
-          echo "Widget downloaded successfully"
-          ls -la dist/
+          # Check file size (should be > 100KB for the real bundle)
+          size=$(stat -c%s "dist/assistant-widget.js")
+          echo "assistant-widget.js size: $size bytes"
+          if [ "$size" -lt 100000 ]; then
+            echo "Error: assistant-widget.js is too small ($size bytes, expected > 100KB)"
+            echo "File contents preview:"
+            head -c 500 dist/assistant-widget.js
+            exit 1
+          fi
+
+          # Check for style.css (optional but log if present)
+          if [ -f "dist/style.css" ]; then
+            css_size=$(stat -c%s "dist/style.css")
+            echo "style.css size: $css_size bytes"
+          else
+            echo "Note: style.css not found (may be bundled in JS)"
+          fi
+
+          echo "Artifacts verified successfully!"
 
       - name: Update version
         run: |
@@ -78,21 +110,31 @@ jobs:
 
             ### Installation
 
-            **CDN:**
+            **CDN (jsDelivr):**
             ```html
-            <script src="https://cdn.jsdelivr.net/gh/ai-enhanced-engineer/chat-widget-dist@${{ env.VERSION }}/dist/assistant-widget.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@bot-brewers/chat-widget@${{ env.VERSION }}/dist/assistant-widget.js"></script>
+            ```
+
+            **CDN (unpkg):**
+            ```html
+            <script src="https://unpkg.com/@bot-brewers/chat-widget@${{ env.VERSION }}/dist/assistant-widget.js"></script>
             ```
 
             **npm:**
             ```bash
             npm install @bot-brewers/chat-widget@${{ env.VERSION }}
             ```
-          files: dist/assistant-widget.js
+
+            ### Bundle Info
+            - JS Bundle: ~50KB gzipped
+          files: |
+            dist/assistant-widget.js
+            dist/style.css
 
       - name: Commit version update
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add package.json
+          git add package.json dist/
           git commit -m "chore: release v$VERSION" || echo "No changes to commit"
           git push
