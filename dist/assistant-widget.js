@@ -1,152 +1,152 @@
 var Ea = Object.defineProperty;
-var mr = (t) => {
+var An = (t) => {
   throw TypeError(t);
 };
-var Ca = (t, e, i) => e in t ? Ea(t, e, { enumerable: !0, configurable: !0, writable: !0, value: i }) : t[e] = i;
-var G = (t, e, i) => Ca(t, typeof e != "symbol" ? e + "" : e, i), Ms = (t, e, i) => e.has(t) || mr("Cannot " + i);
-var c = (t, e, i) => (Ms(t, e, "read from private field"), i ? i.call(t) : e.get(t)), I = (t, e, i) => e.has(t) ? mr("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, i), y = (t, e, i, s) => (Ms(t, e, "write to private field"), s ? s.call(t, i) : e.set(t, i), i), z = (t, e, i) => (Ms(t, e, "access private method"), i);
-var jr = Array.isArray, xa = Array.prototype.indexOf, vs = Array.from, as = Object.keys, os = Object.defineProperty, Mt = Object.getOwnPropertyDescriptor, Yr = Object.getOwnPropertyDescriptors, ka = Object.prototype, Sa = Array.prototype, Zs = Object.getPrototypeOf, wr = Object.isExtensible;
-function Ma(t) {
+var xa = (t, e, i) => e in t ? Ea(t, e, { enumerable: !0, configurable: !0, writable: !0, value: i }) : t[e] = i;
+var G = (t, e, i) => xa(t, typeof e != "symbol" ? e + "" : e, i), Ms = (t, e, i) => e.has(t) || An("Cannot " + i);
+var c = (t, e, i) => (Ms(t, e, "read from private field"), i ? i.call(t) : e.get(t)), I = (t, e, i) => e.has(t) ? An("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, i), y = (t, e, i, s) => (Ms(t, e, "write to private field"), s ? s.call(t, i) : e.set(t, i), i), z = (t, e, i) => (Ms(t, e, "access private method"), i);
+var Wn = Array.isArray, ka = Array.prototype.indexOf, ps = Array.from, rs = Object.keys, as = Object.defineProperty, Tt = Object.getOwnPropertyDescriptor, qn = Object.getOwnPropertyDescriptors, Sa = Object.prototype, Ma = Array.prototype, Zs = Object.getPrototypeOf, yn = Object.isExtensible;
+function Ta(t) {
   return typeof t == "function";
 }
 const Oi = () => {
 };
-function Ta(t) {
+function Oa(t) {
   return t();
 }
-function Rs(t) {
+function Bs(t) {
   for (var e = 0; e < t.length; e++)
     t[e]();
 }
-function Fr() {
-  var t, e, i = new Promise((s, r) => {
-    t = s, e = r;
+function Kn() {
+  var t, e, i = new Promise((s, n) => {
+    t = s, e = n;
   });
   return { promise: i, resolve: t, reject: e };
 }
-const _ = 2, _s = 4, ms = 8, Oa = 1 << 24, Je = 16, it = 32, ht = 64, ws = 128, Be = 512, ie = 1024, me = 2048, We = 4096, ve = 8192, et = 16384, Ki = 32768, Qt = 65536, br = 1 << 17, Wr = 1 << 18, Nt = 1 << 19, qr = 1 << 20, ot = 1 << 25, Lt = 32768, Bs = 1 << 21, $s = 1 << 22, lt = 1 << 23, Tt = Symbol("$state"), Kr = Symbol("legacy props"), Da = Symbol(""), Ft = new class extends Error {
+const $ = 2, _s = 4, vs = 8, Da = 1 << 24, Je = 16, it = 32, pt = 64, ms = 128, Re = 512, se = 1024, me = 2048, We = 4096, ve = 8192, et = 16384, Ki = 32768, Qt = 65536, In = 1 << 17, Jn = 1 << 18, Nt = 1 << 19, Xn = 1 << 20, ot = 1 << 25, Lt = 32768, Rs = 1 << 21, $s = 1 << 22, lt = 1 << 23, Ot = Symbol("$state"), Vn = Symbol("legacy props"), Ba = Symbol(""), Ft = new class extends Error {
   constructor() {
     super(...arguments);
     G(this, "name", "StaleReactionError");
     G(this, "message", "The reaction that called `getAbortSignal()` was re-run or destroyed");
   }
-}(), er = 3, Ci = 8;
-function Jr(t) {
+}(), en = 3, Ei = 8;
+function Zn(t) {
   throw new Error("https://svelte.dev/e/lifecycle_outside_component");
 }
 function Ra() {
   throw new Error("https://svelte.dev/e/async_derived_orphan");
 }
-function Ba(t) {
+function Qa(t) {
   throw new Error("https://svelte.dev/e/effect_in_teardown");
 }
-function Qa() {
+function La() {
   throw new Error("https://svelte.dev/e/effect_in_unowned_derived");
 }
-function La(t) {
+function Pa(t) {
   throw new Error("https://svelte.dev/e/effect_orphan");
 }
-function Pa() {
+function za() {
   throw new Error("https://svelte.dev/e/effect_update_depth_exceeded");
 }
-function za() {
+function Na() {
   throw new Error("https://svelte.dev/e/hydration_failed");
 }
-function Na(t) {
+function Ua(t) {
   throw new Error("https://svelte.dev/e/props_invalid_value");
 }
-function Ua() {
+function Ha() {
   throw new Error("https://svelte.dev/e/state_descriptors_fixed");
 }
-function Ha() {
+function Ga() {
   throw new Error("https://svelte.dev/e/state_prototype_fixed");
 }
-function Ga() {
+function ja() {
   throw new Error("https://svelte.dev/e/state_unsafe_mutation");
 }
-function ja() {
+function Ya() {
   throw new Error("https://svelte.dev/e/svelte_boundary_reset_onerror");
 }
-const Ya = 1, Fa = 2, Wa = 16, qa = 1, Ka = 2, Ja = 4, Xa = 8, Va = 16, Za = 4, _a = 1, $a = 2, Xr = "[", bs = "[!", tr = "]", bi = {}, ee = Symbol(), eo = "http://www.w3.org/1999/xhtml";
-function As(t) {
+const Fa = 1, Wa = 2, qa = 16, Ka = 1, Ja = 2, Xa = 4, Va = 8, Za = 16, _a = 4, $a = 1, eo = 2, _n = "[", ws = "[!", tn = "]", bi = {}, te = Symbol(), to = "http://www.w3.org/1999/xhtml";
+function bs(t) {
   console.warn("https://svelte.dev/e/hydration_mismatch");
 }
-function to() {
+function io() {
   console.warn("https://svelte.dev/e/svelte_boundary_reset_noop");
 }
 let D = !1;
 function $e(t) {
   D = t;
 }
-let k;
+let S;
 function we(t) {
   if (t === null)
-    throw As(), bi;
-  return k = t;
+    throw bs(), bi;
+  return S = t;
 }
-function ys() {
-  return we(/* @__PURE__ */ Xe(k));
+function As() {
+  return we(/* @__PURE__ */ Xe(S));
 }
 function W(t) {
   if (D) {
-    if (/* @__PURE__ */ Xe(k) !== null)
-      throw As(), bi;
-    k = t;
+    if (/* @__PURE__ */ Xe(S) !== null)
+      throw bs(), bi;
+    S = t;
   }
 }
-function Vr(t = 1) {
+function sn(t = 1) {
   if (D) {
-    for (var e = t, i = k; e--; )
+    for (var e = t, i = S; e--; )
       i = /** @type {TemplateNode} */
       /* @__PURE__ */ Xe(i);
-    k = i;
+    S = i;
   }
 }
-function ls(t = !0) {
-  for (var e = 0, i = k; ; ) {
-    if (i.nodeType === Ci) {
+function os(t = !0) {
+  for (var e = 0, i = S; ; ) {
+    if (i.nodeType === Ei) {
       var s = (
         /** @type {Comment} */
         i.data
       );
-      if (s === tr) {
+      if (s === tn) {
         if (e === 0) return i;
         e -= 1;
-      } else (s === Xr || s === bs) && (e += 1);
+      } else (s === _n || s === ws) && (e += 1);
     }
-    var r = (
+    var n = (
       /** @type {TemplateNode} */
       /* @__PURE__ */ Xe(i)
     );
-    t && i.remove(), i = r;
+    t && i.remove(), i = n;
   }
 }
-function Zr(t) {
-  if (!t || t.nodeType !== Ci)
-    throw As(), bi;
+function $n(t) {
+  if (!t || t.nodeType !== Ei)
+    throw bs(), bi;
   return (
     /** @type {Comment} */
     t.data
   );
 }
-function _r(t) {
+function er(t) {
   return t === this.v;
 }
-function io(t, e) {
+function so(t, e) {
   return t != t ? e == e : t !== e || t !== null && typeof t == "object" || typeof t == "function";
 }
-function $r(t) {
-  return !io(t, this.v);
+function tr(t) {
+  return !so(t, this.v);
 }
 let xi = !1;
-function so() {
+function no() {
   xi = !0;
 }
 let U = null;
 function Ai(t) {
   U = t;
 }
-function pt(t, e = !1, i) {
+function vt(t, e = !1, i) {
   U = {
     p: U,
     i: !1,
@@ -157,7 +157,7 @@ function pt(t, e = !1, i) {
     l: xi && !e ? { s: null, u: null, $: [] } : null
   };
 }
-function vt(t) {
+function mt(t) {
   var e = (
     /** @type {ComponentContext} */
     U
@@ -165,7 +165,7 @@ function vt(t) {
   if (i !== null) {
     e.e = null;
     for (var s of i)
-      yn(s);
+      Ir(s);
   }
   return t !== void 0 && (e.x = t), e.i = !0, U = e.p, t ?? /** @type {T} */
   {};
@@ -173,39 +173,39 @@ function vt(t) {
 function Ji() {
   return !xi || U !== null && U.l === null;
 }
-let yt = [];
-function en() {
-  var t = yt;
-  yt = [], Rs(t);
+let It = [];
+function ir() {
+  var t = It;
+  It = [], Bs(t);
 }
 function ki(t) {
-  if (yt.length === 0 && !Li) {
-    var e = yt;
+  if (It.length === 0 && !Li) {
+    var e = It;
     queueMicrotask(() => {
-      e === yt && en();
+      e === It && ir();
     });
   }
-  yt.push(t);
+  It.push(t);
 }
 function ro() {
-  for (; yt.length > 0; )
-    en();
+  for (; It.length > 0; )
+    ir();
 }
-function tn(t) {
-  var e = R;
+function sr(t) {
+  var e = B;
   if (e === null)
     return T.f |= lt, t;
   if (e.f & Ki)
     yi(t, e);
   else {
-    if (!(e.f & ws))
+    if (!(e.f & ms))
       throw t;
     e.b.error(t);
   }
 }
 function yi(t, e) {
   for (; e !== null; ) {
-    if (e.f & ws)
+    if (e.f & ms)
       try {
         e.b.error(t);
         return;
@@ -216,12 +216,12 @@ function yi(t, e) {
   }
   throw t;
 }
-const _i = /* @__PURE__ */ new Set();
-let x = null, ts = null, Y = null, Ce = [], Is = null, Qs = !1, Li = !1;
-var Jt, Xt, It, Et, Yi, Vt, Zt, Z, Ls, Di, Ps, sn, rn;
-const fs = class fs {
+const Zi = /* @__PURE__ */ new Set();
+let x = null, es = null, Y = null, Ee = [], ys = null, Qs = !1, Li = !1;
+var Jt, Xt, Ct, Et, Yi, Vt, Zt, _, Ls, Di, Ps, nr, rr;
+const us = class us {
   constructor() {
-    I(this, Z);
+    I(this, _);
     G(this, "committed", !1);
     /**
      * The current values of any sources that are updated in this batch
@@ -249,7 +249,7 @@ const fs = class fs {
     /**
      * The number of async effects that are currently in flight
      */
-    I(this, It, 0);
+    I(this, Ct, 0);
     /**
      * The number of async effects that are currently in flight, _not_ inside a pending boundary
      */
@@ -287,16 +287,16 @@ const fs = class fs {
    */
   process(e) {
     var s;
-    Ce = [], ts = null, this.apply();
+    Ee = [], es = null, this.apply();
     var i = {
       parent: null,
       effect: null,
       effects: [],
       render_effects: []
     };
-    for (const r of e)
-      z(this, Z, Ls).call(this, r, i);
-    this.is_fork || z(this, Z, sn).call(this), this.is_deferred() ? (z(this, Z, Di).call(this, i.effects), z(this, Z, Di).call(this, i.render_effects)) : (ts = this, x = null, Ar(i.render_effects), Ar(i.effects), ts = null, (s = c(this, Yi)) == null || s.resolve()), Y = null;
+    for (const n of e)
+      z(this, _, Ls).call(this, n, i);
+    this.is_fork || z(this, _, nr).call(this), this.is_deferred() ? (z(this, _, Di).call(this, i.effects), z(this, _, Di).call(this, i.render_effects)) : (es = this, x = null, Cn(i.render_effects), Cn(i.effects), es = null, (s = c(this, Yi)) == null || s.resolve()), Y = null;
   }
   /**
    * Associate a change to a given source with the current
@@ -314,10 +314,10 @@ const fs = class fs {
     x === this && (x = null, Y = null);
   }
   flush() {
-    if (this.activate(), Ce.length > 0) {
-      if (nn(), x !== null && x !== this)
+    if (this.activate(), Ee.length > 0) {
+      if (ar(), x !== null && x !== this)
         return;
-    } else c(this, It) === 0 && this.process([]);
+    } else c(this, Ct) === 0 && this.process([]);
     this.deactivate();
   }
   discard() {
@@ -329,20 +329,20 @@ const fs = class fs {
    * @param {boolean} blocking
    */
   increment(e) {
-    y(this, It, c(this, It) + 1), e && y(this, Et, c(this, Et) + 1);
+    y(this, Ct, c(this, Ct) + 1), e && y(this, Et, c(this, Et) + 1);
   }
   /**
    *
    * @param {boolean} blocking
    */
   decrement(e) {
-    y(this, It, c(this, It) - 1), e && y(this, Et, c(this, Et) - 1), this.revive();
+    y(this, Ct, c(this, Ct) - 1), e && y(this, Et, c(this, Et) - 1), this.revive();
   }
   revive() {
     for (const e of c(this, Vt))
-      c(this, Zt).delete(e), se(e, me), Pt(e);
+      c(this, Zt).delete(e), ne(e, me), Pt(e);
     for (const e of c(this, Zt))
-      se(e, We), Pt(e);
+      ne(e, We), Pt(e);
     this.flush();
   }
   /** @param {() => void} fn */
@@ -354,12 +354,12 @@ const fs = class fs {
     c(this, Xt).add(e);
   }
   settled() {
-    return (c(this, Yi) ?? y(this, Yi, Fr())).promise;
+    return (c(this, Yi) ?? y(this, Yi, Kn())).promise;
   }
   static ensure() {
     if (x === null) {
-      const e = x = new fs();
-      _i.add(x), Li || fs.enqueue(() => {
+      const e = x = new us();
+      Zi.add(x), Li || us.enqueue(() => {
         x === e && e.flush();
       });
     }
@@ -372,7 +372,7 @@ const fs = class fs {
   apply() {
   }
 };
-Jt = new WeakMap(), Xt = new WeakMap(), It = new WeakMap(), Et = new WeakMap(), Yi = new WeakMap(), Vt = new WeakMap(), Zt = new WeakMap(), Z = new WeakSet(), /**
+Jt = new WeakMap(), Xt = new WeakMap(), Ct = new WeakMap(), Et = new WeakMap(), Yi = new WeakMap(), Vt = new WeakMap(), Zt = new WeakMap(), _ = new WeakSet(), /**
  * Traverse the effect tree, executing effects or stashing
  * them for later execution as appropriate
  * @param {Effect} root
@@ -380,16 +380,16 @@ Jt = new WeakMap(), Xt = new WeakMap(), It = new WeakMap(), Et = new WeakMap(), 
  */
 Ls = function(e, i) {
   var g;
-  e.f ^= ie;
+  e.f ^= se;
   for (var s = e.first; s !== null; ) {
-    var r = s.f, n = (r & (it | ht)) !== 0, a = n && (r & ie) !== 0, o = a || (r & ve) !== 0 || this.skipped_effects.has(s);
-    if (s.f & ws && ((g = s.b) != null && g.is_pending()) && (i = {
+    var n = s.f, r = (n & (it | pt)) !== 0, a = r && (n & se) !== 0, o = a || (n & ve) !== 0 || this.skipped_effects.has(s);
+    if (s.f & ms && ((g = s.b) != null && g.is_pending()) && (i = {
       parent: i,
       effect: s,
       effects: [],
       render_effects: []
     }), !o && s.fn !== null) {
-      n ? s.f ^= ie : r & _s ? i.effects.push(s) : Vi(s) && (s.f & Je && c(this, Vt).add(s), Gi(s));
+      r ? s.f ^= se : n & _s ? i.effects.push(s) : Vi(s) && (s.f & Je && c(this, Vt).add(s), Gi(s));
       var l = s.first;
       if (l !== null) {
         s = l;
@@ -398,7 +398,7 @@ Ls = function(e, i) {
     }
     var d = s.parent;
     for (s = s.next; s === null && d !== null; )
-      d === i.effect && (z(this, Z, Di).call(this, i.effects), z(this, Z, Di).call(this, i.render_effects), i = /** @type {EffectTarget} */
+      d === i.effect && (z(this, _, Di).call(this, i.effects), z(this, _, Di).call(this, i.render_effects), i = /** @type {EffectTarget} */
       i.parent), s = d.next, d = d.parent;
   }
 }, /**
@@ -406,27 +406,27 @@ Ls = function(e, i) {
  */
 Di = function(e) {
   for (const i of e)
-    i.f & me ? c(this, Vt).add(i) : i.f & We && c(this, Zt).add(i), z(this, Z, Ps).call(this, i.deps), se(i, ie);
+    i.f & me ? c(this, Vt).add(i) : i.f & We && c(this, Zt).add(i), z(this, _, Ps).call(this, i.deps), ne(i, se);
 }, /**
  * @param {Value[] | null} deps
  */
 Ps = function(e) {
   if (e !== null)
     for (const i of e)
-      !(i.f & _) || !(i.f & Lt) || (i.f ^= Lt, z(this, Z, Ps).call(
+      !(i.f & $) || !(i.f & Lt) || (i.f ^= Lt, z(this, _, Ps).call(
         this,
         /** @type {Derived} */
         i.deps
       ));
-}, sn = function() {
+}, nr = function() {
   if (c(this, Et) === 0) {
     for (const e of c(this, Jt)) e();
     c(this, Jt).clear();
   }
-  c(this, It) === 0 && z(this, Z, rn).call(this);
-}, rn = function() {
-  var n;
-  if (_i.size > 1) {
+  c(this, Ct) === 0 && z(this, _, rr).call(this);
+}, rr = function() {
+  var r;
+  if (Zi.size > 1) {
     this.previous.clear();
     var e = Y, i = !0, s = {
       parent: null,
@@ -434,7 +434,7 @@ Ps = function(e) {
       effects: [],
       render_effects: []
     };
-    for (const a of _i) {
+    for (const a of Zi) {
       if (a === this) {
         i = !1;
         continue;
@@ -452,80 +452,80 @@ Ps = function(e) {
         continue;
       const l = [...a.current.keys()].filter((d) => !this.current.has(d));
       if (l.length > 0) {
-        var r = Ce;
-        Ce = [];
+        var n = Ee;
+        Ee = [];
         const d = /* @__PURE__ */ new Set(), g = /* @__PURE__ */ new Map();
         for (const h of o)
-          an(h, l, d, g);
-        if (Ce.length > 0) {
+          or(h, l, d, g);
+        if (Ee.length > 0) {
           x = a, a.apply();
-          for (const h of Ce)
-            z(n = a, Z, Ls).call(n, h, s);
+          for (const h of Ee)
+            z(r = a, _, Ls).call(r, h, s);
           a.deactivate();
         }
-        Ce = r;
+        Ee = n;
       }
     }
     x = null, Y = e;
   }
-  this.committed = !0, _i.delete(this);
+  this.committed = !0, Zi.delete(this);
 };
-let Ge = fs;
+let Ge = us;
 function Fe(t) {
   var e = Li;
   Li = !0;
   try {
     for (var i; ; ) {
-      if (ro(), Ce.length === 0 && (x == null || x.flush(), Ce.length === 0))
-        return Is = null, /** @type {T} */
+      if (ro(), Ee.length === 0 && (x == null || x.flush(), Ee.length === 0))
+        return ys = null, /** @type {T} */
         i;
-      nn();
+      ar();
     }
   } finally {
     Li = e;
   }
 }
-function nn() {
-  var t = Rt;
+function ar() {
+  var t = Bt;
   Qs = !0;
   var e = null;
   try {
     var i = 0;
-    for (cs(!0); Ce.length > 0; ) {
+    for (ds(!0); Ee.length > 0; ) {
       var s = Ge.ensure();
       if (i++ > 1e3) {
-        var r, n;
-        no();
+        var n, r;
+        ao();
       }
-      s.process(Ce), dt.clear();
+      s.process(Ee), dt.clear();
     }
   } finally {
-    Qs = !1, cs(t), Is = null;
+    Qs = !1, ds(t), ys = null;
   }
 }
-function no() {
+function ao() {
   try {
-    Pa();
+    za();
   } catch (t) {
-    yi(t, Is);
+    yi(t, ys);
   }
 }
 let Te = null;
-function Ar(t) {
+function Cn(t) {
   var e = t.length;
   if (e !== 0) {
     for (var i = 0; i < e; ) {
       var s = t[i++];
-      if (!(s.f & (et | ve)) && Vi(s) && (Te = /* @__PURE__ */ new Set(), Gi(s), s.deps === null && s.first === null && s.nodes === null && (s.teardown === null && s.ac === null ? Cn(s) : s.fn = null), (Te == null ? void 0 : Te.size) > 0)) {
+      if (!(s.f & (et | ve)) && Vi(s) && (Te = /* @__PURE__ */ new Set(), Gi(s), s.deps === null && s.first === null && s.nodes === null && (s.teardown === null && s.ac === null ? xr(s) : s.fn = null), (Te == null ? void 0 : Te.size) > 0)) {
         dt.clear();
-        for (const r of Te) {
-          if (r.f & (et | ve)) continue;
-          const n = [r];
-          let a = r.parent;
+        for (const n of Te) {
+          if (n.f & (et | ve)) continue;
+          const r = [n];
+          let a = n.parent;
           for (; a !== null; )
-            Te.has(a) && (Te.delete(a), n.push(a)), a = a.parent;
-          for (let o = n.length - 1; o >= 0; o--) {
-            const l = n[o];
+            Te.has(a) && (Te.delete(a), r.push(a)), a = a.parent;
+          for (let o = r.length - 1; o >= 0; o--) {
+            const l = r[o];
             l.f & (et | ve) || Gi(l);
           }
         }
@@ -535,72 +535,72 @@ function Ar(t) {
     Te = null;
   }
 }
-function an(t, e, i, s) {
+function or(t, e, i, s) {
   if (!i.has(t) && (i.add(t), t.reactions !== null))
-    for (const r of t.reactions) {
-      const n = r.f;
-      n & _ ? an(
+    for (const n of t.reactions) {
+      const r = n.f;
+      r & $ ? or(
         /** @type {Derived} */
-        r,
+        n,
         e,
         i,
         s
-      ) : n & ($s | Je) && !(n & me) && on(r, e, s) && (se(r, me), Pt(
+      ) : r & ($s | Je) && !(r & me) && lr(n, e, s) && (ne(n, me), Pt(
         /** @type {Effect} */
-        r
+        n
       ));
     }
 }
-function on(t, e, i) {
+function lr(t, e, i) {
   const s = i.get(t);
   if (s !== void 0) return s;
   if (t.deps !== null)
-    for (const r of t.deps) {
-      if (e.includes(r))
+    for (const n of t.deps) {
+      if (e.includes(n))
         return !0;
-      if (r.f & _ && on(
+      if (n.f & $ && lr(
         /** @type {Derived} */
-        r,
+        n,
         e,
         i
       ))
         return i.set(
           /** @type {Derived} */
-          r,
+          n,
           !0
         ), !0;
     }
   return i.set(t, !1), !1;
 }
 function Pt(t) {
-  for (var e = Is = t; e.parent !== null; ) {
+  for (var e = ys = t; e.parent !== null; ) {
     e = e.parent;
     var i = e.f;
-    if (Qs && e === R && i & Je && !(i & Wr))
+    if (Qs && e === B && i & Je && !(i & Jn))
       return;
-    if (i & (ht | it)) {
-      if (!(i & ie)) return;
-      e.f ^= ie;
+    if (i & (pt | it)) {
+      if (!(i & se)) return;
+      e.f ^= se;
     }
   }
-  Ce.push(e);
+  Ee.push(e);
 }
-function ao(t) {
+function oo(t) {
   let e = 0, i = zt(0), s;
   return () => {
-    Ui() && (m(i), Es(() => (e === 0 && (s = mt(() => t(() => Pi(i)))), e += 1, () => {
+    Ui() && (w(i), Is(() => (e === 0 && (s = wt(() => t(() => Pi(i)))), e += 1, () => {
       ki(() => {
         e -= 1, e === 0 && (s == null || s(), s = void 0, Pi(i));
       });
     })));
   };
 }
-var oo = Qt | Nt | ws;
-function lo(t, e, i) {
-  new co(t, e, i);
+var lo = Qt | Nt | ms;
+function co(t, e, i) {
+  new go(t, e, i);
 }
-var ye, he, Fi, ze, Ct, Ne, Ie, ce, Ue, Ve, rt, xt, nt, kt, at, hs, F, ln, dn, zs, is, ss, Ns;
-class co {
+var ye, he, Fi, ze, xt, Ne, Ie, ce, Ue, Ve, nt, kt, rt, St, at, fs, F, dr, cr, zs, ts, is, Ns;
+class go {
   /**
    * @param {TemplateNode} node
    * @param {BoundaryProps} props
@@ -614,11 +614,11 @@ class co {
     /** @type {TemplateNode} */
     I(this, he);
     /** @type {TemplateNode | null} */
-    I(this, Fi, D ? k : null);
+    I(this, Fi, D ? S : null);
     /** @type {BoundaryProps} */
     I(this, ze);
     /** @type {((anchor: Node) => void)} */
-    I(this, Ct);
+    I(this, xt);
     /** @type {Effect} */
     I(this, Ne);
     /** @type {Effect | null} */
@@ -630,10 +630,10 @@ class co {
     /** @type {DocumentFragment | null} */
     I(this, Ve, null);
     /** @type {TemplateNode | null} */
-    I(this, rt, null);
-    I(this, xt, 0);
-    I(this, nt, 0);
-    I(this, kt, !1);
+    I(this, nt, null);
+    I(this, kt, 0);
+    I(this, rt, 0);
+    I(this, St, !1);
     /**
      * A source containing the number of pending async deriveds/expressions.
      * Only created if `$effect.pending()` is used inside the boundary,
@@ -642,30 +642,30 @@ class co {
      * @type {Source<number> | null}
      */
     I(this, at, null);
-    I(this, hs, ao(() => (y(this, at, zt(c(this, xt))), () => {
+    I(this, fs, oo(() => (y(this, at, zt(c(this, kt))), () => {
       y(this, at, null);
     })));
-    y(this, he, e), y(this, ze, i), y(this, Ct, s), this.parent = /** @type {Effect} */
-    R.b, y(this, ye, !!c(this, ze).pending), y(this, Ne, ar(() => {
-      if (R.b = this, D) {
-        const n = c(this, Fi);
-        ys(), /** @type {Comment} */
-        n.nodeType === Ci && /** @type {Comment} */
-        n.data === bs ? z(this, F, dn).call(this) : z(this, F, ln).call(this);
+    y(this, he, e), y(this, ze, i), y(this, xt, s), this.parent = /** @type {Effect} */
+    B.b, y(this, ye, !!c(this, ze).pending), y(this, Ne, ln(() => {
+      if (B.b = this, D) {
+        const r = c(this, Fi);
+        As(), /** @type {Comment} */
+        r.nodeType === Ei && /** @type {Comment} */
+        r.data === ws ? z(this, F, cr).call(this) : z(this, F, dr).call(this);
       } else {
-        var r = z(this, F, zs).call(this);
+        var n = z(this, F, zs).call(this);
         try {
-          y(this, Ie, xe(() => s(r)));
-        } catch (n) {
-          this.error(n);
+          y(this, Ie, xe(() => s(n)));
+        } catch (r) {
+          this.error(r);
         }
-        c(this, nt) > 0 ? z(this, F, ss).call(this) : y(this, ye, !1);
+        c(this, rt) > 0 ? z(this, F, is).call(this) : y(this, ye, !1);
       }
       return () => {
-        var n;
-        (n = c(this, rt)) == null || n.remove();
+        var r;
+        (r = c(this, nt)) == null || r.remove();
       };
-    }, oo)), D && y(this, he, k);
+    }, lo)), D && y(this, he, S);
   }
   /**
    * Returns `true` if the effect exists inside a boundary whose pending snippet is shown
@@ -684,10 +684,10 @@ class co {
    * @param {1 | -1} d
    */
   update_pending_count(e) {
-    z(this, F, Ns).call(this, e), y(this, xt, c(this, xt) + e), c(this, at) && Ii(c(this, at), c(this, xt));
+    z(this, F, Ns).call(this, e), y(this, kt, c(this, kt) + e), c(this, at) && Ii(c(this, at), c(this, kt));
   }
   get_effect_pending() {
-    return c(this, hs).call(this), m(
+    return c(this, fs).call(this), w(
       /** @type {Source<number>} */
       c(this, at)
     );
@@ -696,33 +696,33 @@ class co {
   error(e) {
     var i = c(this, ze).onerror;
     let s = c(this, ze).failed;
-    if (c(this, kt) || !i && !s)
+    if (c(this, St) || !i && !s)
       throw e;
     c(this, Ie) && (oe(c(this, Ie)), y(this, Ie, null)), c(this, ce) && (oe(c(this, ce)), y(this, ce, null)), c(this, Ue) && (oe(c(this, Ue)), y(this, Ue, null)), D && (we(
       /** @type {TemplateNode} */
       c(this, Fi)
-    ), Vr(), we(ls()));
-    var r = !1, n = !1;
+    ), sn(), we(os()));
+    var n = !1, r = !1;
     const a = () => {
-      if (r) {
-        to();
+      if (n) {
+        io();
         return;
       }
-      r = !0, n && ja(), Ge.ensure(), y(this, xt, 0), c(this, Ue) !== null && Dt(c(this, Ue), () => {
+      n = !0, r && Ya(), Ge.ensure(), y(this, kt, 0), c(this, Ue) !== null && Dt(c(this, Ue), () => {
         y(this, Ue, null);
-      }), y(this, ye, this.has_pending_snippet()), y(this, Ie, z(this, F, is).call(this, () => (y(this, kt, !1), xe(() => c(this, Ct).call(this, c(this, he)))))), c(this, nt) > 0 ? z(this, F, ss).call(this) : y(this, ye, !1);
+      }), y(this, ye, this.has_pending_snippet()), y(this, Ie, z(this, F, ts).call(this, () => (y(this, St, !1), xe(() => c(this, xt).call(this, c(this, he)))))), c(this, rt) > 0 ? z(this, F, is).call(this) : y(this, ye, !1);
     };
     var o = T;
     try {
-      ge(null), n = !0, i == null || i(e, a), n = !1;
+      ge(null), r = !0, i == null || i(e, a), r = !1;
     } catch (l) {
       yi(l, c(this, Ne) && c(this, Ne).parent);
     } finally {
       ge(o);
     }
     s && ki(() => {
-      y(this, Ue, z(this, F, is).call(this, () => {
-        Ge.ensure(), y(this, kt, !0);
+      y(this, Ue, z(this, F, ts).call(this, () => {
+        Ge.ensure(), y(this, St, !0);
         try {
           return xe(() => {
             s(
@@ -738,24 +738,24 @@ class co {
             c(this, Ne).parent
           ), null;
         } finally {
-          y(this, kt, !1);
+          y(this, St, !1);
         }
       }));
     });
   }
 }
-ye = new WeakMap(), he = new WeakMap(), Fi = new WeakMap(), ze = new WeakMap(), Ct = new WeakMap(), Ne = new WeakMap(), Ie = new WeakMap(), ce = new WeakMap(), Ue = new WeakMap(), Ve = new WeakMap(), rt = new WeakMap(), xt = new WeakMap(), nt = new WeakMap(), kt = new WeakMap(), at = new WeakMap(), hs = new WeakMap(), F = new WeakSet(), ln = function() {
+ye = new WeakMap(), he = new WeakMap(), Fi = new WeakMap(), ze = new WeakMap(), xt = new WeakMap(), Ne = new WeakMap(), Ie = new WeakMap(), ce = new WeakMap(), Ue = new WeakMap(), Ve = new WeakMap(), nt = new WeakMap(), kt = new WeakMap(), rt = new WeakMap(), St = new WeakMap(), at = new WeakMap(), fs = new WeakMap(), F = new WeakSet(), dr = function() {
   try {
-    y(this, Ie, xe(() => c(this, Ct).call(this, c(this, he))));
+    y(this, Ie, xe(() => c(this, xt).call(this, c(this, he))));
   } catch (e) {
     this.error(e);
   }
   y(this, ye, !1);
-}, dn = function() {
+}, cr = function() {
   const e = c(this, ze).pending;
   e && (y(this, ce, xe(() => e(c(this, he)))), Ge.enqueue(() => {
     var i = z(this, F, zs).call(this);
-    y(this, Ie, z(this, F, is).call(this, () => (Ge.ensure(), xe(() => c(this, Ct).call(this, i))))), c(this, nt) > 0 ? z(this, F, ss).call(this) : (Dt(
+    y(this, Ie, z(this, F, ts).call(this, () => (Ge.ensure(), xe(() => c(this, xt).call(this, i))))), c(this, rt) > 0 ? z(this, F, is).call(this) : (Dt(
       /** @type {Effect} */
       c(this, ce),
       () => {
@@ -765,29 +765,29 @@ ye = new WeakMap(), he = new WeakMap(), Fi = new WeakMap(), ze = new WeakMap(), 
   }));
 }, zs = function() {
   var e = c(this, he);
-  return c(this, ye) && (y(this, rt, Qe()), c(this, he).before(c(this, rt)), e = c(this, rt)), e;
+  return c(this, ye) && (y(this, nt, Qe()), c(this, he).before(c(this, nt)), e = c(this, nt)), e;
 }, /**
  * @param {() => Effect | null} fn
  */
-is = function(e) {
-  var i = R, s = T, r = U;
+ts = function(e) {
+  var i = B, s = T, n = U;
   qe(c(this, Ne)), ge(c(this, Ne)), Ai(c(this, Ne).ctx);
   try {
     return e();
-  } catch (n) {
-    return tn(n), null;
+  } catch (r) {
+    return sr(r), null;
   } finally {
-    qe(i), ge(s), Ai(r);
+    qe(i), ge(s), Ai(n);
   }
-}, ss = function() {
+}, is = function() {
   const e = (
     /** @type {(anchor: Node) => void} */
     c(this, ze).pending
   );
   c(this, Ie) !== null && (y(this, Ve, document.createDocumentFragment()), c(this, Ve).append(
     /** @type {TemplateNode} */
-    c(this, rt)
-  ), Sn(c(this, Ie), c(this, Ve))), c(this, ce) === null && y(this, ce, xe(() => e(c(this, he))));
+    c(this, nt)
+  ), Mr(c(this, Ie), c(this, Ve))), c(this, ce) === null && y(this, ce, xe(() => e(c(this, he))));
 }, /**
  * Updates the pending count associated with the currently visible pending snippet,
  * if any, such that we can replace the snippet with content once work is done
@@ -799,29 +799,29 @@ Ns = function(e) {
     this.parent && z(i = this.parent, F, Ns).call(i, e);
     return;
   }
-  y(this, nt, c(this, nt) + e), c(this, nt) === 0 && (y(this, ye, !1), c(this, ce) && Dt(c(this, ce), () => {
+  y(this, rt, c(this, rt) + e), c(this, rt) === 0 && (y(this, ye, !1), c(this, ce) && Dt(c(this, ce), () => {
     y(this, ce, null);
   }), c(this, Ve) && (c(this, he).before(c(this, Ve)), y(this, Ve, null)));
 };
-function go(t, e, i, s) {
-  const r = Ji() ? Xi : ir;
+function uo(t, e, i, s) {
+  const n = Ji() ? Xi : nn;
   if (i.length === 0 && t.length === 0) {
-    s(e.map(r));
+    s(e.map(n));
     return;
   }
-  var n = x, a = (
+  var r = x, a = (
     /** @type {Effect} */
-    R
-  ), o = uo();
+    B
+  ), o = fo();
   function l() {
-    Promise.all(i.map((d) => /* @__PURE__ */ fo(d))).then((d) => {
+    Promise.all(i.map((d) => /* @__PURE__ */ ho(d))).then((d) => {
       o();
       try {
-        s([...e.map(r), ...d]);
+        s([...e.map(n), ...d]);
       } catch (g) {
         a.f & et || yi(g, a);
       }
-      n == null || n.deactivate(), ds();
+      r == null || r.deactivate(), ls();
     }).catch((d) => {
       yi(d, a);
     });
@@ -831,71 +831,71 @@ function go(t, e, i, s) {
     try {
       return l();
     } finally {
-      n == null || n.deactivate(), ds();
+      r == null || r.deactivate(), ls();
     }
   }) : l();
 }
-function uo() {
-  var t = R, e = T, i = U, s = x;
-  return function(n = !0) {
-    qe(t), ge(e), Ai(i), n && (s == null || s.activate());
+function fo() {
+  var t = B, e = T, i = U, s = x;
+  return function(r = !0) {
+    qe(t), ge(e), Ai(i), r && (s == null || s.activate());
   };
 }
-function ds() {
+function ls() {
   qe(null), ge(null), Ai(null);
 }
 // @__NO_SIDE_EFFECTS__
 function Xi(t) {
-  var e = _ | me, i = T !== null && T.f & _ ? (
+  var e = $ | me, i = T !== null && T.f & $ ? (
     /** @type {Derived} */
     T
   ) : null;
-  return R !== null && (R.f |= Nt), {
+  return B !== null && (B.f |= Nt), {
     ctx: U,
     deps: null,
     effects: null,
-    equals: _r,
+    equals: er,
     f: e,
     fn: t,
     reactions: null,
     rv: 0,
     v: (
       /** @type {V} */
-      ee
+      te
     ),
     wv: 0,
-    parent: i ?? R,
+    parent: i ?? B,
     ac: null
   };
 }
 // @__NO_SIDE_EFFECTS__
-function fo(t, e) {
+function ho(t, e) {
   let i = (
     /** @type {Effect | null} */
-    R
+    B
   );
   i === null && Ra();
   var s = (
     /** @type {Boundary} */
     i.b
-  ), r = (
+  ), n = (
     /** @type {Promise<V>} */
     /** @type {unknown} */
     void 0
-  ), n = zt(
+  ), r = zt(
     /** @type {V} */
-    ee
+    te
   ), a = !T, o = /* @__PURE__ */ new Map();
   return Eo(() => {
     var f;
-    var l = Fr();
-    r = l.promise;
+    var l = Kn();
+    n = l.promise;
     try {
       Promise.resolve(t()).then(l.resolve, l.reject).then(() => {
-        d === x && d.committed && d.deactivate(), ds();
+        d === x && d.committed && d.deactivate(), ls();
       });
     } catch (p) {
-      l.reject(p), ds();
+      l.reject(p), ls();
     }
     var d = (
       /** @type {Batch} */
@@ -907,41 +907,41 @@ function fo(t, e) {
     }
     const h = (p, u = void 0) => {
       if (d.activate(), u)
-        u !== Ft && (n.f |= lt, Ii(n, u));
+        u !== Ft && (r.f |= lt, Ii(r, u));
       else {
-        n.f & lt && (n.f ^= lt), Ii(n, p);
-        for (const [w, v] of o) {
-          if (o.delete(w), w === d) break;
+        r.f & lt && (r.f ^= lt), Ii(r, p);
+        for (const [b, v] of o) {
+          if (o.delete(b), b === d) break;
           v.reject(Ft);
         }
       }
       a && (s.update_pending_count(-1), d.decrement(g));
     };
     l.promise.then(h, (p) => h(null, p || "unknown"));
-  }), An(() => {
+  }), yr(() => {
     for (const l of o.values())
       l.reject(Ft);
   }), new Promise((l) => {
     function d(g) {
       function h() {
-        g === r ? l(n) : d(r);
+        g === n ? l(r) : d(n);
       }
       g.then(h, h);
     }
-    d(r);
+    d(n);
   });
 }
 // @__NO_SIDE_EFFECTS__
 function Se(t) {
   const e = /* @__PURE__ */ Xi(t);
-  return Mn(e), e;
+  return Tr(e), e;
 }
 // @__NO_SIDE_EFFECTS__
-function ir(t) {
+function nn(t) {
   const e = /* @__PURE__ */ Xi(t);
-  return e.equals = $r, e;
+  return e.equals = tr, e;
 }
-function cn(t) {
+function gr(t) {
   var e = t.effects;
   if (e !== null) {
     t.effects = null;
@@ -952,9 +952,9 @@ function cn(t) {
       );
   }
 }
-function ho(t) {
+function po(t) {
   for (var e = t.parent; e !== null; ) {
-    if (!(e.f & _))
+    if (!(e.f & $))
       return e.f & et ? null : (
         /** @type {Effect} */
         e
@@ -963,36 +963,36 @@ function ho(t) {
   }
   return null;
 }
-function sr(t) {
-  var e, i = R;
-  qe(ho(t));
+function rn(t) {
+  var e, i = B;
+  qe(po(t));
   try {
-    t.f &= ~Lt, cn(t), e = Rn(t);
+    t.f &= ~Lt, gr(t), e = Rr(t);
   } finally {
     qe(i);
   }
   return e;
 }
-function gn(t) {
-  var e = sr(t);
-  if (t.equals(e) || (x != null && x.is_fork || (t.v = e), t.wv = On()), !Ut)
+function ur(t) {
+  var e = rn(t);
+  if (t.equals(e) || (x != null && x.is_fork || (t.v = e), t.wv = Dr()), !Ut)
     if (Y !== null)
       (Ui() || x != null && x.is_fork) && Y.set(t, e);
     else {
-      var i = t.f & Be ? ie : We;
-      se(t, i);
+      var i = t.f & Re ? se : We;
+      ne(t, i);
     }
 }
 let Us = /* @__PURE__ */ new Set();
 const dt = /* @__PURE__ */ new Map();
-let un = !1;
+let fr = !1;
 function zt(t, e) {
   var i = {
     f: 0,
     // TODO ideally we could skip this altogether, but it causes type errors
     v: t,
     reactions: null,
-    equals: _r,
+    equals: er,
     rv: 0,
     wv: 0
   };
@@ -1001,19 +1001,19 @@ function zt(t, e) {
 // @__NO_SIDE_EFFECTS__
 function M(t, e) {
   const i = zt(t);
-  return Mn(i), i;
+  return Tr(i), i;
 }
 // @__NO_SIDE_EFFECTS__
-function fn(t, e = !1, i = !0) {
-  var r;
+function hr(t, e = !1, i = !0) {
+  var n;
   const s = zt(t);
-  return e || (s.equals = $r), xi && i && U !== null && U.l !== null && ((r = U.l).s ?? (r.s = [])).push(s), s;
+  return e || (s.equals = tr), xi && i && U !== null && U.l !== null && ((n = U.l).s ?? (n.s = [])).push(s), s;
 }
-function C(t, e, i = !1) {
+function E(t, e, i = !1) {
   T !== null && // since we are untracking the function inside `$inspect.with` we need to add this check
   // to ensure we error if state is set inside an inspect effect
-  (!je || T.f & br) && Ji() && T.f & (_ | Je | $s | br) && !(le != null && le.includes(t)) && Ga();
-  let s = i ? X(e) : e;
+  (!je || T.f & In) && Ji() && T.f & ($ | Je | $s | In) && !(le != null && le.includes(t)) && ja();
+  let s = i ? V(e) : e;
   return Ii(t, s);
 }
 function Ii(t, e) {
@@ -1021,42 +1021,42 @@ function Ii(t, e) {
     var i = t.v;
     Ut ? dt.set(t, e) : dt.set(t, i), t.v = e;
     var s = Ge.ensure();
-    s.capture(t, i), t.f & _ && (t.f & me && sr(
+    s.capture(t, i), t.f & $ && (t.f & me && rn(
       /** @type {Derived} */
       t
-    ), se(t, t.f & Be ? ie : We)), t.wv = On(), hn(t, me), Ji() && R !== null && R.f & ie && !(R.f & (it | ht)) && (Ae === null ? ko([t]) : Ae.push(t)), !s.is_fork && Us.size > 0 && !un && po();
+    ), ne(t, t.f & Re ? se : We)), t.wv = Dr(), pr(t, me), Ji() && B !== null && B.f & se && !(B.f & (it | pt)) && (Ae === null ? So([t]) : Ae.push(t)), !s.is_fork && Us.size > 0 && !fr && vo();
   }
   return e;
 }
-function po() {
-  un = !1;
-  var t = Rt;
-  cs(!0);
+function vo() {
+  fr = !1;
+  var t = Bt;
+  ds(!0);
   const e = Array.from(Us);
   try {
     for (const i of e)
-      i.f & ie && se(i, We), Vi(i) && Gi(i);
+      i.f & se && ne(i, We), Vi(i) && Gi(i);
   } finally {
-    cs(t);
+    ds(t);
   }
   Us.clear();
 }
 function Pi(t) {
-  C(t, t.v + 1);
+  E(t, t.v + 1);
 }
-function hn(t, e) {
+function pr(t, e) {
   var i = t.reactions;
   if (i !== null)
-    for (var s = Ji(), r = i.length, n = 0; n < r; n++) {
-      var a = i[n], o = a.f;
-      if (!(!s && a === R)) {
+    for (var s = Ji(), n = i.length, r = 0; r < n; r++) {
+      var a = i[r], o = a.f;
+      if (!(!s && a === B)) {
         var l = (o & me) === 0;
-        if (l && se(a, e), o & _) {
+        if (l && ne(a, e), o & $) {
           var d = (
             /** @type {Derived} */
             a
           );
-          Y == null || Y.delete(d), o & Lt || (o & Be && (a.f |= Lt), hn(d, We));
+          Y == null || Y.delete(d), o & Lt || (o & Re && (a.f |= Lt), pr(d, We));
         } else l && (o & Je && Te !== null && Te.add(
           /** @type {Effect} */
           a
@@ -1067,19 +1067,19 @@ function hn(t, e) {
       }
     }
 }
-function X(t) {
-  if (typeof t != "object" || t === null || Tt in t)
+function V(t) {
+  if (typeof t != "object" || t === null || Ot in t)
     return t;
   const e = Zs(t);
-  if (e !== ka && e !== Sa)
+  if (e !== Sa && e !== Ma)
     return t;
-  var i = /* @__PURE__ */ new Map(), s = jr(t), r = /* @__PURE__ */ M(0), n = Bt, a = (o) => {
-    if (Bt === n)
+  var i = /* @__PURE__ */ new Map(), s = Wn(t), n = /* @__PURE__ */ M(0), r = Rt, a = (o) => {
+    if (Rt === r)
       return o();
-    var l = T, d = Bt;
-    ge(null), Cr(n);
+    var l = T, d = Rt;
+    ge(null), Sn(r);
     var g = o();
-    return ge(l), Cr(d), g;
+    return ge(l), Sn(d), g;
   };
   return s && i.set("length", /* @__PURE__ */ M(
     /** @type {any[]} */
@@ -1089,35 +1089,35 @@ function X(t) {
     t,
     {
       defineProperty(o, l, d) {
-        (!("value" in d) || d.configurable === !1 || d.enumerable === !1 || d.writable === !1) && Ua();
+        (!("value" in d) || d.configurable === !1 || d.enumerable === !1 || d.writable === !1) && Ha();
         var g = i.get(l);
         return g === void 0 ? g = a(() => {
           var h = /* @__PURE__ */ M(d.value);
           return i.set(l, h), h;
-        }) : C(g, d.value, !0), !0;
+        }) : E(g, d.value, !0), !0;
       },
       deleteProperty(o, l) {
         var d = i.get(l);
         if (d === void 0) {
           if (l in o) {
-            const g = a(() => /* @__PURE__ */ M(ee));
-            i.set(l, g), Pi(r);
+            const g = a(() => /* @__PURE__ */ M(te));
+            i.set(l, g), Pi(n);
           }
         } else
-          C(d, ee), Pi(r);
+          E(d, te), Pi(n);
         return !0;
       },
       get(o, l, d) {
         var p;
-        if (l === Tt)
+        if (l === Ot)
           return t;
         var g = i.get(l), h = l in o;
-        if (g === void 0 && (!h || (p = Mt(o, l)) != null && p.writable) && (g = a(() => {
-          var u = X(h ? o[l] : ee), w = /* @__PURE__ */ M(u);
-          return w;
+        if (g === void 0 && (!h || (p = Tt(o, l)) != null && p.writable) && (g = a(() => {
+          var u = V(h ? o[l] : te), b = /* @__PURE__ */ M(u);
+          return b;
         }), i.set(l, g)), g !== void 0) {
-          var f = m(g);
-          return f === ee ? void 0 : f;
+          var f = w(g);
+          return f === te ? void 0 : f;
         }
         return Reflect.get(o, l, d);
       },
@@ -1125,10 +1125,10 @@ function X(t) {
         var d = Reflect.getOwnPropertyDescriptor(o, l);
         if (d && "value" in d) {
           var g = i.get(l);
-          g && (d.value = m(g));
+          g && (d.value = w(g));
         } else if (d === void 0) {
           var h = i.get(l), f = h == null ? void 0 : h.v;
-          if (h !== void 0 && f !== ee)
+          if (h !== void 0 && f !== te)
             return {
               enumerable: !0,
               configurable: !0,
@@ -1140,16 +1140,16 @@ function X(t) {
       },
       has(o, l) {
         var f;
-        if (l === Tt)
+        if (l === Ot)
           return !0;
-        var d = i.get(l), g = d !== void 0 && d.v !== ee || Reflect.has(o, l);
-        if (d !== void 0 || R !== null && (!g || (f = Mt(o, l)) != null && f.writable)) {
+        var d = i.get(l), g = d !== void 0 && d.v !== te || Reflect.has(o, l);
+        if (d !== void 0 || B !== null && (!g || (f = Tt(o, l)) != null && f.writable)) {
           d === void 0 && (d = a(() => {
-            var p = g ? X(o[l]) : ee, u = /* @__PURE__ */ M(p);
+            var p = g ? V(o[l]) : te, u = /* @__PURE__ */ M(p);
             return u;
           }), i.set(l, d));
-          var h = m(d);
-          if (h === ee)
+          var h = w(d);
+          if (h === te)
             return !1;
         }
         return g;
@@ -1161,14 +1161,14 @@ function X(t) {
           for (var p = d; p < /** @type {Source<number>} */
           h.v; p += 1) {
             var u = i.get(p + "");
-            u !== void 0 ? C(u, ee) : p in o && (u = a(() => /* @__PURE__ */ M(ee)), i.set(p + "", u));
+            u !== void 0 ? E(u, te) : p in o && (u = a(() => /* @__PURE__ */ M(te)), i.set(p + "", u));
           }
         if (h === void 0)
-          (!f || (H = Mt(o, l)) != null && H.writable) && (h = a(() => /* @__PURE__ */ M(void 0)), C(h, X(d)), i.set(l, h));
+          (!f || (H = Tt(o, l)) != null && H.writable) && (h = a(() => /* @__PURE__ */ M(void 0)), E(h, V(d)), i.set(l, h));
         else {
-          f = h.v !== ee;
-          var w = a(() => X(d));
-          C(h, w);
+          f = h.v !== te;
+          var b = a(() => V(d));
+          E(h, b);
         }
         var v = Reflect.getOwnPropertyDescriptor(o, l);
         if (v != null && v.set && v.set.call(g, d), !f) {
@@ -1177,34 +1177,34 @@ function X(t) {
               /** @type {Source<number>} */
               i.get("length")
             ), O = Number(l);
-            Number.isInteger(O) && O >= A.v && C(A, O + 1);
+            Number.isInteger(O) && O >= A.v && E(A, O + 1);
           }
-          Pi(r);
+          Pi(n);
         }
         return !0;
       },
       ownKeys(o) {
-        m(r);
+        w(n);
         var l = Reflect.ownKeys(o).filter((h) => {
           var f = i.get(h);
-          return f === void 0 || f.v !== ee;
+          return f === void 0 || f.v !== te;
         });
         for (var [d, g] of i)
-          g.v !== ee && !(d in o) && l.push(d);
+          g.v !== te && !(d in o) && l.push(d);
         return l;
       },
       setPrototypeOf() {
-        Ha();
+        Ga();
       }
     }
   );
 }
-var yr, pn, vn, mn;
+var En, vr, mr, wr;
 function Hs() {
-  if (yr === void 0) {
-    yr = window, pn = /Firefox/.test(navigator.userAgent);
+  if (En === void 0) {
+    En = window, vr = /Firefox/.test(navigator.userAgent);
     var t = Element.prototype, e = Node.prototype, i = Text.prototype;
-    vn = Mt(e, "firstChild").get, mn = Mt(e, "nextSibling").get, wr(t) && (t.__click = void 0, t.__className = void 0, t.__attributes = null, t.__style = void 0, t.__e = void 0), wr(i) && (i.__t = void 0);
+    mr = Tt(e, "firstChild").get, wr = Tt(e, "nextSibling").get, yn(t) && (t.__click = void 0, t.__className = void 0, t.__attributes = null, t.__style = void 0, t.__e = void 0), yn(i) && (i.__t = void 0);
   }
 }
 function Qe(t = "") {
@@ -1214,64 +1214,64 @@ function Qe(t = "") {
 function tt(t) {
   return (
     /** @type {TemplateNode | null} */
-    vn.call(t)
+    mr.call(t)
   );
 }
 // @__NO_SIDE_EFFECTS__
 function Xe(t) {
   return (
     /** @type {TemplateNode | null} */
-    mn.call(t)
+    wr.call(t)
   );
 }
 function q(t, e) {
   if (!D)
     return /* @__PURE__ */ tt(t);
-  var i = /* @__PURE__ */ tt(k);
+  var i = /* @__PURE__ */ tt(S);
   if (i === null)
-    i = k.appendChild(Qe());
-  else if (e && i.nodeType !== er) {
+    i = S.appendChild(Qe());
+  else if (e && i.nodeType !== en) {
     var s = Qe();
     return i == null || i.before(s), we(s), s;
   }
   return we(i), i;
 }
-function rs(t, e = !1) {
+function ss(t, e = !1) {
   if (!D) {
     var i = /* @__PURE__ */ tt(t);
     return i instanceof Comment && i.data === "" ? /* @__PURE__ */ Xe(i) : i;
   }
-  if (e && (k == null ? void 0 : k.nodeType) !== er) {
+  if (e && (S == null ? void 0 : S.nodeType) !== en) {
     var s = Qe();
-    return k == null || k.before(s), we(s), s;
+    return S == null || S.before(s), we(s), s;
   }
-  return k;
+  return S;
 }
-function V(t, e = 1, i = !1) {
-  let s = D ? k : t;
-  for (var r; e--; )
-    r = s, s = /** @type {TemplateNode} */
+function J(t, e = 1, i = !1) {
+  let s = D ? S : t;
+  for (var n; e--; )
+    n = s, s = /** @type {TemplateNode} */
     /* @__PURE__ */ Xe(s);
   if (!D)
     return s;
-  if (i && (s == null ? void 0 : s.nodeType) !== er) {
-    var n = Qe();
-    return s === null ? r == null || r.after(n) : s.before(n), we(n), n;
+  if (i && (s == null ? void 0 : s.nodeType) !== en) {
+    var r = Qe();
+    return s === null ? n == null || n.after(r) : s.before(r), we(r), r;
   }
   return we(s), s;
 }
-function rr(t) {
+function an(t) {
   t.textContent = "";
 }
-function wn() {
+function br() {
   return !1;
 }
-function vo(t) {
-  D && /* @__PURE__ */ tt(t) !== null && rr(t);
+function mo(t) {
+  D && /* @__PURE__ */ tt(t) !== null && an(t);
 }
-let Ir = !1;
-function mo() {
-  Ir || (Ir = !0, document.addEventListener(
+let xn = !1;
+function wo() {
+  xn || (xn = !0, document.addEventListener(
     "reset",
     (t) => {
       Promise.resolve().then(() => {
@@ -1290,7 +1290,7 @@ function mo() {
   ));
 }
 function Si(t) {
-  var e = T, i = R;
+  var e = T, i = B;
   ge(null), qe(null);
   try {
     return t();
@@ -1298,28 +1298,28 @@ function Si(t) {
     ge(e), qe(i);
   }
 }
-function wo(t, e, i, s = i) {
+function bo(t, e, i, s = i) {
   t.addEventListener(e, () => Si(i));
-  const r = t.__on_r;
-  r ? t.__on_r = () => {
-    r(), s(!0);
-  } : t.__on_r = () => s(!0), mo();
+  const n = t.__on_r;
+  n ? t.__on_r = () => {
+    n(), s(!0);
+  } : t.__on_r = () => s(!0), wo();
 }
-function bn(t) {
-  R === null && (T === null && La(), Qa()), Ut && Ba();
+function Ar(t) {
+  B === null && (T === null && Pa(), La()), Ut && Qa();
 }
-function bo(t, e) {
+function Ao(t, e) {
   var i = e.last;
   i === null ? e.last = e.first = t : (i.next = t, t.prev = i, e.last = t);
 }
 function Le(t, e, i) {
-  var s = R;
+  var s = B;
   s !== null && s.f & ve && (t |= ve);
-  var r = {
+  var n = {
     ctx: U,
     deps: null,
     nodes: null,
-    f: t | me | Be,
+    f: t | me | Re,
     first: null,
     fn: e,
     last: null,
@@ -1333,34 +1333,34 @@ function Le(t, e, i) {
   };
   if (i)
     try {
-      Gi(r), r.f |= Ki;
+      Gi(n), n.f |= Ki;
     } catch (o) {
-      throw oe(r), o;
+      throw oe(n), o;
     }
-  else e !== null && Pt(r);
-  var n = r;
-  if (i && n.deps === null && n.teardown === null && n.nodes === null && n.first === n.last && // either `null`, or a singular child
-  !(n.f & Nt) && (n = n.first, t & Je && t & Qt && n !== null && (n.f |= Qt)), n !== null && (n.parent = s, s !== null && bo(n, s), T !== null && T.f & _ && !(t & ht))) {
+  else e !== null && Pt(n);
+  var r = n;
+  if (i && r.deps === null && r.teardown === null && r.nodes === null && r.first === r.last && // either `null`, or a singular child
+  !(r.f & Nt) && (r = r.first, t & Je && t & Qt && r !== null && (r.f |= Qt)), r !== null && (r.parent = s, s !== null && Ao(r, s), T !== null && T.f & $ && !(t & pt))) {
     var a = (
       /** @type {Derived} */
       T
     );
-    (a.effects ?? (a.effects = [])).push(n);
+    (a.effects ?? (a.effects = [])).push(r);
   }
-  return r;
+  return n;
 }
 function Ui() {
   return T !== null && !je;
 }
-function An(t) {
-  const e = Le(ms, null, !1);
-  return se(e, ie), e.teardown = t, e;
+function yr(t) {
+  const e = Le(vs, null, !1);
+  return ne(e, se), e.teardown = t, e;
 }
-function Ot(t) {
-  bn();
+function ct(t) {
+  Ar();
   var e = (
     /** @type {Effect} */
-    R.f
+    B.f
   ), i = !T && (e & it) !== 0 && (e & Ki) === 0;
   if (i) {
     var s = (
@@ -1369,75 +1369,75 @@ function Ot(t) {
     );
     (s.e ?? (s.e = [])).push(t);
   } else
-    return yn(t);
+    return Ir(t);
 }
-function yn(t) {
-  return Le(_s | qr, t, !1);
-}
-function Ao(t) {
-  return bn(), Le(ms | qr, t, !0);
+function Ir(t) {
+  return Le(_s | Xn, t, !1);
 }
 function yo(t) {
+  return Ar(), Le(vs | Xn, t, !0);
+}
+function Io(t) {
   Ge.ensure();
-  const e = Le(ht | Nt, t, !0);
+  const e = Le(pt | Nt, t, !0);
   return () => {
     oe(e);
   };
 }
-function Io(t) {
+function Co(t) {
   Ge.ensure();
-  const e = Le(ht | Nt, t, !0);
+  const e = Le(pt | Nt, t, !0);
   return (i = {}) => new Promise((s) => {
     i.outro ? Dt(e, () => {
       oe(e), s(void 0);
     }) : (oe(e), s(void 0));
   });
 }
-function nr(t) {
+function on(t) {
   return Le(_s, t, !1);
 }
 function Eo(t) {
   return Le($s | Nt, t, !0);
 }
-function Es(t, e = 0) {
-  return Le(ms | e, t, !0);
+function Is(t, e = 0) {
+  return Le(vs | e, t, !0);
 }
-function ut(t, e = [], i = [], s = []) {
-  go(s, e, i, (r) => {
-    Le(ms, () => t(...r.map(m)), !0);
+function ft(t, e = [], i = [], s = []) {
+  uo(s, e, i, (n) => {
+    Le(vs, () => t(...n.map(w)), !0);
   });
 }
-function ar(t, e = 0) {
+function ln(t, e = 0) {
   var i = Le(Je | e, t, !0);
   return i;
 }
 function xe(t) {
   return Le(it | Nt, t, !0);
 }
-function In(t) {
+function Cr(t) {
   var e = t.teardown;
   if (e !== null) {
     const i = Ut, s = T;
-    Er(!0), ge(null);
+    kn(!0), ge(null);
     try {
       e.call(null);
     } finally {
-      Er(i), ge(s);
+      kn(i), ge(s);
     }
   }
 }
-function En(t, e = !1) {
+function Er(t, e = !1) {
   var i = t.first;
   for (t.first = t.last = null; i !== null; ) {
-    const r = i.ac;
-    r !== null && Si(() => {
-      r.abort(Ft);
+    const n = i.ac;
+    n !== null && Si(() => {
+      n.abort(Ft);
     });
     var s = i.next;
-    i.f & ht ? i.parent = null : oe(i, e), i = s;
+    i.f & pt ? i.parent = null : oe(i, e), i = s;
   }
 }
-function Co(t) {
+function xo(t) {
   for (var e = t.first; e !== null; ) {
     var i = e.next;
     e.f & it || oe(e), e = i;
@@ -1445,250 +1445,250 @@ function Co(t) {
 }
 function oe(t, e = !0) {
   var i = !1;
-  (e || t.f & Wr) && t.nodes !== null && t.nodes.end !== null && (xo(
+  (e || t.f & Jn) && t.nodes !== null && t.nodes.end !== null && (ko(
     t.nodes.start,
     /** @type {TemplateNode} */
     t.nodes.end
-  ), i = !0), En(t, e && !i), gs(t, 0), se(t, et);
+  ), i = !0), Er(t, e && !i), cs(t, 0), ne(t, et);
   var s = t.nodes && t.nodes.t;
   if (s !== null)
-    for (const n of s)
-      n.stop();
-  In(t);
-  var r = t.parent;
-  r !== null && r.first !== null && Cn(t), t.next = t.prev = t.teardown = t.ctx = t.deps = t.fn = t.nodes = t.ac = null;
+    for (const r of s)
+      r.stop();
+  Cr(t);
+  var n = t.parent;
+  n !== null && n.first !== null && xr(t), t.next = t.prev = t.teardown = t.ctx = t.deps = t.fn = t.nodes = t.ac = null;
 }
-function xo(t, e) {
+function ko(t, e) {
   for (; t !== null; ) {
     var i = t === e ? null : /* @__PURE__ */ Xe(t);
     t.remove(), t = i;
   }
 }
-function Cn(t) {
+function xr(t) {
   var e = t.parent, i = t.prev, s = t.next;
   i !== null && (i.next = s), s !== null && (s.prev = i), e !== null && (e.first === t && (e.first = s), e.last === t && (e.last = i));
 }
 function Dt(t, e, i = !0) {
   var s = [];
-  xn(t, s, !0);
-  var r = () => {
+  kr(t, s, !0);
+  var n = () => {
     i && oe(t), e && e();
-  }, n = s.length;
-  if (n > 0) {
-    var a = () => --n || r();
+  }, r = s.length;
+  if (r > 0) {
+    var a = () => --r || n();
     for (var o of s)
       o.out(a);
   } else
-    r();
+    n();
 }
-function xn(t, e, i) {
+function kr(t, e, i) {
   if (!(t.f & ve)) {
     t.f ^= ve;
     var s = t.nodes && t.nodes.t;
     if (s !== null)
       for (const o of s)
         (o.is_global || i) && e.push(o);
-    for (var r = t.first; r !== null; ) {
-      var n = r.next, a = (r.f & Qt) !== 0 || // If this is a branch effect without a block effect parent,
+    for (var n = t.first; n !== null; ) {
+      var r = n.next, a = (n.f & Qt) !== 0 || // If this is a branch effect without a block effect parent,
       // it means the parent block effect was pruned. In that case,
       // transparency information was transferred to the branch effect.
-      (r.f & it) !== 0 && (t.f & Je) !== 0;
-      xn(r, e, a ? i : !1), r = n;
+      (n.f & it) !== 0 && (t.f & Je) !== 0;
+      kr(n, e, a ? i : !1), n = r;
     }
   }
 }
-function or(t) {
-  kn(t, !0);
+function dn(t) {
+  Sr(t, !0);
 }
-function kn(t, e) {
+function Sr(t, e) {
   if (t.f & ve) {
-    t.f ^= ve, t.f & ie || (se(t, me), Pt(t));
+    t.f ^= ve, t.f & se || (ne(t, me), Pt(t));
     for (var i = t.first; i !== null; ) {
-      var s = i.next, r = (i.f & Qt) !== 0 || (i.f & it) !== 0;
-      kn(i, r ? e : !1), i = s;
+      var s = i.next, n = (i.f & Qt) !== 0 || (i.f & it) !== 0;
+      Sr(i, n ? e : !1), i = s;
     }
-    var n = t.nodes && t.nodes.t;
-    if (n !== null)
-      for (const a of n)
+    var r = t.nodes && t.nodes.t;
+    if (r !== null)
+      for (const a of r)
         (a.is_global || e) && a.in();
   }
 }
-function Sn(t, e) {
+function Mr(t, e) {
   if (t.nodes)
     for (var i = t.nodes.start, s = t.nodes.end; i !== null; ) {
-      var r = i === s ? null : /* @__PURE__ */ Xe(i);
-      e.append(i), i = r;
+      var n = i === s ? null : /* @__PURE__ */ Xe(i);
+      e.append(i), i = n;
     }
 }
-let Rt = !1;
-function cs(t) {
-  Rt = t;
+let Bt = !1;
+function ds(t) {
+  Bt = t;
 }
 let Ut = !1;
-function Er(t) {
+function kn(t) {
   Ut = t;
 }
 let T = null, je = !1;
 function ge(t) {
   T = t;
 }
-let R = null;
+let B = null;
 function qe(t) {
-  R = t;
+  B = t;
 }
 let le = null;
-function Mn(t) {
+function Tr(t) {
   T !== null && (le === null ? le = [t] : le.push(t));
 }
-let ne = null, fe = 0, Ae = null;
-function ko(t) {
+let ae = null, fe = 0, Ae = null;
+function So(t) {
   Ae = t;
 }
-let Tn = 1, Hi = 0, Bt = Hi;
-function Cr(t) {
-  Bt = t;
+let Or = 1, Hi = 0, Rt = Hi;
+function Sn(t) {
+  Rt = t;
 }
-function On() {
-  return ++Tn;
+function Dr() {
+  return ++Or;
 }
 function Vi(t) {
   var e = t.f;
   if (e & me)
     return !0;
-  if (e & _ && (t.f &= ~Lt), e & We) {
+  if (e & $ && (t.f &= ~Lt), e & We) {
     var i = t.deps;
     if (i !== null)
-      for (var s = i.length, r = 0; r < s; r++) {
-        var n = i[r];
+      for (var s = i.length, n = 0; n < s; n++) {
+        var r = i[n];
         if (Vi(
           /** @type {Derived} */
-          n
-        ) && gn(
+          r
+        ) && ur(
           /** @type {Derived} */
-          n
-        ), n.wv > t.wv)
+          r
+        ), r.wv > t.wv)
           return !0;
       }
-    e & Be && // During time traveling we don't want to reset the status so that
+    e & Re && // During time traveling we don't want to reset the status so that
     // traversal of the graph in the other batches still happens
-    Y === null && se(t, ie);
+    Y === null && ne(t, se);
   }
   return !1;
 }
-function Dn(t, e, i = !0) {
+function Br(t, e, i = !0) {
   var s = t.reactions;
   if (s !== null && !(le != null && le.includes(t)))
-    for (var r = 0; r < s.length; r++) {
-      var n = s[r];
-      n.f & _ ? Dn(
+    for (var n = 0; n < s.length; n++) {
+      var r = s[n];
+      r.f & $ ? Br(
         /** @type {Derived} */
-        n,
+        r,
         e,
         !1
-      ) : e === n && (i ? se(n, me) : n.f & ie && se(n, We), Pt(
+      ) : e === r && (i ? ne(r, me) : r.f & se && ne(r, We), Pt(
         /** @type {Effect} */
-        n
+        r
       ));
     }
 }
-function Rn(t) {
+function Rr(t) {
   var u;
-  var e = ne, i = fe, s = Ae, r = T, n = le, a = U, o = je, l = Bt, d = t.f;
-  ne = /** @type {null | Value[]} */
-  null, fe = 0, Ae = null, T = d & (it | ht) ? null : t, le = null, Ai(t.ctx), je = !1, Bt = ++Hi, t.ac !== null && (Si(() => {
+  var e = ae, i = fe, s = Ae, n = T, r = le, a = U, o = je, l = Rt, d = t.f;
+  ae = /** @type {null | Value[]} */
+  null, fe = 0, Ae = null, T = d & (it | pt) ? null : t, le = null, Ai(t.ctx), je = !1, Rt = ++Hi, t.ac !== null && (Si(() => {
     t.ac.abort(Ft);
   }), t.ac = null);
   try {
-    t.f |= Bs;
+    t.f |= Rs;
     var g = (
       /** @type {Function} */
       t.fn
     ), h = g(), f = t.deps;
-    if (ne !== null) {
+    if (ae !== null) {
       var p;
-      if (gs(t, fe), f !== null && fe > 0)
-        for (f.length = fe + ne.length, p = 0; p < ne.length; p++)
-          f[fe + p] = ne[p];
+      if (cs(t, fe), f !== null && fe > 0)
+        for (f.length = fe + ae.length, p = 0; p < ae.length; p++)
+          f[fe + p] = ae[p];
       else
-        t.deps = f = ne;
-      if (Ui() && t.f & Be)
+        t.deps = f = ae;
+      if (Ui() && t.f & Re)
         for (p = fe; p < f.length; p++)
           ((u = f[p]).reactions ?? (u.reactions = [])).push(t);
-    } else f !== null && fe < f.length && (gs(t, fe), f.length = fe);
-    if (Ji() && Ae !== null && !je && f !== null && !(t.f & (_ | We | me)))
+    } else f !== null && fe < f.length && (cs(t, fe), f.length = fe);
+    if (Ji() && Ae !== null && !je && f !== null && !(t.f & ($ | We | me)))
       for (p = 0; p < /** @type {Source[]} */
       Ae.length; p++)
-        Dn(
+        Br(
           Ae[p],
           /** @type {Effect} */
           t
         );
-    return r !== null && r !== t && (Hi++, Ae !== null && (s === null ? s = Ae : s.push(.../** @type {Source[]} */
+    return n !== null && n !== t && (Hi++, Ae !== null && (s === null ? s = Ae : s.push(.../** @type {Source[]} */
     Ae))), t.f & lt && (t.f ^= lt), h;
-  } catch (w) {
-    return tn(w);
+  } catch (b) {
+    return sr(b);
   } finally {
-    t.f ^= Bs, ne = e, fe = i, Ae = s, T = r, le = n, Ai(a), je = o, Bt = l;
+    t.f ^= Rs, ae = e, fe = i, Ae = s, T = n, le = r, Ai(a), je = o, Rt = l;
   }
 }
-function So(t, e) {
+function Mo(t, e) {
   let i = e.reactions;
   if (i !== null) {
-    var s = xa.call(i, t);
+    var s = ka.call(i, t);
     if (s !== -1) {
-      var r = i.length - 1;
-      r === 0 ? i = e.reactions = null : (i[s] = i[r], i.pop());
+      var n = i.length - 1;
+      n === 0 ? i = e.reactions = null : (i[s] = i[n], i.pop());
     }
   }
-  i === null && e.f & _ && // Destroying a child effect while updating a parent effect can cause a dependency to appear
+  i === null && e.f & $ && // Destroying a child effect while updating a parent effect can cause a dependency to appear
   // to be unused, when in fact it is used by the currently-updating parent. Checking `new_deps`
   // allows us to skip the expensive work of disconnecting and immediately reconnecting it
-  (ne === null || !ne.includes(e)) && (se(e, We), e.f & Be && (e.f ^= Be, e.f &= ~Lt), cn(
+  (ae === null || !ae.includes(e)) && (ne(e, We), e.f & Re && (e.f ^= Re, e.f &= ~Lt), gr(
     /** @type {Derived} **/
     e
-  ), gs(
+  ), cs(
     /** @type {Derived} **/
     e,
     0
   ));
 }
-function gs(t, e) {
+function cs(t, e) {
   var i = t.deps;
   if (i !== null)
     for (var s = e; s < i.length; s++)
-      So(t, i[s]);
+      Mo(t, i[s]);
 }
 function Gi(t) {
   var e = t.f;
   if (!(e & et)) {
-    se(t, ie);
-    var i = R, s = Rt;
-    R = t, Rt = !0;
+    ne(t, se);
+    var i = B, s = Bt;
+    B = t, Bt = !0;
     try {
-      e & (Je | Oa) ? Co(t) : En(t), In(t);
-      var r = Rn(t);
-      t.teardown = typeof r == "function" ? r : null, t.wv = Tn;
-      var n;
+      e & (Je | Da) ? xo(t) : Er(t), Cr(t);
+      var n = Rr(t);
+      t.teardown = typeof n == "function" ? n : null, t.wv = Or;
+      var r;
     } finally {
-      Rt = s, R = i;
+      Bt = s, B = i;
     }
   }
 }
-async function Bn() {
+async function Qr() {
   await Promise.resolve(), Fe();
 }
-function m(t) {
-  var e = t.f, i = (e & _) !== 0;
+function w(t) {
+  var e = t.f, i = (e & $) !== 0;
   if (T !== null && !je) {
-    var s = R !== null && (R.f & et) !== 0;
+    var s = B !== null && (B.f & et) !== 0;
     if (!s && !(le != null && le.includes(t))) {
-      var r = T.deps;
-      if (T.f & Bs)
-        t.rv < Hi && (t.rv = Hi, ne === null && r !== null && r[fe] === t ? fe++ : ne === null ? ne = [t] : ne.includes(t) || ne.push(t));
+      var n = T.deps;
+      if (T.f & Rs)
+        t.rv < Hi && (t.rv = Hi, ae === null && n !== null && n[fe] === t ? fe++ : ae === null ? ae = [t] : ae.includes(t) || ae.push(t));
       else {
         (T.deps ?? (T.deps = [])).push(t);
-        var n = t.reactions;
-        n === null ? t.reactions = [T] : n.includes(T) || n.push(T);
+        var r = t.reactions;
+        r === null ? t.reactions = [T] : r.includes(T) || r.push(T);
       }
     }
   }
@@ -1700,38 +1700,38 @@ function m(t) {
         /** @type {Derived} */
         t
       ), o = a.v;
-      return (!(a.f & ie) && a.reactions !== null || Ln(a)) && (o = sr(a)), dt.set(a, o), o;
+      return (!(a.f & se) && a.reactions !== null || Pr(a)) && (o = rn(a)), dt.set(a, o), o;
     }
   } else i && (!(Y != null && Y.has(t)) || x != null && x.is_fork && !Ui()) && (a = /** @type {Derived} */
-  t, Vi(a) && gn(a), Rt && Ui() && !(a.f & Be) && Qn(a));
+  t, Vi(a) && ur(a), Bt && Ui() && !(a.f & Re) && Lr(a));
   if (Y != null && Y.has(t))
     return Y.get(t);
   if (t.f & lt)
     throw t.v;
   return t.v;
 }
-function Qn(t) {
+function Lr(t) {
   if (t.deps !== null) {
-    t.f ^= Be;
+    t.f ^= Re;
     for (const e of t.deps)
-      (e.reactions ?? (e.reactions = [])).push(t), e.f & _ && !(e.f & Be) && Qn(
+      (e.reactions ?? (e.reactions = [])).push(t), e.f & $ && !(e.f & Re) && Lr(
         /** @type {Derived} */
         e
       );
   }
 }
-function Ln(t) {
-  if (t.v === ee) return !0;
+function Pr(t) {
+  if (t.v === te) return !0;
   if (t.deps === null) return !1;
   for (const e of t.deps)
-    if (dt.has(e) || e.f & _ && Ln(
+    if (dt.has(e) || e.f & $ && Pr(
       /** @type {Derived} */
       e
     ))
       return !0;
   return !1;
 }
-function mt(t) {
+function wt(t) {
   var e = je;
   try {
     return je = !0, t();
@@ -1739,18 +1739,18 @@ function mt(t) {
     je = e;
   }
 }
-const Mo = -7169;
-function se(t, e) {
-  t.f = t.f & Mo | e;
+const To = -7169;
+function ne(t, e) {
+  t.f = t.f & To | e;
 }
-function To(t) {
+function Oo(t) {
   if (!(typeof t != "object" || !t || t instanceof EventTarget)) {
-    if (Tt in t)
+    if (Ot in t)
       Gs(t);
     else if (!Array.isArray(t))
       for (let e in t) {
         const i = t[e];
-        typeof i == "object" && i && Tt in i && Gs(i);
+        typeof i == "object" && i && Ot in i && Gs(i);
       }
   }
 }
@@ -1765,97 +1765,97 @@ function Gs(t, e = /* @__PURE__ */ new Set()) {
       }
     const i = Zs(t);
     if (i !== Object.prototype && i !== Array.prototype && i !== Map.prototype && i !== Set.prototype && i !== Date.prototype) {
-      const s = Yr(i);
-      for (let r in s) {
-        const n = s[r].get;
-        if (n)
+      const s = qn(i);
+      for (let n in s) {
+        const r = s[n].get;
+        if (r)
           try {
-            n.call(t);
+            r.call(t);
           } catch {
           }
       }
     }
   }
 }
-const Oo = ["touchstart", "touchmove"];
-function Do(t) {
-  return Oo.includes(t);
+const Do = ["touchstart", "touchmove"];
+function Bo(t) {
+  return Do.includes(t);
 }
-const Pn = /* @__PURE__ */ new Set(), js = /* @__PURE__ */ new Set();
+const zr = /* @__PURE__ */ new Set(), js = /* @__PURE__ */ new Set();
 function Ro(t, e, i, s = {}) {
-  function r(n) {
-    if (s.capture || Ri.call(e, n), !n.cancelBubble)
-      return Si(() => i == null ? void 0 : i.call(this, n));
+  function n(r) {
+    if (s.capture || Bi.call(e, r), !r.cancelBubble)
+      return Si(() => i == null ? void 0 : i.call(this, r));
   }
   return t.startsWith("pointer") || t.startsWith("touch") || t === "wheel" ? ki(() => {
-    e.addEventListener(t, r, s);
-  }) : e.addEventListener(t, r, s), r;
+    e.addEventListener(t, n, s);
+  }) : e.addEventListener(t, n, s), n;
 }
-function Bo(t, e, i, s, r) {
-  var n = { capture: s, passive: r }, a = Ro(t, e, i, n);
+function Qo(t, e, i, s, n) {
+  var r = { capture: s, passive: n }, a = Ro(t, e, i, r);
   (e === document.body || // @ts-ignore
   e === window || // @ts-ignore
   e === document || // Firefox has quirky behavior, it can happen that we still get "canplay" events when the element is already removed
-  e instanceof HTMLMediaElement) && An(() => {
-    e.removeEventListener(t, a, n);
+  e instanceof HTMLMediaElement) && yr(() => {
+    e.removeEventListener(t, a, r);
   });
 }
 function Cs(t) {
   for (var e = 0; e < t.length; e++)
-    Pn.add(t[e]);
+    zr.add(t[e]);
   for (var i of js)
     i(t);
 }
-let xr = null;
-function Ri(t) {
+let Mn = null;
+function Bi(t) {
   var v;
   var e = this, i = (
     /** @type {Node} */
     e.ownerDocument
-  ), s = t.type, r = ((v = t.composedPath) == null ? void 0 : v.call(t)) || [], n = (
+  ), s = t.type, n = ((v = t.composedPath) == null ? void 0 : v.call(t)) || [], r = (
     /** @type {null | Element} */
-    r[0] || t.target
+    n[0] || t.target
   );
-  xr = t;
-  var a = 0, o = xr === t && t.__root;
+  Mn = t;
+  var a = 0, o = Mn === t && t.__root;
   if (o) {
-    var l = r.indexOf(o);
+    var l = n.indexOf(o);
     if (l !== -1 && (e === document || e === /** @type {any} */
     window)) {
       t.__root = e;
       return;
     }
-    var d = r.indexOf(e);
+    var d = n.indexOf(e);
     if (d === -1)
       return;
     l <= d && (a = l);
   }
-  if (n = /** @type {Element} */
-  r[a] || t.target, n !== e) {
-    os(t, "currentTarget", {
+  if (r = /** @type {Element} */
+  n[a] || t.target, r !== e) {
+    as(t, "currentTarget", {
       configurable: !0,
       get() {
-        return n || i;
+        return r || i;
       }
     });
-    var g = T, h = R;
+    var g = T, h = B;
     ge(null), qe(null);
     try {
-      for (var f, p = []; n !== null; ) {
-        var u = n.assignedSlot || n.parentNode || /** @type {any} */
-        n.host || null;
+      for (var f, p = []; r !== null; ) {
+        var u = r.assignedSlot || r.parentNode || /** @type {any} */
+        r.host || null;
         try {
-          var w = n["__" + s];
-          w != null && (!/** @type {any} */
-          n.disabled || // DOM could've been updated already by the time this is reached, so we check this as well
+          var b = r["__" + s];
+          b != null && (!/** @type {any} */
+          r.disabled || // DOM could've been updated already by the time this is reached, so we check this as well
           // -> the target could not have been disabled because it emits the event in the first place
-          t.target === n) && w.call(n, t);
+          t.target === r) && b.call(r, t);
         } catch (A) {
           f ? p.push(A) : f = A;
         }
         if (t.cancelBubble || u === e || u === null)
           break;
-        n = u;
+        r = u;
       }
       if (f) {
         for (let A of p)
@@ -1869,28 +1869,28 @@ function Ri(t) {
     }
   }
 }
-function zn(t) {
+function Nr(t) {
   var e = document.createElement("template");
   return e.innerHTML = t.replaceAll("<!>", "<!---->"), e.content;
 }
-function ct(t, e) {
+function gt(t, e) {
   var i = (
     /** @type {Effect} */
-    R
+    B
   );
   i.nodes === null && (i.nodes = { start: t, end: e, a: null, t: null });
 }
 // @__NO_SIDE_EFFECTS__
 function K(t, e) {
-  var i = (e & _a) !== 0, s = (e & $a) !== 0, r, n = !t.startsWith("<!>");
+  var i = (e & $a) !== 0, s = (e & eo) !== 0, n, r = !t.startsWith("<!>");
   return () => {
     if (D)
-      return ct(k, null), k;
-    r === void 0 && (r = zn(n ? t : "<!>" + t), i || (r = /** @type {TemplateNode} */
-    /* @__PURE__ */ tt(r)));
+      return gt(S, null), S;
+    n === void 0 && (n = Nr(r ? t : "<!>" + t), i || (n = /** @type {TemplateNode} */
+    /* @__PURE__ */ tt(n)));
     var a = (
       /** @type {TemplateNode} */
-      s || pn ? document.importNode(r, !0) : r.cloneNode(!0)
+      s || vr ? document.importNode(n, !0) : n.cloneNode(!0)
     );
     if (i) {
       var o = (
@@ -1900,53 +1900,53 @@ function K(t, e) {
         /** @type {TemplateNode} */
         a.lastChild
       );
-      ct(o, l);
+      gt(o, l);
     } else
-      ct(a, a);
+      gt(a, a);
     return a;
   };
 }
 // @__NO_SIDE_EFFECTS__
-function Qo(t, e, i = "svg") {
-  var s = !t.startsWith("<!>"), r = `<${i}>${s ? t : "<!>" + t}</${i}>`, n;
+function Lo(t, e, i = "svg") {
+  var s = !t.startsWith("<!>"), n = `<${i}>${s ? t : "<!>" + t}</${i}>`, r;
   return () => {
     if (D)
-      return ct(k, null), k;
-    if (!n) {
+      return gt(S, null), S;
+    if (!r) {
       var a = (
         /** @type {DocumentFragment} */
-        zn(r)
+        Nr(n)
       ), o = (
         /** @type {Element} */
         /* @__PURE__ */ tt(a)
       );
-      n = /** @type {Element} */
+      r = /** @type {Element} */
       /* @__PURE__ */ tt(o);
     }
     var l = (
       /** @type {TemplateNode} */
-      n.cloneNode(!0)
+      r.cloneNode(!0)
     );
-    return ct(l, l), l;
+    return gt(l, l), l;
   };
 }
 // @__NO_SIDE_EFFECTS__
-function Lo(t, e) {
-  return /* @__PURE__ */ Qo(t, e, "svg");
+function Po(t, e) {
+  return /* @__PURE__ */ Lo(t, e, "svg");
 }
-function Po() {
+function zo() {
   if (D)
-    return ct(k, null), k;
+    return gt(S, null), S;
   var t = document.createDocumentFragment(), e = document.createComment(""), i = Qe();
-  return t.append(e, i), ct(e, i), t;
+  return t.append(e, i), gt(e, i), t;
 }
 function N(t, e) {
   if (D) {
     var i = (
       /** @type {Effect & { nodes: EffectNodes }} */
-      R
+      B
     );
-    (!(i.f & Ki) || i.nodes.end === null) && (i.nodes.end = k), ys();
+    (!(i.f & Ki) || i.nodes.end === null) && (i.nodes.end = S), As();
     return;
   }
   t !== null && t.before(
@@ -1955,57 +1955,57 @@ function N(t, e) {
   );
 }
 let Ys = !0;
-function us(t, e) {
+function gs(t, e) {
   var i = e == null ? "" : typeof e == "object" ? e + "" : e;
   i !== (t.__t ?? (t.__t = t.nodeValue)) && (t.__t = i, t.nodeValue = i + "");
 }
-function lr(t, e) {
-  return Nn(t, e);
+function cn(t, e) {
+  return Ur(t, e);
 }
-function zo(t, e) {
+function No(t, e) {
   Hs(), e.intro = e.intro ?? !1;
-  const i = e.target, s = D, r = k;
+  const i = e.target, s = D, n = S;
   try {
-    for (var n = /* @__PURE__ */ tt(i); n && (n.nodeType !== Ci || /** @type {Comment} */
-    n.data !== Xr); )
-      n = /* @__PURE__ */ Xe(n);
-    if (!n)
+    for (var r = /* @__PURE__ */ tt(i); r && (r.nodeType !== Ei || /** @type {Comment} */
+    r.data !== _n); )
+      r = /* @__PURE__ */ Xe(r);
+    if (!r)
       throw bi;
     $e(!0), we(
       /** @type {Comment} */
-      n
+      r
     );
-    const a = Nn(t, { ...e, anchor: n });
+    const a = Ur(t, { ...e, anchor: r });
     return $e(!1), /**  @type {Exports} */
     a;
   } catch (a) {
     if (a instanceof Error && a.message.split(`
 `).some((o) => o.startsWith("https://svelte.dev/e/")))
       throw a;
-    return a !== bi && console.warn("Failed to hydrate: ", a), e.recover === !1 && za(), Hs(), rr(i), $e(!1), lr(t, e);
+    return a !== bi && console.warn("Failed to hydrate: ", a), e.recover === !1 && Na(), Hs(), an(i), $e(!1), cn(t, e);
   } finally {
-    $e(s), we(r);
+    $e(s), we(n);
   }
 }
 const Yt = /* @__PURE__ */ new Map();
-function Nn(t, { target: e, anchor: i, props: s = {}, events: r, context: n, intro: a = !0 }) {
+function Ur(t, { target: e, anchor: i, props: s = {}, events: n, context: r, intro: a = !0 }) {
   Hs();
   var o = /* @__PURE__ */ new Set(), l = (h) => {
     for (var f = 0; f < h.length; f++) {
       var p = h[f];
       if (!o.has(p)) {
         o.add(p);
-        var u = Do(p);
-        e.addEventListener(p, Ri, { passive: u });
-        var w = Yt.get(p);
-        w === void 0 ? (document.addEventListener(p, Ri, { passive: u }), Yt.set(p, 1)) : Yt.set(p, w + 1);
+        var u = Bo(p);
+        e.addEventListener(p, Bi, { passive: u });
+        var b = Yt.get(p);
+        b === void 0 ? (document.addEventListener(p, Bi, { passive: u }), Yt.set(p, 1)) : Yt.set(p, b + 1);
       }
     }
   };
-  l(vs(Pn)), js.add(l);
-  var d = void 0, g = Io(() => {
+  l(ps(zr)), js.add(l);
+  var d = void 0, g = Co(() => {
     var h = i ?? e.appendChild(Qe());
-    return lo(
+    return co(
       /** @type {TemplateNode} */
       h,
       {
@@ -2013,32 +2013,32 @@ function Nn(t, { target: e, anchor: i, props: s = {}, events: r, context: n, int
         }
       },
       (f) => {
-        if (n) {
-          pt({});
+        if (r) {
+          vt({});
           var p = (
             /** @type {ComponentContext} */
             U
           );
-          p.c = n;
+          p.c = r;
         }
-        if (r && (s.$$events = r), D && ct(
+        if (n && (s.$$events = n), D && gt(
           /** @type {TemplateNode} */
           f,
           null
-        ), Ys = a, d = t(f, s) || {}, Ys = !0, D && (R.nodes.end = k, k === null || k.nodeType !== Ci || /** @type {Comment} */
-        k.data !== tr))
-          throw As(), bi;
-        n && vt();
+        ), Ys = a, d = t(f, s) || {}, Ys = !0, D && (B.nodes.end = S, S === null || S.nodeType !== Ei || /** @type {Comment} */
+        S.data !== tn))
+          throw bs(), bi;
+        r && mt();
       }
     ), () => {
       var u;
       for (var f of o) {
-        e.removeEventListener(f, Ri);
+        e.removeEventListener(f, Bi);
         var p = (
           /** @type {number} */
           Yt.get(f)
         );
-        --p === 0 ? (document.removeEventListener(f, Ri), Yt.delete(f)) : Yt.set(f, p);
+        --p === 0 ? (document.removeEventListener(f, Bi), Yt.delete(f)) : Yt.set(f, p);
       }
       js.delete(l), h !== i && ((u = h.parentNode) == null || u.removeChild(h));
     };
@@ -2050,8 +2050,8 @@ function Ws(t, e) {
   const i = Fs.get(t);
   return i ? (Fs.delete(t), i(e)) : Promise.resolve();
 }
-var De, He, pe, St, Wi, qi, ps;
-class No {
+var De, He, pe, Mt, Wi, qi, hs;
+class Uo {
   /**
    * @param {TemplateNode} anchor
    * @param {boolean} transition
@@ -2086,7 +2086,7 @@ class No {
      * Keys of effects that are currently outroing
      * @type {Set<Key>}
      */
-    I(this, St, /* @__PURE__ */ new Set());
+    I(this, Mt, /* @__PURE__ */ new Set());
     /**
      * Whether to pause (i.e. outro) on change, or destroy immediately.
      * This is necessary for `<svelte:element>`
@@ -2103,39 +2103,39 @@ class No {
           c(this, De).get(e)
         ), s = c(this, He).get(i);
         if (s)
-          or(s), c(this, St).delete(i);
+          dn(s), c(this, Mt).delete(i);
         else {
-          var r = c(this, pe).get(i);
-          r && (c(this, He).set(i, r.effect), c(this, pe).delete(i), r.fragment.lastChild.remove(), this.anchor.before(r.fragment), s = r.effect);
+          var n = c(this, pe).get(i);
+          n && (c(this, He).set(i, n.effect), c(this, pe).delete(i), n.fragment.lastChild.remove(), this.anchor.before(n.fragment), s = n.effect);
         }
-        for (const [n, a] of c(this, De)) {
-          if (c(this, De).delete(n), n === e)
+        for (const [r, a] of c(this, De)) {
+          if (c(this, De).delete(r), r === e)
             break;
           const o = c(this, pe).get(a);
           o && (oe(o.effect), c(this, pe).delete(a));
         }
-        for (const [n, a] of c(this, He)) {
-          if (n === i || c(this, St).has(n)) continue;
+        for (const [r, a] of c(this, He)) {
+          if (r === i || c(this, Mt).has(r)) continue;
           const o = () => {
-            if (Array.from(c(this, De).values()).includes(n)) {
+            if (Array.from(c(this, De).values()).includes(r)) {
               var d = document.createDocumentFragment();
-              Sn(a, d), d.append(Qe()), c(this, pe).set(n, { effect: a, fragment: d });
+              Mr(a, d), d.append(Qe()), c(this, pe).set(r, { effect: a, fragment: d });
             } else
               oe(a);
-            c(this, St).delete(n), c(this, He).delete(n);
+            c(this, Mt).delete(r), c(this, He).delete(r);
           };
-          c(this, Wi) || !s ? (c(this, St).add(n), Dt(a, o, !1)) : o();
+          c(this, Wi) || !s ? (c(this, Mt).add(r), Dt(a, o, !1)) : o();
         }
       }
     });
     /**
      * @param {Batch} batch
      */
-    I(this, ps, (e) => {
+    I(this, hs, (e) => {
       c(this, De).delete(e);
       const i = Array.from(c(this, De).values());
-      for (const [s, r] of c(this, pe))
-        i.includes(s) || (oe(r.effect), c(this, pe).delete(s));
+      for (const [s, n] of c(this, pe))
+        i.includes(s) || (oe(n.effect), c(this, pe).delete(s));
     });
     this.anchor = e, y(this, Wi, i);
   }
@@ -2148,64 +2148,64 @@ class No {
     var s = (
       /** @type {Batch} */
       x
-    ), r = wn();
+    ), n = br();
     if (i && !c(this, He).has(e) && !c(this, pe).has(e))
-      if (r) {
-        var n = document.createDocumentFragment(), a = Qe();
-        n.append(a), c(this, pe).set(e, {
+      if (n) {
+        var r = document.createDocumentFragment(), a = Qe();
+        r.append(a), c(this, pe).set(e, {
           effect: xe(() => i(a)),
-          fragment: n
+          fragment: r
         });
       } else
         c(this, He).set(
           e,
           xe(() => i(this.anchor))
         );
-    if (c(this, De).set(s, e), r) {
+    if (c(this, De).set(s, e), n) {
       for (const [o, l] of c(this, He))
         o === e ? s.skipped_effects.delete(l) : s.skipped_effects.add(l);
       for (const [o, l] of c(this, pe))
         o === e ? s.skipped_effects.delete(l.effect) : s.skipped_effects.add(l.effect);
-      s.oncommit(c(this, qi)), s.ondiscard(c(this, ps));
+      s.oncommit(c(this, qi)), s.ondiscard(c(this, hs));
     } else
-      D && (this.anchor = k), c(this, qi).call(this);
+      D && (this.anchor = S), c(this, qi).call(this);
   }
 }
-De = new WeakMap(), He = new WeakMap(), pe = new WeakMap(), St = new WeakMap(), Wi = new WeakMap(), qi = new WeakMap(), ps = new WeakMap();
+De = new WeakMap(), He = new WeakMap(), pe = new WeakMap(), Mt = new WeakMap(), Wi = new WeakMap(), qi = new WeakMap(), hs = new WeakMap();
 function ke(t, e, i = !1) {
-  D && ys();
-  var s = new No(t), r = i ? Qt : 0;
-  function n(a, o) {
+  D && As();
+  var s = new Uo(t), n = i ? Qt : 0;
+  function r(a, o) {
     if (D) {
-      const d = Zr(t) === bs;
+      const d = $n(t) === ws;
       if (a === d) {
-        var l = ls();
+        var l = os();
         we(l), s.anchor = l, $e(!1), s.ensure(a, o), $e(!0);
         return;
       }
     }
     s.ensure(a, o);
   }
-  ar(() => {
+  ln(() => {
     var a = !1;
     e((o, l = !0) => {
-      a = !0, n(l, o);
-    }), a || n(!1, null);
-  }, r);
+      a = !0, r(l, o);
+    }), a || r(!1, null);
+  }, n);
 }
-function Uo(t, e, i) {
-  for (var s = [], r = e.length, n, a = e.length, o = 0; o < r; o++) {
+function Ho(t, e, i) {
+  for (var s = [], n = e.length, r, a = e.length, o = 0; o < n; o++) {
     let h = e[o];
     Dt(
       h,
       () => {
-        if (n) {
-          if (n.pending.delete(h), n.done.add(h), n.pending.size === 0) {
+        if (r) {
+          if (r.pending.delete(h), r.done.add(h), r.pending.size === 0) {
             var f = (
               /** @type {Set<EachOutroGroup>} */
               t.outrogroups
             );
-            qs(vs(n.done)), f.delete(n), f.size === 0 && (t.outrogroups = null);
+            qs(ps(r.done)), f.delete(r), f.size === 0 && (t.outrogroups = null);
           }
         } else
           a -= 1;
@@ -2223,101 +2223,101 @@ function Uo(t, e, i) {
         /** @type {Element} */
         d.parentNode
       );
-      rr(g), g.append(d), t.items.clear();
+      an(g), g.append(d), t.items.clear();
     }
     qs(e, !l);
   } else
-    n = {
+    r = {
       pending: new Set(e),
       done: /* @__PURE__ */ new Set()
-    }, (t.outrogroups ?? (t.outrogroups = /* @__PURE__ */ new Set())).add(n);
+    }, (t.outrogroups ?? (t.outrogroups = /* @__PURE__ */ new Set())).add(r);
 }
 function qs(t, e = !0) {
   for (var i = 0; i < t.length; i++)
     oe(t[i], e);
 }
-var kr;
-function Ho(t, e, i, s, r, n = null) {
+var Tn;
+function Go(t, e, i, s, n, r = null) {
   var a = t, o = /* @__PURE__ */ new Map();
-  D && ys();
-  var l = null, d = /* @__PURE__ */ ir(() => {
-    var w = i();
-    return jr(w) ? w : w == null ? [] : vs(w);
+  D && As();
+  var l = null, d = /* @__PURE__ */ nn(() => {
+    var b = i();
+    return Wn(b) ? b : b == null ? [] : ps(b);
   }), g, h = !0;
   function f() {
-    u.fallback = l, Go(u, g, a, e, s), l !== null && (g.length === 0 ? l.f & ot ? (l.f ^= ot, Bi(l, null, a)) : or(l) : Dt(l, () => {
+    u.fallback = l, jo(u, g, a, e, s), l !== null && (g.length === 0 ? l.f & ot ? (l.f ^= ot, Ri(l, null, a)) : dn(l) : Dt(l, () => {
       l = null;
     }));
   }
-  var p = ar(() => {
+  var p = ln(() => {
     g = /** @type {V[]} */
-    m(d);
-    var w = g.length;
+    w(d);
+    var b = g.length;
     let v = !1;
     if (D) {
-      var A = Zr(a) === bs;
-      A !== (w === 0) && (a = ls(), we(a), $e(!1), v = !0);
+      var A = $n(a) === ws;
+      A !== (b === 0) && (a = os(), we(a), $e(!1), v = !0);
     }
     for (var O = /* @__PURE__ */ new Set(), H = (
       /** @type {Batch} */
       x
-    ), B = wn(), Q = 0; Q < w; Q += 1) {
-      D && k.nodeType === Ci && /** @type {Comment} */
-      k.data === tr && (a = /** @type {Comment} */
-      k, v = !0, $e(!1));
-      var de = g[Q], ue = s(de, Q), J = h ? null : o.get(ue);
-      J ? (J.v && Ii(J.v, de), J.i && Ii(J.i, Q), B && H.skipped_effects.delete(J.e)) : (J = jo(
+    ), Q = br(), L = 0; L < b; L += 1) {
+      D && S.nodeType === Ei && /** @type {Comment} */
+      S.data === tn && (a = /** @type {Comment} */
+      S, v = !0, $e(!1));
+      var de = g[L], ue = s(de, L), X = h ? null : o.get(ue);
+      X ? (X.v && Ii(X.v, de), X.i && Ii(X.i, L), Q && H.skipped_effects.delete(X.e)) : (X = Yo(
         o,
-        h ? a : kr ?? (kr = Qe()),
+        h ? a : Tn ?? (Tn = Qe()),
         de,
         ue,
-        Q,
-        r,
+        L,
+        n,
         e,
         i
-      ), h || (J.e.f |= ot), o.set(ue, J)), O.add(ue);
+      ), h || (X.e.f |= ot), o.set(ue, X)), O.add(ue);
     }
-    if (w === 0 && n && !l && (h ? l = xe(() => n(a)) : (l = xe(() => n(kr ?? (kr = Qe()))), l.f |= ot)), D && w > 0 && we(ls()), !h)
-      if (B) {
-        for (const [re, ks] of o)
-          O.has(re) || H.skipped_effects.add(ks.e);
+    if (b === 0 && r && !l && (h ? l = xe(() => r(a)) : (l = xe(() => r(Tn ?? (Tn = Qe()))), l.f |= ot)), D && b > 0 && we(os()), !h)
+      if (Q) {
+        for (const [re, xs] of o)
+          O.has(re) || H.skipped_effects.add(xs.e);
         H.oncommit(f), H.ondiscard(() => {
         });
       } else
         f();
-    v && $e(!0), m(d);
+    v && $e(!0), w(d);
   }), u = { effect: p, items: o, outrogroups: null, fallback: l };
-  h = !1, D && (a = k);
+  h = !1, D && (a = S);
 }
-function Go(t, e, i, s, r) {
-  var J;
-  var n = e.length, a = t.items, o = t.effect.first, l, d = null, g = [], h = [], f, p, u, w;
-  for (w = 0; w < n; w += 1) {
-    if (f = e[w], p = r(f, w), u = /** @type {EachItem} */
+function jo(t, e, i, s, n) {
+  var X;
+  var r = e.length, a = t.items, o = t.effect.first, l, d = null, g = [], h = [], f, p, u, b;
+  for (b = 0; b < r; b += 1) {
+    if (f = e[b], p = n(f, b), u = /** @type {EachItem} */
     a.get(p).e, t.outrogroups !== null)
       for (const re of t.outrogroups)
         re.pending.delete(u), re.done.delete(u);
     if (u.f & ot)
       if (u.f ^= ot, u === o)
-        Bi(u, null, i);
+        Ri(u, null, i);
       else {
         var v = d ? d.next : o;
-        u === t.effect.last && (t.effect.last = u.prev), u.prev && (u.prev.next = u.next), u.next && (u.next.prev = u.prev), st(t, d, u), st(t, u, v), Bi(u, v, i), d = u, g = [], h = [], o = d.next;
+        u === t.effect.last && (t.effect.last = u.prev), u.prev && (u.prev.next = u.next), u.next && (u.next.prev = u.prev), st(t, d, u), st(t, u, v), Ri(u, v, i), d = u, g = [], h = [], o = d.next;
         continue;
       }
-    if (u.f & ve && or(u), u !== o) {
+    if (u.f & ve && dn(u), u !== o) {
       if (l !== void 0 && l.has(u)) {
         if (g.length < h.length) {
           var A = h[0], O;
           d = A.prev;
-          var H = g[0], B = g[g.length - 1];
+          var H = g[0], Q = g[g.length - 1];
           for (O = 0; O < g.length; O += 1)
-            Bi(g[O], A, i);
+            Ri(g[O], A, i);
           for (O = 0; O < h.length; O += 1)
             l.delete(h[O]);
-          st(t, H.prev, B.next), st(t, d, H), st(t, B, A), o = A, d = B, w -= 1, g = [], h = [];
+          st(t, H.prev, Q.next), st(t, d, H), st(t, Q, A), o = A, d = Q, b -= 1, g = [], h = [];
         } else
-          l.delete(u), Bi(u, o, i), st(t, u.prev, u.next), st(t, u, d === null ? t.effect.first : d.next), st(t, d, u), d = u;
+          l.delete(u), Ri(u, o, i), st(t, u.prev, u.next), st(t, u, d === null ? t.effect.first : d.next), st(t, d, u), d = u;
         continue;
       }
       for (g = [], h = []; o !== null && o !== u; )
@@ -2329,36 +2329,36 @@ function Go(t, e, i, s, r) {
   }
   if (t.outrogroups !== null) {
     for (const re of t.outrogroups)
-      re.pending.size === 0 && (qs(vs(re.done)), (J = t.outrogroups) == null || J.delete(re));
+      re.pending.size === 0 && (qs(ps(re.done)), (X = t.outrogroups) == null || X.delete(re));
     t.outrogroups.size === 0 && (t.outrogroups = null);
   }
   if (o !== null || l !== void 0) {
-    var Q = [];
+    var L = [];
     if (l !== void 0)
       for (u of l)
-        u.f & ve || Q.push(u);
+        u.f & ve || L.push(u);
     for (; o !== null; )
-      !(o.f & ve) && o !== t.fallback && Q.push(o), o = o.next;
-    var de = Q.length;
+      !(o.f & ve) && o !== t.fallback && L.push(o), o = o.next;
+    var de = L.length;
     if (de > 0) {
       var ue = null;
-      Uo(t, Q, ue);
+      Ho(t, L, ue);
     }
   }
 }
-function jo(t, e, i, s, r, n, a, o) {
-  var l = a & Ya ? a & Wa ? zt(i) : /* @__PURE__ */ fn(i, !1, !1) : null, d = a & Fa ? zt(r) : null;
+function Yo(t, e, i, s, n, r, a, o) {
+  var l = a & Fa ? a & qa ? zt(i) : /* @__PURE__ */ hr(i, !1, !1) : null, d = a & Wa ? zt(n) : null;
   return {
     v: l,
     i: d,
-    e: xe(() => (n(e, l ?? i, d ?? r, o), () => {
+    e: xe(() => (r(e, l ?? i, d ?? n, o), () => {
       t.delete(s);
     }))
   };
 }
-function Bi(t, e, i) {
+function Ri(t, e, i) {
   if (t.nodes)
-    for (var s = t.nodes.start, r = t.nodes.end, n = e && !(e.f & ot) ? (
+    for (var s = t.nodes.start, n = t.nodes.end, r = e && !(e.f & ot) ? (
       /** @type {EffectNodes} */
       e.nodes.start
     ) : i; s !== null; ) {
@@ -2366,7 +2366,7 @@ function Bi(t, e, i) {
         /** @type {TemplateNode} */
         /* @__PURE__ */ Xe(s)
       );
-      if (n.before(s), s === r)
+      if (r.before(s), s === n)
         return;
       s = a;
     }
@@ -2374,7 +2374,7 @@ function Bi(t, e, i) {
 function st(t, e, i) {
   e === null ? t.effect.first = i : e.next = i, i === null ? t.effect.last = e : i.prev = e;
 }
-const Yo = () => performance.now(), _e = {
+const Fo = () => performance.now(), _e = {
   // don't access requestAnimationFrame eagerly outside method
   // this allows basic testing of user code without JSDOM
   // bunder will eval and remove ternary when the user's app is built
@@ -2382,18 +2382,18 @@ const Yo = () => performance.now(), _e = {
     /** @param {any} _ */
     (t) => requestAnimationFrame(t)
   ),
-  now: () => Yo(),
+  now: () => Fo(),
   tasks: /* @__PURE__ */ new Set()
 };
-function Un() {
+function Hr() {
   const t = _e.now();
   _e.tasks.forEach((e) => {
     e.c(t) || (_e.tasks.delete(e), e.f());
-  }), _e.tasks.size !== 0 && _e.tick(Un);
+  }), _e.tasks.size !== 0 && _e.tick(Hr);
 }
-function Fo(t) {
+function Wo(t) {
   let e;
-  return _e.tasks.size === 0 && _e.tick(Un), {
+  return _e.tasks.size === 0 && _e.tick(Hr), {
     promise: new Promise((i) => {
       _e.tasks.add(e = { c: t, f: i });
     }),
@@ -2402,12 +2402,12 @@ function Fo(t) {
     }
   };
 }
-function $i(t, e) {
+function _i(t, e) {
   Si(() => {
     t.dispatchEvent(new CustomEvent(e));
   });
 }
-function Wo(t) {
+function qo(t) {
   if (t === "float") return "cssFloat";
   if (t === "offset") return "cssOffset";
   if (t.startsWith("--")) return t;
@@ -2417,36 +2417,36 @@ function Wo(t) {
     (i) => i[0].toUpperCase() + i.slice(1)
   ).join("");
 }
-function Sr(t) {
+function On(t) {
   const e = {}, i = t.split(";");
   for (const s of i) {
-    const [r, n] = s.split(":");
-    if (!r || n === void 0) break;
-    const a = Wo(r.trim());
-    e[a] = n.trim();
+    const [n, r] = s.split(":");
+    if (!n || r === void 0) break;
+    const a = qo(n.trim());
+    e[a] = r.trim();
   }
   return e;
 }
-const qo = (t) => t;
-function Mr(t, e, i, s) {
+const Ko = (t) => t;
+function Dn(t, e, i, s) {
   var v;
-  var r = (t & Za) !== 0, n = "both", a, o = e.inert, l = e.style.overflow, d, g;
+  var n = (t & _a) !== 0, r = "both", a, o = e.inert, l = e.style.overflow, d, g;
   function h() {
     return Si(() => a ?? (a = i()(e, (s == null ? void 0 : s()) ?? /** @type {P} */
     {}, {
-      direction: n
+      direction: r
     })));
   }
   var f = {
-    is_global: r,
+    is_global: n,
     in() {
-      e.inert = o, $i(e, "introstart"), d = Ks(e, h(), g, 1, () => {
-        $i(e, "introend"), d == null || d.abort(), d = a = void 0, e.style.overflow = l;
+      e.inert = o, _i(e, "introstart"), d = Ks(e, h(), g, 1, () => {
+        _i(e, "introend"), d == null || d.abort(), d = a = void 0, e.style.overflow = l;
       });
     },
     out(A) {
-      e.inert = !0, $i(e, "outrostart"), g = Ks(e, h(), d, 0, () => {
-        $i(e, "outroend"), A == null || A();
+      e.inert = !0, _i(e, "outrostart"), g = Ks(e, h(), d, 0, () => {
+        _i(e, "outroend"), A == null || A();
       });
     },
     stop: () => {
@@ -2454,32 +2454,32 @@ function Mr(t, e, i, s) {
     }
   }, p = (
     /** @type {Effect & { nodes: EffectNodes }} */
-    R
+    B
   );
   if (((v = p.nodes).t ?? (v.t = [])).push(f), Ys) {
-    var u = r;
+    var u = n;
     if (!u) {
-      for (var w = (
+      for (var b = (
         /** @type {Effect | null} */
         p.parent
-      ); w && w.f & Qt; )
-        for (; (w = w.parent) && !(w.f & Je); )
+      ); b && b.f & Qt; )
+        for (; (b = b.parent) && !(b.f & Je); )
           ;
-      u = !w || (w.f & Ki) !== 0;
+      u = !b || (b.f & Ki) !== 0;
     }
-    u && nr(() => {
-      mt(() => f.in());
+    u && on(() => {
+      wt(() => f.in());
     });
   }
 }
-function Ks(t, e, i, s, r) {
-  var n = s === 1;
-  if (Ma(e)) {
+function Ks(t, e, i, s, n) {
+  var r = s === 1;
+  if (Ta(e)) {
     var a, o = !1;
     return ki(() => {
       if (!o) {
-        var v = e({ direction: n ? "in" : "out" });
-        a = Ks(t, v, i, s, r);
+        var v = e({ direction: r ? "in" : "out" });
+        a = Ks(t, v, i, s, n);
       }
     }), {
       abort: () => {
@@ -2491,21 +2491,21 @@ function Ks(t, e, i, s, r) {
     };
   }
   if (i == null || i.deactivate(), !(e != null && e.duration))
-    return r(), {
+    return n(), {
       abort: Oi,
       deactivate: Oi,
       reset: Oi,
       t: () => s
     };
-  const { delay: l = 0, css: d, tick: g, easing: h = qo } = e;
+  const { delay: l = 0, css: d, tick: g, easing: h = Ko } = e;
   var f = [];
-  if (n && i === void 0 && (g && g(0, 1), d)) {
-    var p = Sr(d(0, 1));
+  if (r && i === void 0 && (g && g(0, 1), d)) {
+    var p = On(d(0, 1));
     f.push(p, p);
   }
-  var u = () => 1 - s, w = t.animate(f, { duration: l, fill: "forwards" });
-  return w.onfinish = () => {
-    w.cancel();
+  var u = () => 1 - s, b = t.animate(f, { duration: l, fill: "forwards" });
+  return b.onfinish = () => {
+    b.cancel();
     var v = (i == null ? void 0 : i.t()) ?? 1 - s;
     i == null || i.abort();
     var A = s - v, O = (
@@ -2513,34 +2513,34 @@ function Ks(t, e, i, s, r) {
       e.duration * Math.abs(A)
     ), H = [];
     if (O > 0) {
-      var B = !1;
+      var Q = !1;
       if (d)
-        for (var Q = Math.ceil(O / 16.666666666666668), de = 0; de <= Q; de += 1) {
-          var ue = v + A * h(de / Q), J = Sr(d(ue, 1 - ue));
-          H.push(J), B || (B = J.overflow === "hidden");
+        for (var L = Math.ceil(O / 16.666666666666668), de = 0; de <= L; de += 1) {
+          var ue = v + A * h(de / L), X = On(d(ue, 1 - ue));
+          H.push(X), Q || (Q = X.overflow === "hidden");
         }
-      B && (t.style.overflow = "hidden"), u = () => {
+      Q && (t.style.overflow = "hidden"), u = () => {
         var re = (
           /** @type {number} */
           /** @type {globalThis.Animation} */
-          w.currentTime
+          b.currentTime
         );
         return v + A * h(re / O);
-      }, g && Fo(() => {
-        if (w.playState !== "running") return !1;
+      }, g && Wo(() => {
+        if (b.playState !== "running") return !1;
         var re = u();
         return g(re, 1 - re), !0;
       });
     }
-    w = t.animate(H, { duration: O, fill: "forwards" }), w.onfinish = () => {
-      u = () => s, g == null || g(s, 1 - s), r();
+    b = t.animate(H, { duration: O, fill: "forwards" }), b.onfinish = () => {
+      u = () => s, g == null || g(s, 1 - s), n();
     };
   }, {
     abort: () => {
-      w && (w.cancel(), w.effect = null, w.onfinish = Oi);
+      b && (b.cancel(), b.effect = null, b.onfinish = Oi);
     },
     deactivate: () => {
-      r = Oi;
+      n = Oi;
     },
     reset: () => {
       s === 0 && (g == null || g(1, 0));
@@ -2549,7 +2549,7 @@ function Ks(t, e, i, s, r) {
   };
 }
 function Ht(t, e) {
-  nr(() => {
+  on(() => {
     var i = t.getRootNode(), s = (
       /** @type {ShadowRoot} */
       i.host ? (
@@ -2562,85 +2562,85 @@ function Ht(t, e) {
       )
     );
     if (!s.querySelector("#" + e.hash)) {
-      const r = document.createElement("style");
-      r.id = e.hash, r.textContent = e.code, s.appendChild(r);
+      const n = document.createElement("style");
+      n.id = e.hash, n.textContent = e.code, s.appendChild(n);
     }
   });
 }
-const Tr = [...` 	
+const Bn = [...` 	
 \r\f \v\uFEFF`];
-function Ko(t, e, i) {
+function Jo(t, e, i) {
   var s = t == null ? "" : "" + t;
   if (e && (s = s ? s + " " + e : e), i) {
-    for (var r in i)
-      if (i[r])
-        s = s ? s + " " + r : r;
+    for (var n in i)
+      if (i[n])
+        s = s ? s + " " + n : n;
       else if (s.length)
-        for (var n = r.length, a = 0; (a = s.indexOf(r, a)) >= 0; ) {
-          var o = a + n;
-          (a === 0 || Tr.includes(s[a - 1])) && (o === s.length || Tr.includes(s[o])) ? s = (a === 0 ? "" : s.substring(0, a)) + s.substring(o + 1) : a = o;
+        for (var r = n.length, a = 0; (a = s.indexOf(n, a)) >= 0; ) {
+          var o = a + r;
+          (a === 0 || Bn.includes(s[a - 1])) && (o === s.length || Bn.includes(s[o])) ? s = (a === 0 ? "" : s.substring(0, a)) + s.substring(o + 1) : a = o;
         }
   }
   return s === "" ? null : s;
 }
-function Jo(t, e) {
+function Xo(t, e) {
   return t == null ? null : String(t);
 }
-function dr(t, e, i, s, r, n) {
+function gn(t, e, i, s, n, r) {
   var a = t.__className;
   if (D || a !== i || a === void 0) {
-    var o = Ko(i, s, n);
+    var o = Jo(i, s, r);
     (!D || o !== t.getAttribute("class")) && (o == null ? t.removeAttribute("class") : t.className = o), t.__className = i;
-  } else if (n && r !== n)
-    for (var l in n) {
-      var d = !!n[l];
-      (r == null || d !== !!r[l]) && t.classList.toggle(l, d);
+  } else if (r && n !== r)
+    for (var l in r) {
+      var d = !!r[l];
+      (n == null || d !== !!n[l]) && t.classList.toggle(l, d);
     }
-  return n;
+  return r;
 }
-function Xo(t, e, i, s) {
-  var r = t.__style;
-  if (D || r !== e) {
-    var n = Jo(e);
-    (!D || n !== t.getAttribute("style")) && (n == null ? t.removeAttribute("style") : t.style.cssText = n), t.__style = e;
+function Vo(t, e, i, s) {
+  var n = t.__style;
+  if (D || n !== e) {
+    var r = Xo(e);
+    (!D || r !== t.getAttribute("style")) && (r == null ? t.removeAttribute("style") : t.style.cssText = r), t.__style = e;
   }
   return s;
 }
-const Vo = Symbol("is custom element"), Zo = Symbol("is html");
+const Zo = Symbol("is custom element"), _o = Symbol("is html");
 function Ke(t, e, i, s) {
-  var r = _o(t);
-  D && (r[e] = t.getAttribute(e), e === "src" || e === "srcset" || e === "href" && t.nodeName === "LINK") || r[e] !== (r[e] = i) && (e === "loading" && (t[Da] = i), i == null ? t.removeAttribute(e) : typeof i != "string" && $o(t).includes(e) ? t[e] = i : t.setAttribute(e, i));
+  var n = $o(t);
+  D && (n[e] = t.getAttribute(e), e === "src" || e === "srcset" || e === "href" && t.nodeName === "LINK") || n[e] !== (n[e] = i) && (e === "loading" && (t[Ba] = i), i == null ? t.removeAttribute(e) : typeof i != "string" && el(t).includes(e) ? t[e] = i : t.setAttribute(e, i));
 }
-function _o(t) {
+function $o(t) {
   return (
     /** @type {Record<string | symbol, unknown>} **/
     // @ts-expect-error
     t.__attributes ?? (t.__attributes = {
-      [Vo]: t.nodeName.includes("-"),
-      [Zo]: t.namespaceURI === eo
+      [Zo]: t.nodeName.includes("-"),
+      [_o]: t.namespaceURI === to
     })
   );
 }
-var Or = /* @__PURE__ */ new Map();
-function $o(t) {
-  var e = t.getAttribute("is") || t.nodeName, i = Or.get(e);
+var Rn = /* @__PURE__ */ new Map();
+function el(t) {
+  var e = t.getAttribute("is") || t.nodeName, i = Rn.get(e);
   if (i) return i;
-  Or.set(e, i = []);
-  for (var s, r = t, n = Element.prototype; n !== r; ) {
-    s = Yr(r);
+  Rn.set(e, i = []);
+  for (var s, n = t, r = Element.prototype; r !== n; ) {
+    s = qn(n);
     for (var a in s)
       s[a].set && i.push(a);
-    r = Zs(r);
+    n = Zs(n);
   }
   return i;
 }
-function el(t, e, i = e) {
+function tl(t, e, i = e) {
   var s = /* @__PURE__ */ new WeakSet();
-  wo(t, "input", async (r) => {
-    var n = r ? t.defaultValue : t.value;
-    if (n = Ts(t) ? Os(n) : n, i(n), x !== null && s.add(x), await Bn(), n !== (n = e())) {
+  bo(t, "input", async (n) => {
+    var r = n ? t.defaultValue : t.value;
+    if (r = Ts(t) ? Os(r) : r, i(r), x !== null && s.add(x), await Qr(), r !== (r = e())) {
       var a = t.selectionStart, o = t.selectionEnd, l = t.value.length;
-      if (t.value = n ?? "", o !== null) {
+      if (t.value = r ?? "", o !== null) {
         var d = t.value.length;
         a === o && o === l && d > l ? (t.selectionStart = d, t.selectionEnd = d) : (t.selectionStart = a, t.selectionEnd = Math.min(o, d));
       }
@@ -2649,17 +2649,17 @@ function el(t, e, i = e) {
   // then use the updated value from the input instead.
   (D && t.defaultValue !== t.value || // If defaultValue is set, then value == defaultValue
   // TODO Svelte 6: remove input.value check and set to empty string?
-  mt(e) == null && t.value) && (i(Ts(t) ? Os(t.value) : t.value), x !== null && s.add(x)), Es(() => {
-    var r = e();
+  wt(e) == null && t.value) && (i(Ts(t) ? Os(t.value) : t.value), x !== null && s.add(x)), Is(() => {
+    var n = e();
     if (t === document.activeElement) {
-      var n = (
+      var r = (
         /** @type {Batch} */
-        ts ?? x
+        es ?? x
       );
-      if (s.has(n))
+      if (s.has(r))
         return;
     }
-    Ts(t) && r === Os(t.value) || t.type === "date" && !r && !t.value || r !== t.value && (t.value = r ?? "");
+    Ts(t) && n === Os(t.value) || t.type === "date" && !n && !t.value || n !== t.value && (t.value = n ?? "");
   });
 }
 function Ts(t) {
@@ -2669,32 +2669,32 @@ function Ts(t) {
 function Os(t) {
   return t === "" ? null : +t;
 }
-function Dr(t, e) {
-  return t === e || (t == null ? void 0 : t[Tt]) === e;
+function Qn(t, e) {
+  return t === e || (t == null ? void 0 : t[Ot]) === e;
 }
-function cr(t = {}, e, i, s) {
-  return nr(() => {
-    var r, n;
-    return Es(() => {
-      r = n, n = [], mt(() => {
-        t !== i(...n) && (e(t, ...n), r && Dr(i(...r), t) && e(null, ...r));
+function un(t = {}, e, i, s) {
+  return on(() => {
+    var n, r;
+    return Is(() => {
+      n = r, r = [], wt(() => {
+        t !== i(...r) && (e(t, ...r), n && Qn(i(...n), t) && e(null, ...n));
       });
     }), () => {
       ki(() => {
-        n && Dr(i(...n), t) && e(null, ...n);
+        r && Qn(i(...r), t) && e(null, ...r);
       });
     };
   }), t;
 }
-function tl(t = !1) {
+function il(t = !1) {
   const e = (
     /** @type {ComponentContextLegacy} */
     U
   ), i = e.l.u;
   if (!i) return;
-  let s = () => To(e.s);
+  let s = () => Oo(e.s);
   if (t) {
-    let r = 0, n = (
+    let n = 0, r = (
       /** @type {Record<string, any>} */
       {}
     );
@@ -2702,105 +2702,105 @@ function tl(t = !1) {
       let o = !1;
       const l = e.s;
       for (const d in l)
-        l[d] !== n[d] && (n[d] = l[d], o = !0);
-      return o && r++, r;
+        l[d] !== r[d] && (r[d] = l[d], o = !0);
+      return o && n++, n;
     });
-    s = () => m(a);
+    s = () => w(a);
   }
-  i.b.length && Ao(() => {
-    Rr(e, s), Rs(i.b);
-  }), Ot(() => {
-    const r = mt(() => i.m.map(Ta));
+  i.b.length && yo(() => {
+    Ln(e, s), Bs(i.b);
+  }), ct(() => {
+    const n = wt(() => i.m.map(Oa));
     return () => {
-      for (const n of r)
-        typeof n == "function" && n();
+      for (const r of n)
+        typeof r == "function" && r();
     };
-  }), i.a.length && Ot(() => {
-    Rr(e, s), Rs(i.a);
+  }), i.a.length && ct(() => {
+    Ln(e, s), Bs(i.a);
   });
 }
-function Rr(t, e) {
+function Ln(t, e) {
   if (t.l.s)
-    for (const i of t.l.s) m(i);
+    for (const i of t.l.s) w(i);
   e();
 }
-let es = !1;
-function il(t) {
-  var e = es;
+let $i = !1;
+function sl(t) {
+  var e = $i;
   try {
-    return es = !1, [t(), es];
+    return $i = !1, [t(), $i];
   } finally {
-    es = e;
+    $i = e;
   }
 }
-function gt(t, e, i, s) {
+function ut(t, e, i, s) {
   var H;
-  var r = !xi || (i & Ka) !== 0, n = (i & Xa) !== 0, a = (i & Va) !== 0, o = (
+  var n = !xi || (i & Ja) !== 0, r = (i & Va) !== 0, a = (i & Za) !== 0, o = (
     /** @type {V} */
     s
-  ), l = !0, d = () => (l && (l = !1, o = a ? mt(
+  ), l = !0, d = () => (l && (l = !1, o = a ? wt(
     /** @type {() => V} */
     s
   ) : (
     /** @type {V} */
     s
   )), o), g;
-  if (n) {
-    var h = Tt in t || Kr in t;
-    g = ((H = Mt(t, e)) == null ? void 0 : H.set) ?? (h && e in t ? (B) => t[e] = B : void 0);
+  if (r) {
+    var h = Ot in t || Vn in t;
+    g = ((H = Tt(t, e)) == null ? void 0 : H.set) ?? (h && e in t ? (Q) => t[e] = Q : void 0);
   }
   var f, p = !1;
-  n ? [f, p] = il(() => (
+  r ? [f, p] = sl(() => (
     /** @type {V} */
     t[e]
   )) : f = /** @type {V} */
-  t[e], f === void 0 && s !== void 0 && (f = d(), g && (r && Na(), g(f)));
+  t[e], f === void 0 && s !== void 0 && (f = d(), g && (n && Ua(), g(f)));
   var u;
-  if (r ? u = () => {
-    var B = (
+  if (n ? u = () => {
+    var Q = (
       /** @type {V} */
       t[e]
     );
-    return B === void 0 ? d() : (l = !0, B);
+    return Q === void 0 ? d() : (l = !0, Q);
   } : u = () => {
-    var B = (
+    var Q = (
       /** @type {V} */
       t[e]
     );
-    return B !== void 0 && (o = /** @type {V} */
-    void 0), B === void 0 ? o : B;
-  }, r && !(i & Ja))
+    return Q !== void 0 && (o = /** @type {V} */
+    void 0), Q === void 0 ? o : Q;
+  }, n && !(i & Xa))
     return u;
   if (g) {
-    var w = t.$$legacy;
+    var b = t.$$legacy;
     return (
       /** @type {() => V} */
-      function(B, Q) {
-        return arguments.length > 0 ? ((!r || !Q || w || p) && g(Q ? u() : B), B) : u();
+      function(Q, L) {
+        return arguments.length > 0 ? ((!n || !L || b || p) && g(L ? u() : Q), Q) : u();
       }
     );
   }
-  var v = !1, A = (i & qa ? Xi : ir)(() => (v = !1, u()));
-  n && m(A);
+  var v = !1, A = (i & Ka ? Xi : nn)(() => (v = !1, u()));
+  r && w(A);
   var O = (
     /** @type {Effect} */
-    R
+    B
   );
   return (
     /** @type {() => V} */
-    function(B, Q) {
+    function(Q, L) {
       if (arguments.length > 0) {
-        const de = Q ? m(A) : r && n ? X(B) : B;
-        return C(A, de), v = !0, o !== void 0 && (o = de), B;
+        const de = L ? w(A) : n && r ? V(Q) : Q;
+        return E(A, de), v = !0, o !== void 0 && (o = de), Q;
       }
-      return Ut && v || O.f & et ? A.v : m(A);
+      return Ut && v || O.f & et ? A.v : w(A);
     }
   );
 }
-function sl(t) {
+function nl(t) {
   return new rl(t);
 }
-var Ze, Ee;
+var Ze, Ce;
 class rl {
   /**
    * @param {ComponentConstructorOptions & {
@@ -2811,55 +2811,55 @@ class rl {
     /** @type {any} */
     I(this, Ze);
     /** @type {Record<string, any>} */
-    I(this, Ee);
-    var n;
+    I(this, Ce);
+    var r;
     var i = /* @__PURE__ */ new Map(), s = (a, o) => {
-      var l = /* @__PURE__ */ fn(o, !1, !1);
+      var l = /* @__PURE__ */ hr(o, !1, !1);
       return i.set(a, l), l;
     };
-    const r = new Proxy(
+    const n = new Proxy(
       { ...e.props || {}, $$events: {} },
       {
         get(a, o) {
-          return m(i.get(o) ?? s(o, Reflect.get(a, o)));
+          return w(i.get(o) ?? s(o, Reflect.get(a, o)));
         },
         has(a, o) {
-          return o === Kr ? !0 : (m(i.get(o) ?? s(o, Reflect.get(a, o))), Reflect.has(a, o));
+          return o === Vn ? !0 : (w(i.get(o) ?? s(o, Reflect.get(a, o))), Reflect.has(a, o));
         },
         set(a, o, l) {
-          return C(i.get(o) ?? s(o, l), l), Reflect.set(a, o, l);
+          return E(i.get(o) ?? s(o, l), l), Reflect.set(a, o, l);
         }
       }
     );
-    y(this, Ee, (e.hydrate ? zo : lr)(e.component, {
+    y(this, Ce, (e.hydrate ? No : cn)(e.component, {
       target: e.target,
       anchor: e.anchor,
-      props: r,
+      props: n,
       context: e.context,
       intro: e.intro ?? !1,
       recover: e.recover
-    })), (!((n = e == null ? void 0 : e.props) != null && n.$$host) || e.sync === !1) && Fe(), y(this, Ze, r.$$events);
-    for (const a of Object.keys(c(this, Ee)))
-      a === "$set" || a === "$destroy" || a === "$on" || os(this, a, {
+    })), (!((r = e == null ? void 0 : e.props) != null && r.$$host) || e.sync === !1) && Fe(), y(this, Ze, n.$$events);
+    for (const a of Object.keys(c(this, Ce)))
+      a === "$set" || a === "$destroy" || a === "$on" || as(this, a, {
         get() {
-          return c(this, Ee)[a];
+          return c(this, Ce)[a];
         },
         /** @param {any} value */
         set(o) {
-          c(this, Ee)[a] = o;
+          c(this, Ce)[a] = o;
         },
         enumerable: !0
       });
-    c(this, Ee).$set = /** @param {Record<string, any>} next */
+    c(this, Ce).$set = /** @param {Record<string, any>} next */
     (a) => {
-      Object.assign(r, a);
-    }, c(this, Ee).$destroy = () => {
-      Ws(c(this, Ee));
+      Object.assign(n, a);
+    }, c(this, Ce).$destroy = () => {
+      Ws(c(this, Ce));
     };
   }
   /** @param {Record<string, any>} props */
   $set(e) {
-    c(this, Ee).$set(e);
+    c(this, Ce).$set(e);
   }
   /**
    * @param {string} event
@@ -2868,21 +2868,21 @@ class rl {
    */
   $on(e, i) {
     c(this, Ze)[e] = c(this, Ze)[e] || [];
-    const s = (...r) => i.call(this, ...r);
+    const s = (...n) => i.call(this, ...n);
     return c(this, Ze)[e].push(s), () => {
       c(this, Ze)[e] = c(this, Ze)[e].filter(
         /** @param {any} fn */
-        (r) => r !== s
+        (n) => n !== s
       );
     };
   }
   $destroy() {
-    c(this, Ee).$destroy();
+    c(this, Ce).$destroy();
   }
 }
-Ze = new WeakMap(), Ee = new WeakMap();
-let Hn;
-typeof HTMLElement == "function" && (Hn = class extends HTMLElement {
+Ze = new WeakMap(), Ce = new WeakMap();
+let Gr;
+typeof HTMLElement == "function" && (Gr = class extends HTMLElement {
   /**
    * @param {*} $$componentCtor
    * @param {*} $$slots
@@ -2919,8 +2919,8 @@ typeof HTMLElement == "function" && (Hn = class extends HTMLElement {
    */
   addEventListener(e, i, s) {
     if (this.$$l[e] = this.$$l[e] || [], this.$$l[e].push(i), this.$$c) {
-      const r = this.$$c.$on(e, i);
-      this.$$l_u.set(i, r);
+      const n = this.$$c.$on(e, i);
+      this.$$l_u.set(i, n);
     }
     super.addEventListener(e, i, s);
   }
@@ -2931,30 +2931,30 @@ typeof HTMLElement == "function" && (Hn = class extends HTMLElement {
    */
   removeEventListener(e, i, s) {
     if (super.removeEventListener(e, i, s), this.$$c) {
-      const r = this.$$l_u.get(i);
-      r && (r(), this.$$l_u.delete(i));
+      const n = this.$$l_u.get(i);
+      n && (n(), this.$$l_u.delete(i));
     }
   }
   async connectedCallback() {
     if (this.$$cn = !0, !this.$$c) {
-      let e = function(r) {
-        return (n) => {
+      let e = function(n) {
+        return (r) => {
           const a = document.createElement("slot");
-          r !== "default" && (a.name = r), N(n, a);
+          n !== "default" && (a.name = n), N(r, a);
         };
       };
       if (await Promise.resolve(), !this.$$cn || this.$$c)
         return;
-      const i = {}, s = nl(this);
-      for (const r of this.$$s)
-        r in s && (r === "default" && !this.$$d.children ? (this.$$d.children = e(r), i.default = !0) : i[r] = e(r));
-      for (const r of this.attributes) {
-        const n = this.$$g_p(r.name);
-        n in this.$$d || (this.$$d[n] = ns(n, r.value, this.$$p_d, "toProp"));
+      const i = {}, s = al(this);
+      for (const n of this.$$s)
+        n in s && (n === "default" && !this.$$d.children ? (this.$$d.children = e(n), i.default = !0) : i[n] = e(n));
+      for (const n of this.attributes) {
+        const r = this.$$g_p(n.name);
+        r in this.$$d || (this.$$d[r] = ns(r, n.value, this.$$p_d, "toProp"));
       }
-      for (const r in this.$$p_d)
-        !(r in this.$$d) && this[r] !== void 0 && (this.$$d[r] = this[r], delete this[r]);
-      this.$$c = sl({
+      for (const n in this.$$p_d)
+        !(n in this.$$d) && this[n] !== void 0 && (this.$$d[n] = this[n], delete this[n]);
+      this.$$c = nl({
         component: this.$$ctor,
         target: this.shadowRoot || this,
         props: {
@@ -2962,28 +2962,28 @@ typeof HTMLElement == "function" && (Hn = class extends HTMLElement {
           $$slots: i,
           $$host: this
         }
-      }), this.$$me = yo(() => {
-        Es(() => {
-          var r;
+      }), this.$$me = Io(() => {
+        Is(() => {
+          var n;
           this.$$r = !0;
-          for (const n of as(this.$$c)) {
-            if (!((r = this.$$p_d[n]) != null && r.reflect)) continue;
-            this.$$d[n] = this.$$c[n];
+          for (const r of rs(this.$$c)) {
+            if (!((n = this.$$p_d[r]) != null && n.reflect)) continue;
+            this.$$d[r] = this.$$c[r];
             const a = ns(
-              n,
-              this.$$d[n],
+              r,
+              this.$$d[r],
               this.$$p_d,
               "toAttribute"
             );
-            a == null ? this.removeAttribute(this.$$p_d[n].attribute || n) : this.setAttribute(this.$$p_d[n].attribute || n, a);
+            a == null ? this.removeAttribute(this.$$p_d[r].attribute || r) : this.setAttribute(this.$$p_d[r].attribute || r, a);
           }
           this.$$r = !1;
         });
       });
-      for (const r in this.$$l)
-        for (const n of this.$$l[r]) {
-          const a = this.$$c.$on(r, n);
-          this.$$l_u.set(n, a);
+      for (const n in this.$$l)
+        for (const r of this.$$l[n]) {
+          const a = this.$$c.$on(n, r);
+          this.$$l_u.set(r, a);
         }
       this.$$l = {};
     }
@@ -2996,8 +2996,8 @@ typeof HTMLElement == "function" && (Hn = class extends HTMLElement {
    * @param {string} newValue
    */
   attributeChangedCallback(e, i, s) {
-    var r;
-    this.$$r || (e = this.$$g_p(e), this.$$d[e] = ns(e, s, this.$$p_d, "toProp"), (r = this.$$c) == null || r.$set({ [e]: this.$$d[e] }));
+    var n;
+    this.$$r || (e = this.$$g_p(e), this.$$d[e] = ns(e, s, this.$$p_d, "toProp"), (n = this.$$c) == null || n.$set({ [e]: this.$$d[e] }));
   }
   disconnectedCallback() {
     this.$$cn = !1, Promise.resolve().then(() => {
@@ -3008,18 +3008,18 @@ typeof HTMLElement == "function" && (Hn = class extends HTMLElement {
    * @param {string} attribute_name
    */
   $$g_p(e) {
-    return as(this.$$p_d).find(
+    return rs(this.$$p_d).find(
       (i) => this.$$p_d[i].attribute === e || !this.$$p_d[i].attribute && i.toLowerCase() === e
     ) || e;
   }
 });
 function ns(t, e, i, s) {
-  var n;
-  const r = (n = i[t]) == null ? void 0 : n.type;
-  if (e = r === "Boolean" && typeof e != "boolean" ? e != null : e, !s || !i[t])
+  var r;
+  const n = (r = i[t]) == null ? void 0 : r.type;
+  if (e = n === "Boolean" && typeof e != "boolean" ? e != null : e, !s || !i[t])
     return e;
   if (s === "toAttribute")
-    switch (r) {
+    switch (n) {
       case "Object":
       case "Array":
         return e == null ? null : JSON.stringify(e);
@@ -3031,7 +3031,7 @@ function ns(t, e, i, s) {
         return e;
     }
   else
-    switch (r) {
+    switch (n) {
       case "Object":
       case "Array":
         return e && JSON.parse(e);
@@ -3043,7 +3043,7 @@ function ns(t, e, i, s) {
         return e;
     }
 }
-function nl(t) {
+function al(t) {
   const e = {};
   return t.childNodes.forEach((i) => {
     e[
@@ -3052,19 +3052,19 @@ function nl(t) {
     ] = !0;
   }), e;
 }
-function Gt(t, e, i, s, r, n) {
-  let a = class extends Hn {
+function Gt(t, e, i, s, n, r) {
+  let a = class extends Gr {
     constructor() {
-      super(t, i, r), this.$$p_d = e;
+      super(t, i, n), this.$$p_d = e;
     }
     static get observedAttributes() {
-      return as(e).map(
+      return rs(e).map(
         (o) => (e[o].attribute || o).toLowerCase()
       );
     }
   };
-  return as(e).forEach((o) => {
-    os(a.prototype, o, {
+  return rs(e).forEach((o) => {
+    as(a.prototype, o, {
       get() {
         return this.$$c && o in this.$$c ? this.$$c[o] : this.$$d[o];
       },
@@ -3073,13 +3073,13 @@ function Gt(t, e, i, s, r, n) {
         l = ns(o, l, e), this.$$d[o] = l;
         var d = this.$$c;
         if (d) {
-          var g = (h = Mt(d, o)) == null ? void 0 : h.get;
+          var g = (h = Tt(d, o)) == null ? void 0 : h.get;
           g ? d[o] = l : d.$set({ [o]: l });
         }
       }
     });
   }), s.forEach((o) => {
-    os(a.prototype, o, {
+    as(a.prototype, o, {
       get() {
         var l;
         return (l = this.$$c) == null ? void 0 : l[o];
@@ -3088,34 +3088,34 @@ function Gt(t, e, i, s, r, n) {
   }), t.element = /** @type {any} */
   a, a;
 }
-function gr(t) {
-  U === null && Jr(), xi && U.l !== null ? ol(U).m.push(t) : Ot(() => {
-    const e = mt(t);
+function fn(t) {
+  U === null && Zn(), xi && U.l !== null ? ll(U).m.push(t) : ct(() => {
+    const e = wt(t);
     if (typeof e == "function") return (
       /** @type {() => void} */
       e
     );
   });
 }
-function al(t) {
-  U === null && Jr(), gr(() => () => mt(t));
-}
 function ol(t) {
+  U === null && Zn(), fn(() => () => wt(t));
+}
+function ll(t) {
   var e = (
     /** @type {ComponentContextLegacy} */
     t.l
   );
   return e.u ?? (e.u = { a: [], b: [], m: [] });
 }
-const ll = "5";
-var Gr;
-typeof window < "u" && ((Gr = window.__svelte ?? (window.__svelte = {})).v ?? (Gr.v = /* @__PURE__ */ new Set())).add(ll);
-const dl = (t) => t;
-function cl(t) {
+const dl = "5";
+var Fn;
+typeof window < "u" && ((Fn = window.__svelte ?? (window.__svelte = {})).v ?? (Fn.v = /* @__PURE__ */ new Set())).add(dl);
+const cl = (t) => t;
+function gl(t) {
   const e = t - 1;
   return e * e * e + 1;
 }
-function Br(t) {
+function Pn(t) {
   const e = typeof t == "string" && t.match(/^\s*(-?[\d.]+)([^\s]*)\s*$/);
   return e ? [parseFloat(e[1]), e[2] || "px"] : [
     /** @type {number} */
@@ -3123,28 +3123,28 @@ function Br(t) {
     "px"
   ];
 }
-function gl(t, { delay: e = 0, duration: i = 400, easing: s = dl } = {}) {
-  const r = +getComputedStyle(t).opacity;
+function ul(t, { delay: e = 0, duration: i = 400, easing: s = cl } = {}) {
+  const n = +getComputedStyle(t).opacity;
   return {
     delay: e,
     duration: i,
     easing: s,
-    css: (n) => `opacity: ${n * r}`
+    css: (r) => `opacity: ${r * n}`
   };
 }
-function ul(t, { delay: e = 0, duration: i = 400, easing: s = cl, x: r = 0, y: n = 0, opacity: a = 0 } = {}) {
-  const o = getComputedStyle(t), l = +o.opacity, d = o.transform === "none" ? "" : o.transform, g = l * (1 - a), [h, f] = Br(r), [p, u] = Br(n);
+function fl(t, { delay: e = 0, duration: i = 400, easing: s = gl, x: n = 0, y: r = 0, opacity: a = 0 } = {}) {
+  const o = getComputedStyle(t), l = +o.opacity, d = o.transform === "none" ? "" : o.transform, g = l * (1 - a), [h, f] = Pn(n), [p, u] = Pn(r);
   return {
     delay: e,
     duration: i,
     easing: s,
-    css: (w, v) => `
-			transform: ${d} translate(${(1 - w) * h}${f}, ${(1 - w) * p}${u});
+    css: (b, v) => `
+			transform: ${d} translate(${(1 - b) * h}${f}, ${(1 - b) * p}${u});
 			opacity: ${l - g * v}`
   };
 }
 var _t, $t, ei, ti;
-class fl {
+class hl {
   constructor() {
     I(this, _t);
     I(this, $t);
@@ -3153,28 +3153,28 @@ class fl {
     y(this, _t, /* @__PURE__ */ M(!1)), y(this, $t, /* @__PURE__ */ M(!1)), y(this, ei, /* @__PURE__ */ M(!1)), y(this, ti, /* @__PURE__ */ M(!1));
   }
   get isOpen() {
-    return m(c(this, _t));
+    return w(c(this, _t));
   }
   set isOpen(e) {
-    C(c(this, _t), e, !0);
+    E(c(this, _t), e, !0);
   }
   get isMinimized() {
-    return m(c(this, $t));
+    return w(c(this, $t));
   }
   set isMinimized(e) {
-    C(c(this, $t), e, !0);
+    E(c(this, $t), e, !0);
   }
   get isLoading() {
-    return m(c(this, ei));
+    return w(c(this, ei));
   }
   set isLoading(e) {
-    C(c(this, ei), e, !0);
+    E(c(this, ei), e, !0);
   }
   get hasUnreadMessages() {
-    return m(c(this, ti));
+    return w(c(this, ti));
   }
   set hasUnreadMessages(e) {
-    C(c(this, ti), e, !0);
+    E(c(this, ti), e, !0);
   }
   toggle() {
     this.isOpen = !this.isOpen, this.isOpen && (this.hasUnreadMessages = !1);
@@ -3199,15 +3199,17 @@ class fl {
   }
 }
 _t = new WeakMap(), $t = new WeakMap(), ei = new WeakMap(), ti = new WeakMap();
-const j = new fl(), ae = {
+const j = new hl(), Z = {
   /** Session timeout: 1 hour in milliseconds */
   SESSION_TIMEOUT: 60 * 60 * 1e3,
   /** WebSocket reconnection delay: 1 second */
   RECONNECT_DELAY: 1e3,
   /** Maximum WebSocket reconnection delay: 30 seconds */
   MAX_RECONNECT_DELAY_MS: 3e4,
-  /** WebSocket heartbeat interval: 30 seconds */
+  /** WebSocket heartbeat interval: 30 seconds (desktop) */
   HEARTBEAT_INTERVAL: 30 * 1e3,
+  /** WebSocket heartbeat interval for mobile: 10 seconds */
+  MOBILE_HEARTBEAT_INTERVAL: 10 * 1e3,
   /** Maximum reconnection attempts */
   MAX_RECONNECT_ATTEMPTS: 5,
   /** API request timeout: 30 seconds */
@@ -3221,66 +3223,68 @@ const j = new fl(), ae = {
   /** General typing indicator timeout fallback: 30 seconds */
   TYPING_FALLBACK_TIMEOUT: 3e4,
   /** Streaming message batch delay for smooth updates: 16ms (~60fps) */
-  STREAMING_BATCH_DELAY: 16
-}, At = {
+  STREAMING_BATCH_DELAY: 16,
+  /** Connection verification timeout when page becomes visible: 5 seconds */
+  VISIBILITY_PING_TIMEOUT: 5e3
+}, yt = {
   /** Maximum message length */
   MAX_LENGTH: 4e3,
   /** Minimum message length */
   MIN_LENGTH: 1,
   /** Maximum message queue size to prevent memory leaks */
   MAX_QUEUE_SIZE: 50
-}, Qr = {
+}, zn = {
   /** Visitor ID storage key */
   VISITOR_ID: "ai_chat_visitor_id",
   /** Session history storage key */
   SESSIONS: "ai_chat_sessions"
 };
-var ii, si, ri, ni, ai, oi;
-class hl {
+var ii, si, ni, ri, ai, oi;
+class pl {
   constructor() {
     I(this, ii);
     I(this, si);
-    I(this, ri);
     I(this, ni);
+    I(this, ri);
     I(this, ai);
     I(this, oi);
-    y(this, ii, /* @__PURE__ */ M(X([]))), y(this, si, /* @__PURE__ */ M(null)), y(this, ri, /* @__PURE__ */ M(!1)), y(this, ni, /* @__PURE__ */ M(null)), y(this, ai, /* @__PURE__ */ M(null)), this.streamingBuffer = "", this.streamingTimeout = null, y(this, oi, /* @__PURE__ */ M(0));
+    y(this, ii, /* @__PURE__ */ M(V([]))), y(this, si, /* @__PURE__ */ M(null)), y(this, ni, /* @__PURE__ */ M(!1)), y(this, ri, /* @__PURE__ */ M(null)), y(this, ai, /* @__PURE__ */ M(null)), this.streamingBuffer = "", this.streamingTimeout = null, y(this, oi, /* @__PURE__ */ M(0));
   }
   get messages() {
-    return m(c(this, ii));
+    return w(c(this, ii));
   }
   set messages(e) {
-    C(c(this, ii), e, !0);
+    E(c(this, ii), e, !0);
   }
   get currentSession() {
-    return m(c(this, si));
+    return w(c(this, si));
   }
   set currentSession(e) {
-    C(c(this, si), e, !0);
+    E(c(this, si), e, !0);
   }
   get isTyping() {
-    return m(c(this, ri));
+    return w(c(this, ni));
   }
   set isTyping(e) {
-    C(c(this, ri), e, !0);
+    E(c(this, ni), e, !0);
   }
   get error() {
-    return m(c(this, ni));
+    return w(c(this, ri));
   }
   set error(e) {
-    C(c(this, ni), e, !0);
+    E(c(this, ri), e, !0);
   }
   get streamingMessageId() {
-    return m(c(this, ai));
+    return w(c(this, ai));
   }
   set streamingMessageId(e) {
-    C(c(this, ai), e, !0);
+    E(c(this, ai), e, !0);
   }
   get streamingUpdateSignal() {
-    return m(c(this, oi));
+    return w(c(this, oi));
   }
   set streamingUpdateSignal(e) {
-    C(c(this, oi), e, !0);
+    E(c(this, oi), e, !0);
   }
   // Derived state
   get unreadCount() {
@@ -3327,7 +3331,7 @@ class hl {
         () => {
           this.flushStreamingBuffer(), this.streamingTimeout = null;
         },
-        ae.STREAMING_BATCH_DELAY
+        Z.STREAMING_BATCH_DELAY
       );
     }
   }
@@ -3365,8 +3369,8 @@ class hl {
     this.currentSession = e, this.messages = [...e.messages];
   }
 }
-ii = new WeakMap(), si = new WeakMap(), ri = new WeakMap(), ni = new WeakMap(), ai = new WeakMap(), oi = new WeakMap();
-const S = new hl(), Lr = {
+ii = new WeakMap(), si = new WeakMap(), ni = new WeakMap(), ri = new WeakMap(), ai = new WeakMap(), oi = new WeakMap();
+const k = new pl(), Nn = {
   "client-id": "clientId",
   theme: "theme",
   position: "position",
@@ -3388,7 +3392,7 @@ const S = new hl(), Lr = {
   initialMessage: void 0,
   debug: !1,
   autoInit: !0
-}, Gn = {
+}, jr = {
   /**
    * Convert camelCase config to snake_case for backend API
    */
@@ -3431,16 +3435,16 @@ const S = new hl(), Lr = {
    * Convert HTML attribute name to property name
    */
   attributeToProperty(t) {
-    return Lr[t] || null;
+    return Nn[t] || null;
   },
   /**
    * Convert property name to HTML attribute name
    */
   propertyToAttribute(t) {
-    const i = Object.entries(Lr).find(([, s]) => s === t);
+    const i = Object.entries(Nn).find(([, s]) => s === t);
     return i ? i[0] : null;
   }
-}, pl = [
+}, vl = [
   "bot-brewers",
   "modern",
   "dark",
@@ -3451,67 +3455,67 @@ const S = new hl(), Lr = {
   "corporate",
   "light"
 ];
-function jn(t) {
-  return pl.includes(t);
+function Yr(t) {
+  return vl.includes(t);
 }
-function xs(t) {
+function Es(t) {
   return !t || typeof t != "string" ? !1 : /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(t);
 }
-function ur(t, e = "#6b46c1") {
-  return xs(t) ? t : e;
+function hn(t, e = "#6b46c1") {
+  return Es(t) ? t : e;
 }
-function Yn(t) {
-  if (!xs(t)) return t;
+function Fr(t) {
+  if (!Es(t)) return t;
   if (t.length === 4) {
     const e = t.slice(1);
     return "#" + e[0] + e[0] + e[1] + e[1] + e[2] + e[2];
   }
   return t;
 }
-function Fn(t) {
-  const e = Yn(t), i = parseInt(e.slice(1, 3), 16) / 255, s = parseInt(e.slice(3, 5), 16) / 255, r = parseInt(e.slice(5, 7), 16) / 255, n = Math.max(i, s, r), a = Math.min(i, s, r);
+function Wr(t) {
+  const e = Fr(t), i = parseInt(e.slice(1, 3), 16) / 255, s = parseInt(e.slice(3, 5), 16) / 255, n = parseInt(e.slice(5, 7), 16) / 255, r = Math.max(i, s, n), a = Math.min(i, s, n);
   let o = 0, l = 0;
-  const d = (n + a) / 2;
-  if (n !== a) {
-    const g = n - a;
-    switch (l = d > 0.5 ? g / (2 - n - a) : g / (n + a), n) {
+  const d = (r + a) / 2;
+  if (r !== a) {
+    const g = r - a;
+    switch (l = d > 0.5 ? g / (2 - r - a) : g / (r + a), r) {
       case i:
-        o = ((s - r) / g + (s < r ? 6 : 0)) / 6;
+        o = ((s - n) / g + (s < n ? 6 : 0)) / 6;
         break;
       case s:
-        o = ((r - i) / g + 2) / 6;
+        o = ((n - i) / g + 2) / 6;
         break;
-      case r:
+      case n:
         o = ((i - s) / g + 4) / 6;
         break;
     }
   }
   return { h: o * 360, s: l * 100, l: d * 100 };
 }
-function Wn(t, e, i) {
+function qr(t, e, i) {
   e /= 100, i /= 100;
-  const s = e * Math.min(i, 1 - i), r = (n) => {
-    const a = (n + t / 30) % 12, o = i - s * Math.max(Math.min(a - 3, 9 - a, 1), -1);
+  const s = e * Math.min(i, 1 - i), n = (r) => {
+    const a = (r + t / 30) % 12, o = i - s * Math.max(Math.min(a - 3, 9 - a, 1), -1);
     return Math.round(255 * o).toString(16).padStart(2, "0");
   };
-  return `#${r(0)}${r(8)}${r(4)}`.toUpperCase();
+  return `#${n(0)}${n(8)}${n(4)}`.toUpperCase();
 }
-function Re(t, e) {
-  if (!xs(t)) return t;
-  const i = Fn(t), s = Math.max(0, Math.min(100, i.l + e));
-  return Wn(i.h, i.s, s);
+function Be(t, e) {
+  if (!Es(t)) return t;
+  const i = Wr(t), s = Math.max(0, Math.min(100, i.l + e));
+  return qr(i.h, i.s, s);
 }
-const vl = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const ml = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  adjustColor: Re,
-  expandHexColor: Yn,
-  hexToHsl: Fn,
-  hslToHex: Wn,
-  isValidHexColor: xs,
-  sanitizeHexColor: ur
+  adjustColor: Be,
+  expandHexColor: Fr,
+  hexToHsl: Wr,
+  hslToHex: qr,
+  isValidHexColor: Es,
+  sanitizeHexColor: hn
 }, Symbol.toStringTag, { value: "Module" }));
 var li, di, ci, gi, ui, fi, hi, pi, vi, mi, wi;
-class ml {
+class wl {
   constructor() {
     I(this, li);
     I(this, di);
@@ -3524,79 +3528,79 @@ class ml {
     I(this, vi);
     I(this, mi);
     I(this, wi);
-    y(this, li, /* @__PURE__ */ M("")), y(this, di, /* @__PURE__ */ M(X(Pe.theme))), y(this, ci, /* @__PURE__ */ M(X(Pe.position))), y(this, gi, /* @__PURE__ */ M(X(Pe.title))), y(this, ui, /* @__PURE__ */ M(X(Pe.logoUrl))), y(this, fi, /* @__PURE__ */ M(X(Pe.placeholder))), y(this, hi, /* @__PURE__ */ M(X(Pe.accentColor))), y(this, pi, /* @__PURE__ */ M(X(Pe.avatarEmoji))), y(this, vi, /* @__PURE__ */ M(X(Pe.companyName))), y(this, mi, /* @__PURE__ */ M(X(Pe.initialMessage))), y(this, wi, /* @__PURE__ */ M("default"));
+    y(this, li, /* @__PURE__ */ M("")), y(this, di, /* @__PURE__ */ M(V(Pe.theme))), y(this, ci, /* @__PURE__ */ M(V(Pe.position))), y(this, gi, /* @__PURE__ */ M(V(Pe.title))), y(this, ui, /* @__PURE__ */ M(V(Pe.logoUrl))), y(this, fi, /* @__PURE__ */ M(V(Pe.placeholder))), y(this, hi, /* @__PURE__ */ M(V(Pe.accentColor))), y(this, pi, /* @__PURE__ */ M(V(Pe.avatarEmoji))), y(this, vi, /* @__PURE__ */ M(V(Pe.companyName))), y(this, mi, /* @__PURE__ */ M(V(Pe.initialMessage))), y(this, wi, /* @__PURE__ */ M("default"));
   }
   get clientId() {
-    return m(c(this, li));
+    return w(c(this, li));
   }
   set clientId(e) {
-    C(c(this, li), e, !0);
+    E(c(this, li), e, !0);
   }
   get theme() {
-    return m(c(this, di));
+    return w(c(this, di));
   }
   set theme(e) {
-    C(c(this, di), e, !0);
+    E(c(this, di), e, !0);
   }
   get position() {
-    return m(c(this, ci));
+    return w(c(this, ci));
   }
   set position(e) {
-    C(c(this, ci), e, !0);
+    E(c(this, ci), e, !0);
   }
   get title() {
-    return m(c(this, gi));
+    return w(c(this, gi));
   }
   set title(e) {
-    C(c(this, gi), e, !0);
+    E(c(this, gi), e, !0);
   }
   get logoUrl() {
-    return m(c(this, ui));
+    return w(c(this, ui));
   }
   set logoUrl(e) {
-    C(c(this, ui), e, !0);
+    E(c(this, ui), e, !0);
   }
   get placeholder() {
-    return m(c(this, fi));
+    return w(c(this, fi));
   }
   set placeholder(e) {
-    C(c(this, fi), e, !0);
+    E(c(this, fi), e, !0);
   }
   get accentColor() {
-    return m(c(this, hi));
+    return w(c(this, hi));
   }
   set accentColor(e) {
-    C(c(this, hi), e, !0);
+    E(c(this, hi), e, !0);
   }
   get avatarEmoji() {
-    return m(c(this, pi));
+    return w(c(this, pi));
   }
   set avatarEmoji(e) {
-    C(c(this, pi), e, !0);
+    E(c(this, pi), e, !0);
   }
   get companyName() {
-    return m(c(this, vi));
+    return w(c(this, vi));
   }
   set companyName(e) {
-    C(c(this, vi), e, !0);
+    E(c(this, vi), e, !0);
   }
   get initialMessage() {
-    return m(c(this, mi));
+    return w(c(this, mi));
   }
   set initialMessage(e) {
-    C(c(this, mi), e, !0);
+    E(c(this, mi), e, !0);
   }
   get titleSource() {
-    return m(c(this, wi));
+    return w(c(this, wi));
   }
   set titleSource(e) {
-    C(c(this, wi), e, !0);
+    E(c(this, wi), e, !0);
   }
   updateConfig(e, i = "default") {
     if (e.title !== void 0) {
       this.setTitle(e.title, i);
-      const { title: s, ...r } = e;
-      Object.assign(this, r);
+      const { title: s, ...n } = e;
+      Object.assign(this, n);
     } else
       Object.assign(this, e);
   }
@@ -3605,8 +3609,8 @@ class ml {
    * Priority: user > backend > default
    */
   setTitle(e, i) {
-    const s = ["user", "backend", "default"], r = s.indexOf(this.titleSource);
-    s.indexOf(i) <= r && (this.title = e, this.titleSource = i);
+    const s = ["user", "backend", "default"], n = s.indexOf(this.titleSource);
+    s.indexOf(i) <= n && (this.title = e, this.titleSource = i);
   }
   /**
    * Set user-configured title (highest priority)
@@ -3636,28 +3640,28 @@ class ml {
    */
   parseElementAttributes(e) {
     const i = {}, s = e.getAttributeNames();
-    for (const r of s) {
-      const n = Gn.attributeToProperty(r);
-      if (!n) continue;
-      const a = e.getAttribute(r);
-      if (n === "initialMessage") {
+    for (const n of s) {
+      const r = jr.attributeToProperty(n);
+      if (!r) continue;
+      const a = e.getAttribute(n);
+      if (r === "initialMessage") {
         i.initialMessage = a === "" ? void 0 : a || void 0;
         continue;
       }
       if (a)
-        switch (n) {
+        switch (r) {
           case "clientId":
           case "title":
           case "logoUrl":
           case "placeholder":
           case "avatarEmoji":
-            i[n] = a;
+            i[r] = a;
             break;
           case "accentColor":
-            i.accentColor = ur(a, this.accentColor);
+            i.accentColor = hn(a, this.accentColor);
             break;
           case "theme":
-            jn(a) && (i.theme = a);
+            Yr(a) && (i.theme = a);
             break;
           case "position":
             (a === "bottom-left" || a === "bottom-right") && (i.position = a);
@@ -3671,23 +3675,23 @@ class ml {
   }
   get cssVariables() {
     const e = {};
-    return this.accentColor && (e["--widget-primary"] = this.accentColor, e["--widget-primary-hover"] = Re(this.accentColor, -20), e["--widget-primary-light"] = Re(this.accentColor, 20), e["--widget-primary-dark"] = Re(this.accentColor, -30), e["--widget-gradient"] = `linear-gradient(135deg, ${this.accentColor} 0%, ${Re(this.accentColor, 20)} 100%)`, e["--widget-gradient-hover"] = `linear-gradient(135deg, ${Re(this.accentColor, -20)} 0%, ${this.accentColor} 100%)`), e;
+    return this.accentColor && (e["--widget-primary"] = this.accentColor, e["--widget-primary-hover"] = Be(this.accentColor, -20), e["--widget-primary-light"] = Be(this.accentColor, 20), e["--widget-primary-dark"] = Be(this.accentColor, -30), e["--widget-gradient"] = `linear-gradient(135deg, ${this.accentColor} 0%, ${Be(this.accentColor, 20)} 100%)`, e["--widget-gradient-hover"] = `linear-gradient(135deg, ${Be(this.accentColor, -20)} 0%, ${this.accentColor} 100%)`), e;
   }
   applyTheme(e) {
     e.setAttribute("data-theme", this.theme);
     const i = this.cssVariables;
-    for (const [s, r] of Object.entries(i))
-      e.style.setProperty(s, r);
+    for (const [s, n] of Object.entries(i))
+      e.style.setProperty(s, n);
   }
   // Remove duplicate adjustColor method - using shared utility from color.ts
 }
 li = new WeakMap(), di = new WeakMap(), ci = new WeakMap(), gi = new WeakMap(), ui = new WeakMap(), fi = new WeakMap(), hi = new WeakMap(), pi = new WeakMap(), vi = new WeakMap(), mi = new WeakMap(), wi = new WeakMap();
-const ft = new ml(), wl = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const ht = new wl(), bl = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  configStore: ft
-}, Symbol.toStringTag, { value: "Module" })), bl = "data:image/png;base64,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", Al = "data:image/png;base64,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", yl = bl, Il = Al;
-var El = /* @__PURE__ */ K('<img alt="Chat" class="button-logo svelte-bkcus6"/>'), Cl = /* @__PURE__ */ Lo('<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svelte-bkcus6"><path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="currentColor" class="svelte-bkcus6"></path></svg>'), xl = /* @__PURE__ */ K('<span class="unread-indicator svelte-bkcus6"></span>'), kl = /* @__PURE__ */ K("<button><!> <!></button>");
-const Sl = {
+  configStore: ht
+}, Symbol.toStringTag, { value: "Module" })), Al = "data:image/png;base64,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", yl = "data:image/png;base64,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", Il = Al, Cl = yl;
+var El = /* @__PURE__ */ K('<img alt="Chat" class="button-logo svelte-bkcus6"/>'), xl = /* @__PURE__ */ Po('<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svelte-bkcus6"><path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="currentColor" class="svelte-bkcus6"></path></svg>'), kl = /* @__PURE__ */ K('<span class="unread-indicator svelte-bkcus6"></span>'), Sl = /* @__PURE__ */ K("<button><!> <!></button>");
+const Ml = {
   hash: "svelte-bkcus6",
   code: `.floating-button.svelte-bkcus6 {width:64px;height:64px;border-radius:var(--widget-radius-full);background:transparent;
     /* Bot Gold ring border */border:3px solid var(--widget-accent);color:var(--widget-text);cursor:pointer;display:flex;align-items:center;justify-content:center;
@@ -3752,16 +3756,16 @@ const Sl = {
       animation: none;}
   }`
 };
-function qn(t, e) {
-  pt(e, !0), Ht(t, Sl);
-  let i = gt(e, "onclick", 7);
-  const s = /* @__PURE__ */ Se(() => j.isOpen), r = /* @__PURE__ */ Se(() => j.hasUnreadMessages);
-  let n = /* @__PURE__ */ M(!1), a = /* @__PURE__ */ M("");
-  Ot(() => {
-    if (m(s) || m(n)) return;
+function Kr(t, e) {
+  vt(e, !0), Ht(t, Ml);
+  let i = ut(e, "onclick", 7);
+  const s = /* @__PURE__ */ Se(() => j.isOpen), n = /* @__PURE__ */ Se(() => j.hasUnreadMessages);
+  let r = /* @__PURE__ */ M(!1), a = /* @__PURE__ */ M("");
+  ct(() => {
+    if (w(s) || w(r)) return;
     const v = setTimeout(
       () => {
-        C(a, "attention-bounce"), C(n, !0), setTimeout(() => C(a, ""), 600);
+        E(a, "attention-bounce"), E(r, !0), setTimeout(() => E(a, ""), 600);
       },
       1e4
     );
@@ -3778,39 +3782,39 @@ function qn(t, e) {
     set onclick(v) {
       i(v), Fe();
     }
-  }, d = kl();
+  }, d = Sl();
   let g;
   d.__click = o;
   var h = q(d);
   {
     var f = (v) => {
       var A = El();
-      ut(() => Ke(A, "src", yl)), N(v, A);
+      ft(() => Ke(A, "src", Il)), N(v, A);
     }, p = (v) => {
-      var A = Cl();
-      N(v, A);
-    };
-    ke(h, (v) => {
-      m(s) ? v(p, !1) : v(f);
-    });
-  }
-  var u = V(h, 2);
-  {
-    var w = (v) => {
       var A = xl();
       N(v, A);
     };
-    ke(u, (v) => {
-      m(r) && !m(s) && v(w);
+    ke(h, (v) => {
+      w(s) ? v(p, !1) : v(f);
     });
   }
-  return W(d), ut(() => {
-    g = dr(d, 1, `floating-button ${m(a) ?? ""}`, "svelte-bkcus6", g, { open: m(s) }), Ke(d, "aria-label", m(s) ? "Close chat" : "Open chat");
-  }), N(t, d), vt(l);
+  var u = J(h, 2);
+  {
+    var b = (v) => {
+      var A = kl();
+      N(v, A);
+    };
+    ke(u, (v) => {
+      w(n) && !w(s) && v(b);
+    });
+  }
+  return W(d), ft(() => {
+    g = gn(d, 1, `floating-button ${w(a) ?? ""}`, "svelte-bkcus6", g, { open: w(s) }), Ke(d, "aria-label", w(s) ? "Close chat" : "Open chat");
+  }), N(t, d), mt(l);
 }
 Cs(["click"]);
-Gt(qn, { onclick: {} }, [], [], !0);
-class Ml {
+Gt(Kr, { onclick: {} }, [], [], !0);
+class Tl {
   constructor(e) {
     this.isDebugMode = e.debug ?? !1;
   }
@@ -3845,8 +3849,8 @@ class Ml {
     return this.isDebugMode;
   }
 }
-function fr(t) {
-  return new Ml(t);
+function pn(t) {
+  return new Tl(t);
 }
 function Ds() {
   var t;
@@ -3934,10 +3938,10 @@ class Wt {
   cleanup(e = 3e5) {
     const i = Date.now();
     for (const [s] of this.messageMap.entries()) {
-      const r = s.match(/(\d+)/);
-      if (r) {
-        const n = parseInt(r[1], 10);
-        i - n > e && this.messageMap.delete(s);
+      const n = s.match(/(\d+)/);
+      if (n) {
+        const r = parseInt(n[1], 10);
+        i - r > e && this.messageMap.delete(s);
       }
     }
   }
@@ -3954,7 +3958,7 @@ class Wt {
 function Ye() {
   return Wt.getInstance();
 }
-class Tl {
+class Ol {
   /**
    * Validate message content and length
    */
@@ -3988,24 +3992,24 @@ class Tl {
       originalLength: e.length,
       trimmedLength: s.length,
       wasWhitespaceOnly: e.length > 0 && s.length === 0
-    }), s.length < At.MIN_LENGTH) {
+    }), s.length < yt.MIN_LENGTH) {
       const a = "Message is too short";
       return P.log("MessageValidator", "Validation failed - too short", {
         correlationId: i,
         trimmedLength: s.length,
-        minLength: At.MIN_LENGTH,
+        minLength: yt.MIN_LENGTH,
         error: a
       }), {
         isValid: !1,
         error: a
       };
     }
-    if (s.length > At.MAX_LENGTH) {
-      const a = `Message exceeds maximum length of ${At.MAX_LENGTH} characters`;
+    if (s.length > yt.MAX_LENGTH) {
+      const a = `Message exceeds maximum length of ${yt.MAX_LENGTH} characters`;
       return P.log("MessageValidator", "Validation failed - too long", {
         correlationId: i,
         trimmedLength: s.length,
-        maxLength: At.MAX_LENGTH,
+        maxLength: yt.MAX_LENGTH,
         error: a
       }), {
         isValid: !1,
@@ -4017,25 +4021,25 @@ class Tl {
       inputContent: s,
       inputLength: s.length
     });
-    const r = this.sanitizeHTML(s);
+    const n = this.sanitizeHTML(s);
     P.log("MessageValidator", "HTML sanitization complete", {
       correlationId: i,
       original: s,
-      sanitized: r,
+      sanitized: n,
       originalLength: s.length,
-      sanitizedLength: r.length,
-      contentRemoved: s.length !== r.length,
-      contentChanged: s !== r,
-      removedContent: s.length !== r.length ? {
-        removed: s.replace(r, ""),
-        difference: s.length - r.length
+      sanitizedLength: n.length,
+      contentRemoved: s.length !== n.length,
+      contentChanged: s !== n,
+      removedContent: s.length !== n.length ? {
+        removed: s.replace(n, ""),
+        difference: s.length - n.length
       } : null
     });
-    const n = {
+    const r = {
       isValid: !0,
-      sanitizedValue: r
+      sanitizedValue: n
     };
-    return P.log("MessageValidator", "Final validation result", { correlationId: i, result: n }), n;
+    return P.log("MessageValidator", "Final validation result", { correlationId: i, result: r }), r;
   }
   /**
    * Basic HTML sanitization
@@ -4047,30 +4051,30 @@ class Tl {
       input: e,
       inputLength: e.length
     });
-    let s = e, r = 0;
-    const n = s;
-    s = s.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, ""), s !== n && P.log("MessageValidator", `Step ${++r} - Removed script tags`, {
+    let s = e, n = 0;
+    const r = s;
+    s = s.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, ""), s !== r && P.log("MessageValidator", `Step ${++n} - Removed script tags`, {
       correlationId: i,
-      before: n,
+      before: r,
       after: s,
-      removed: n.length - s.length
+      removed: r.length - s.length
     });
     const a = s;
-    s = s.replace(/href\s*=\s*["']javascript:[^"']*["']/gi, 'href=""'), s !== a && P.log("MessageValidator", `Step ${++r} - Removed javascript: protocol`, {
+    s = s.replace(/href\s*=\s*["']javascript:[^"']*["']/gi, 'href=""'), s !== a && P.log("MessageValidator", `Step ${++n} - Removed javascript: protocol`, {
       correlationId: i,
       before: a,
       after: s,
       removed: a.length - s.length
     });
     const o = s;
-    s = s.replace(/\s*on\w+\s*=\s*["'][^"']*["']/gi, ""), s !== o && P.log("MessageValidator", `Step ${++r} - Removed event handlers:`, {
+    s = s.replace(/\s*on\w+\s*=\s*["'][^"']*["']/gi, ""), s !== o && P.log("MessageValidator", `Step ${++n} - Removed event handlers:`, {
       correlationId: i,
       before: o,
       after: s,
       removed: o.length - s.length
     });
     const l = s;
-    return s = s.replace(/src\s*=\s*["']data:[^"']*["']/gi, 'src=""'), s !== l && P.log("MessageValidator", `Step ${++r} - Removed data: URLs:`, {
+    return s = s.replace(/src\s*=\s*["']data:[^"']*["']/gi, 'src=""'), s !== l && P.log("MessageValidator", `Step ${++n} - Removed data: URLs:`, {
       correlationId: i,
       before: l,
       after: s,
@@ -4086,7 +4090,7 @@ class Tl {
     }), s;
   }
 }
-class Kn {
+class Jr {
   /**
    * Validate client ID format
    */
@@ -4122,49 +4126,49 @@ class be extends Error {
   }
 }
 class qt extends be {
-  constructor(e, i, s, r) {
-    super(e, { ...r, statusCode: i, endpoint: s }, !0), this.name = "NetworkError", this.statusCode = i, this.endpoint = s;
+  constructor(e, i, s, n) {
+    super(e, { ...n, statusCode: i, endpoint: s }, !0), this.name = "NetworkError", this.statusCode = i, this.endpoint = s;
   }
 }
-class Jn extends be {
-  constructor(e, i, s, r, n) {
-    super(e, { ...n, wsUrl: i, closeCode: s, closeReason: r }, !0), this.name = "WebSocketError", this.wsUrl = i, this.closeCode = s, this.closeReason = r;
+class Xr extends be {
+  constructor(e, i, s, n, r) {
+    super(e, { ...r, wsUrl: i, closeCode: s, closeReason: n }, !0), this.name = "WebSocketError", this.wsUrl = i, this.closeCode = s, this.closeReason = n;
   }
 }
 class zi extends be {
-  constructor(e, i, s, r, n) {
-    super(e, { ...n, field: i, value: s, expectedType: r }, !1), this.name = "ValidationError", this.field = i, this.value = s, this.expectedType = r;
+  constructor(e, i, s, n, r) {
+    super(e, { ...r, field: i, value: s, expectedType: n }, !1), this.name = "ValidationError", this.field = i, this.value = s, this.expectedType = n;
   }
 }
-class Xn extends be {
-  constructor(e, i, s, r) {
-    super(e, { ...r, configKey: i, configValue: s }, !1), this.name = "ConfigurationError", this.configKey = i, this.configValue = s;
+class Vr extends be {
+  constructor(e, i, s, n) {
+    super(e, { ...n, configKey: i, configValue: s }, !1), this.name = "ConfigurationError", this.configKey = i, this.configValue = s;
   }
 }
-class Vn extends be {
-  constructor(e, i, s, r) {
-    super(e, { ...r, clientId: i, statusCode: s }, !1), this.name = "AuthenticationError", this.clientId = i, this.statusCode = s;
+class Zr extends be {
+  constructor(e, i, s, n) {
+    super(e, { ...n, clientId: i, statusCode: s }, !1), this.name = "AuthenticationError", this.clientId = i, this.statusCode = s;
   }
 }
 class Kt extends be {
-  constructor(e, i, s, r) {
-    super(e, { ...r, retryAfter: i, limit: s }, !0), this.name = "RateLimitError", this.retryAfter = i, this.limit = s;
+  constructor(e, i, s, n) {
+    super(e, { ...n, retryAfter: i, limit: s }, !0), this.name = "RateLimitError", this.retryAfter = i, this.limit = s;
   }
 }
-class Zn extends be {
-  constructor(e, i, s, r) {
-    super(e, { ...r, storageType: i, operation: s }, !0), this.name = "StorageError", this.storageType = i, this.operation = s;
+class _r extends be {
+  constructor(e, i, s, n) {
+    super(e, { ...n, storageType: i, operation: s }, !0), this.name = "StorageError", this.storageType = i, this.operation = s;
   }
 }
-class _n extends be {
-  constructor(e, i, s, r) {
-    super(e, { ...r, timeout: i, operation: s }, !0), this.name = "TimeoutError", this.timeout = i, this.operation = s;
+class $r extends be {
+  constructor(e, i, s, n) {
+    super(e, { ...n, timeout: i, operation: s }, !0), this.name = "TimeoutError", this.timeout = i, this.operation = s;
   }
 }
-function Pr(t) {
+function Un(t) {
   return t instanceof be ? t.isRetryable : !!(t instanceof TypeError && t.message.includes("fetch"));
 }
-function Ol(t) {
+function Dl(t) {
   return t instanceof be ? {
     name: t.name,
     message: t.message,
@@ -4180,21 +4184,21 @@ function Ol(t) {
     type: typeof t
   };
 }
-function Dl(t) {
-  return t instanceof qt ? t.statusCode === 404 ? "Service temporarily unavailable. Please try again later." : t.statusCode === 429 || t instanceof Kt ? "Too many requests. Please wait a moment and try again." : t.statusCode && t.statusCode >= 500 ? "Server error. Please try again in a few moments." : t.statusCode && (t.statusCode === 400 || t.statusCode === 401 || t.statusCode === 403) ? t.message : "Unable to connect to the server. Please check your internet connection." : t instanceof Jn ? "Connection lost. Attempting to reconnect..." : t instanceof Vn ? "Access denied. Please check your configuration." : t instanceof zi ? t.message : t instanceof Xn ? "Widget configuration error. Please contact support." : t instanceof _n ? "Request timed out. Please try again." : t instanceof Zn ? "Unable to save data. Please check your browser settings." : "Something went wrong. Please try again.";
+function Bl(t) {
+  return t instanceof qt ? t.statusCode === 404 ? "Service temporarily unavailable. Please try again later." : t.statusCode === 429 || t instanceof Kt ? "Too many requests. Please wait a moment and try again." : t.statusCode && t.statusCode >= 500 ? "Server error. Please try again in a few moments." : t.statusCode && (t.statusCode === 400 || t.statusCode === 401 || t.statusCode === 403) ? t.message : "Unable to connect to the server. Please check your internet connection." : t instanceof Xr ? "Connection lost. Attempting to reconnect..." : t instanceof Zr ? "Access denied. Please check your configuration." : t instanceof zi ? t.message : t instanceof Vr ? "Widget configuration error. Please contact support." : t instanceof $r ? "Request timed out. Please try again." : t instanceof _r ? "Unable to save data. Please check your browser settings." : "Something went wrong. Please try again.";
 }
 class Ni {
   /**
    * Process and categorize errors using custom error classes
    */
   static handle(e, i) {
-    const s = Ol(e);
-    let r;
-    return e instanceof qt ? r = "NETWORK_ERROR" : e instanceof Jn ? r = "WEBSOCKET_ERROR" : e instanceof zi ? r = "VALIDATION_ERROR" : e instanceof Xn ? r = "CONFIGURATION_ERROR" : e instanceof Vn ? r = "AUTHENTICATION_ERROR" : e instanceof Kt ? r = "RATE_LIMIT_ERROR" : e instanceof Zn ? r = "STORAGE_ERROR" : e instanceof _n ? r = "TIMEOUT_ERROR" : e instanceof be ? r = "WIDGET_ERROR" : r = "UNKNOWN_ERROR", {
-      message: Dl(e),
-      code: r,
+    const s = Dl(e);
+    let n;
+    return e instanceof qt ? n = "NETWORK_ERROR" : e instanceof Xr ? n = "WEBSOCKET_ERROR" : e instanceof zi ? n = "VALIDATION_ERROR" : e instanceof Vr ? n = "CONFIGURATION_ERROR" : e instanceof Zr ? n = "AUTHENTICATION_ERROR" : e instanceof Kt ? n = "RATE_LIMIT_ERROR" : e instanceof _r ? n = "STORAGE_ERROR" : e instanceof $r ? n = "TIMEOUT_ERROR" : e instanceof be ? n = "WIDGET_ERROR" : n = "UNKNOWN_ERROR", {
+      message: Bl(e),
+      code: n,
       isUserFacing: !0,
-      shouldRetry: Pr(e),
+      shouldRetry: Un(e),
       context: {
         ...i,
         metadata: {
@@ -4214,7 +4218,7 @@ class Ni {
    * Check if error should be retried
    */
   static shouldRetry(e) {
-    return e && typeof e == "object" && "shouldRetry" in e ? e.shouldRetry : Pr(e);
+    return e && typeof e == "object" && "shouldRetry" in e ? e.shouldRetry : Un(e);
   }
   /**
    * Get user-friendly error message
@@ -4244,11 +4248,11 @@ class Js {
    * Resolve API and WebSocket URLs based on client ID and environment
    */
   static resolveUrls(e, i = {}) {
-    const s = Kn.validate(e);
+    const s = Jr.validate(e);
     if (!s.isValid)
       throw new Error(`Invalid client ID for URL resolution: ${s.error}`);
-    const r = s.sanitizedValue;
-    return this.isDevelopmentEnvironment(i.environment) ? this.resolveDevelopmentUrls(r) : this.resolveProductionUrls(r);
+    const n = s.sanitizedValue;
+    return this.isDevelopmentEnvironment(i.environment) ? this.resolveDevelopmentUrls(n) : this.resolveProductionUrls(n);
   }
   /**
    * Resolve URLs for development environment
@@ -4302,8 +4306,8 @@ class Js {
       const s = new URL(e);
       return s.pathname = (s.pathname === "/" ? "" : s.pathname) + i, s.toString();
     } catch {
-      const r = e.endsWith("/") ? "" : "/";
-      return e + r + i.substring(1);
+      const n = e.endsWith("/") ? "" : "/";
+      return e + n + i.substring(1);
     }
   }
   /**
@@ -4329,27 +4333,27 @@ class Js {
     }
   }
 }
-class Bl {
+class Ql {
   constructor(e) {
     try {
-      const i = window, s = i.AIChat || i.ChatWidget || {}, r = e ? this.parseElementAttributes(e) : {}, n = {
+      const i = window, s = i.AIChat || i.ChatWidget || {}, n = e ? this.parseElementAttributes(e) : {}, r = {
         ...Pe,
         ...s,
-        ...r
+        ...n
       };
       if ((s.apiUrl || s.wsUrl) && console.warn(
         `[Assistant Widget] Deprecation Warning: window.AIChat.apiUrl and window.AIChat.wsUrl are no longer supported.
 URL configuration is now handled at build time via VITE_API_BASE_URL environment variable.
 For local development: npm run build:local
 For production: npm run build (uses default staging gateway)`
-      ), !n.clientId)
+      ), !r.clientId)
         throw new Error("Widget configuration missing: clientId is required");
-      const a = Kn.validate(n.clientId);
+      const a = Jr.validate(r.clientId);
       if (!a.isValid)
         throw new Error(`Invalid client ID: ${a.error}`);
       const o = Js.resolveUrls(a.sanitizedValue);
       this.config = {
-        ...n,
+        ...r,
         clientId: a.sanitizedValue,
         ...o
       };
@@ -4367,29 +4371,29 @@ For production: npm run build (uses default staging gateway)`
    */
   parseElementAttributes(e) {
     const i = {}, s = e.getAttributeNames();
-    for (const r of s) {
-      const n = Gn.attributeToProperty(r);
-      if (!n) continue;
-      const a = e.getAttribute(r);
+    for (const n of s) {
+      const r = jr.attributeToProperty(n);
+      if (!r) continue;
+      const a = e.getAttribute(n);
       if (a)
-        switch (n) {
+        switch (r) {
           case "clientId":
           case "title":
           case "logoUrl":
           case "placeholder":
           case "accentColor":
           case "avatarEmoji":
-            i[n] = a;
+            i[r] = a;
             break;
           case "theme":
-            jn(a) && (i.theme = a);
+            Yr(a) && (i.theme = a);
             break;
           case "position":
             (a === "bottom-left" || a === "bottom-right") && (i.position = a);
             break;
           case "debug":
           case "autoInit":
-            i[n] = a === "true" || a === "";
+            i[r] = a === "true" || a === "";
             break;
           case "companyName":
             i.companyName = a, e.hasAttribute("title") || (i.title = `${a} Assistant`);
@@ -4429,9 +4433,9 @@ For production: npm run build (uses default staging gateway)`
     return { ...this.config };
   }
 }
-const Ei = /* @__PURE__ */ new Map();
+const Ci = /* @__PURE__ */ new Map();
 let ji = !1;
-function Ql() {
+function Ll() {
   try {
     const t = "__storage_test__";
     return localStorage.setItem(t, t), localStorage.removeItem(t), !0;
@@ -4439,30 +4443,30 @@ function Ql() {
     return !1;
   }
 }
-ji = !Ql();
-function Ll(t) {
+ji = !Ll();
+function Pl(t) {
   try {
-    return ji ? Ei.get(t) ?? null : localStorage.getItem(t);
+    return ji ? Ci.get(t) ?? null : localStorage.getItem(t);
   } catch {
-    return Ei.get(t) ?? null;
+    return Ci.get(t) ?? null;
   }
 }
-function Pl(t, e) {
+function zl(t, e) {
   try {
-    return ji ? (Ei.set(t, e), !0) : (localStorage.setItem(t, e), !0);
+    return ji ? (Ci.set(t, e), !0) : (localStorage.setItem(t, e), !0);
   } catch {
-    return Ei.set(t, e), ji = !0, !1;
+    return Ci.set(t, e), ji = !0, !1;
   }
 }
-function zl(t) {
+function Nl(t) {
   try {
     if (ji) {
-      Ei.delete(t);
+      Ci.delete(t);
       return;
     }
     localStorage.removeItem(t);
   } catch {
-    Ei.delete(t);
+    Ci.delete(t);
   }
 }
 const Oe = class Oe {
@@ -4481,13 +4485,13 @@ const Oe = class Oe {
    * Internal storage access methods that use adapter if available
    */
   getItem(e) {
-    return this.storageAdapter ? this.storageAdapter.getItem(e) : Ll(e);
+    return this.storageAdapter ? this.storageAdapter.getItem(e) : Pl(e);
   }
   setItem(e, i) {
-    this.storageAdapter ? this.storageAdapter.setItem(e, i) : Pl(e, i);
+    this.storageAdapter ? this.storageAdapter.setItem(e, i) : zl(e, i);
   }
   removeItem(e) {
-    this.storageAdapter ? this.storageAdapter.removeItem(e) : zl(e);
+    this.storageAdapter ? this.storageAdapter.removeItem(e) : Nl(e);
   }
   /**
    * Generate RFC 4122 compliant UUID v4 for visitor identification
@@ -4520,7 +4524,7 @@ const Oe = class Oe {
   }
   getLastActiveSession() {
     const i = this.getSessionHistory().filter(
-      (s) => s.active && Date.now() - s.timestamp < ae.SESSION_TIMEOUT
+      (s) => s.active && Date.now() - s.timestamp < Z.SESSION_TIMEOUT
     );
     return i.length > 0 ? i[i.length - 1].id : null;
   }
@@ -4529,7 +4533,7 @@ const Oe = class Oe {
    */
   markSessionInactive(e) {
     const s = this.getSessionHistory().map(
-      (r) => r.id === e ? { ...r, active: !1 } : r
+      (n) => n.id === e ? { ...n, active: !1 } : n
     );
     this.setItem(
       Oe.SESSION_HISTORY_KEY,
@@ -4543,7 +4547,7 @@ const Oe = class Oe {
     this.removeItem(Oe.VISITOR_ID_KEY), this.removeItem(Oe.SESSION_HISTORY_KEY), this.visitorId = this.generateVisitorId();
   }
 };
-Oe.VISITOR_ID_KEY = Qr.VISITOR_ID, Oe.SESSION_HISTORY_KEY = Qr.SESSIONS;
+Oe.VISITOR_ID_KEY = zn.VISITOR_ID, Oe.SESSION_HISTORY_KEY = zn.SESSIONS;
 let Xs = Oe;
 class Qi {
   /**
@@ -4574,10 +4578,10 @@ class Qi {
     return e.visitorId && s.append("visitor_id", e.visitorId), `${i}?${s}`;
   }
 }
-var te = /* @__PURE__ */ ((t) => (t.DISCONNECTED = "disconnected", t.CONNECTING = "connecting", t.CONNECTED = "connected", t.ERROR = "error", t))(te || {});
-class Nl {
+var ie = /* @__PURE__ */ ((t) => (t.DISCONNECTED = "disconnected", t.CONNECTING = "connecting", t.CONNECTED = "connected", t.ERROR = "error", t))(ie || {});
+class Ul {
   constructor(e, i) {
-    this.ws = null, this.sessionId = null, this.state = "disconnected", this.messageQueue = [], this.reconnectAttempts = 0, this.maxReconnectAttempts = ae.MAX_RECONNECT_ATTEMPTS, this.reconnectDelay = ae.RECONNECT_DELAY, this.heartbeatInterval = null, this.listeners = /* @__PURE__ */ new Map(), this.abortController = null, this.cleanupFunctions = [], this.config = e, this.visitor = i, this.debugLogger = fr(e.getAll());
+    this.ws = null, this.sessionId = null, this.state = "disconnected", this.messageQueue = [], this.reconnectAttempts = 0, this.maxReconnectAttempts = Z.MAX_RECONNECT_ATTEMPTS, this.reconnectDelay = Z.RECONNECT_DELAY, this.heartbeatInterval = null, this.listeners = /* @__PURE__ */ new Map(), this.abortController = null, this.cleanupFunctions = [], this.visibilityChangeHandler = null, this.pendingPongTimeout = null, this.config = e, this.visitor = i, this.debugLogger = pn(e.getAll()), this.setupVisibilityChangeListener();
   }
   /**
    * Connect to WebSocket server
@@ -4624,7 +4628,7 @@ class Nl {
         /* CONNECTED */
       ), this.reconnectAttempts = 0, this.flushMessageQueue(), this.startHeartbeat();
     }, this.ws.onmessage = (e) => {
-      var i, s, r, n, a, o, l, d, g;
+      var i, s, n, r, a, o, l, d, g;
       this.debugLogger.log("WebSocketManager", "Raw message received", {
         data: e.data,
         type: typeof e.data,
@@ -4638,8 +4642,8 @@ class Nl {
         this.debugLogger.log("WebSocketManager", "Parsed message", {
           message: h,
           messageType: h.type,
-          content: (r = h.data) == null ? void 0 : r.content,
-          hasContent: !!((n = h.data) != null && n.content),
+          content: (n = h.data) == null ? void 0 : n.content,
+          hasContent: !!((r = h.data) != null && r.content),
           contentLength: ((o = (a = h.data) == null ? void 0 : a.content) == null ? void 0 : o.length) || 0,
           hasError: h.type === "error",
           metadata: (l = h.data) == null ? void 0 : l.metadata
@@ -4688,10 +4692,40 @@ class Nl {
     });
   }
   /**
+   * Set up page visibility change detection to handle mobile connection suspension
+   */
+  setupVisibilityChangeListener() {
+    this.visibilityChangeHandler = () => {
+      document.visibilityState === "visible" ? (this.debugLogger.log("WebSocketManager", "Page became visible, verifying connection"), this.verifyConnection()) : this.debugLogger.log("WebSocketManager", "Page became hidden");
+    }, document.addEventListener("visibilitychange", this.visibilityChangeHandler), this.cleanupFunctions.push(() => {
+      this.visibilityChangeHandler && (document.removeEventListener("visibilitychange", this.visibilityChangeHandler), this.visibilityChangeHandler = null);
+    });
+  }
+  /**
+   * Verify WebSocket connection is still alive when page becomes visible
+   * If connection appears open but doesn't respond to ping, trigger reconnection
+   */
+  verifyConnection() {
+    if (this.state !== "connected" || !this.ws || this.ws.readyState !== WebSocket.OPEN)
+      return;
+    this.pendingPongTimeout && (clearTimeout(this.pendingPongTimeout), this.pendingPongTimeout = null), this.debugLogger.log("WebSocketManager", "Sending verification ping");
+    const e = (i) => {
+      i.type === "pong" && (this.debugLogger.log("WebSocketManager", "Connection verified - pong received"), this.pendingPongTimeout && (clearTimeout(this.pendingPongTimeout), this.pendingPongTimeout = null), this.off("message", e));
+    };
+    this.on("message", e), this.pendingPongTimeout = window.setTimeout(() => {
+      this.debugLogger.warn("WebSocketManager", "No pong received - connection appears stale, reconnecting"), this.off("message", e), this.pendingPongTimeout = null, this.cleanup(), this.reconnect();
+    }, Z.VISIBILITY_PING_TIMEOUT);
+    try {
+      this.ws.send(JSON.stringify({ type: "ping" }));
+    } catch (i) {
+      this.debugLogger.error("WebSocketManager", "Failed to send verification ping", i), this.off("message", e), this.pendingPongTimeout && (clearTimeout(this.pendingPongTimeout), this.pendingPongTimeout = null), this.reconnect();
+    }
+  }
+  /**
    * Send message through WebSocket
    */
   send(e) {
-    var r, n, a;
+    var n, r, a;
     const i = Ye().getCurrent();
     this.debugLogger.log("WebSocketManager", "send() called", {
       correlationId: i,
@@ -4699,7 +4733,7 @@ class Nl {
       messageLength: (e == null ? void 0 : e.length) || 0,
       messageType: typeof e,
       wsState: this.state,
-      wsReadyState: (r = this.ws) == null ? void 0 : r.readyState,
+      wsReadyState: (n = this.ws) == null ? void 0 : n.readyState,
       sessionId: this.sessionId
     });
     const s = JSON.stringify({
@@ -4713,7 +4747,7 @@ class Nl {
       data: s,
       dataLength: s.length,
       parsedBack: JSON.parse(s)
-    }), this.state === "connected" && ((n = this.ws) == null ? void 0 : n.readyState) === WebSocket.OPEN)
+    }), this.state === "connected" && ((r = this.ws) == null ? void 0 : r.readyState) === WebSocket.OPEN)
       this.debugLogger.log("WebSocketManager", "Sending via WebSocket immediately", { correlationId: i }), this.ws.send(s);
     else {
       if (this.debugLogger.log("WebSocketManager", "WebSocket not ready, queuing message", {
@@ -4721,10 +4755,10 @@ class Nl {
         state: this.state,
         readyState: (a = this.ws) == null ? void 0 : a.readyState,
         queueLength: this.messageQueue.length
-      }), this.messageQueue.length >= At.MAX_QUEUE_SIZE) {
+      }), this.messageQueue.length >= yt.MAX_QUEUE_SIZE) {
         this.debugLogger.warn("WebSocketManager", "Message queue full", {
           queueSize: this.messageQueue.length,
-          maxSize: At.MAX_QUEUE_SIZE
+          maxSize: yt.MAX_QUEUE_SIZE
         }), this.emit("error", {
           error: "Too many pending messages. Please wait for connection to restore."
         });
@@ -4753,10 +4787,16 @@ class Nl {
     this.sessionId && await this.connect(this.sessionId);
   }
   startHeartbeat() {
-    this.stopHeartbeat(), this.heartbeatInterval = window.setInterval(() => {
-      var e;
-      ((e = this.ws) == null ? void 0 : e.readyState) === WebSocket.OPEN && this.ws.send(JSON.stringify({ type: "ping" }));
-    }, ae.HEARTBEAT_INTERVAL), this.cleanupFunctions.push(() => this.stopHeartbeat());
+    this.stopHeartbeat();
+    const e = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent), i = e ? Z.MOBILE_HEARTBEAT_INTERVAL : Z.HEARTBEAT_INTERVAL;
+    this.debugLogger.log("WebSocketManager", "Starting heartbeat", {
+      isMobile: e,
+      interval: i,
+      intervalSeconds: i / 1e3
+    }), this.heartbeatInterval = window.setInterval(() => {
+      var s;
+      ((s = this.ws) == null ? void 0 : s.readyState) === WebSocket.OPEN && this.ws.send(JSON.stringify({ type: "ping" }));
+    }, i), this.cleanupFunctions.push(() => this.stopHeartbeat());
   }
   stopHeartbeat() {
     this.heartbeatInterval && (clearInterval(this.heartbeatInterval), this.heartbeatInterval = null);
@@ -4773,7 +4813,7 @@ class Nl {
   }
   emit(e, i) {
     var s;
-    (s = this.listeners.get(e)) == null || s.forEach((r) => r(i));
+    (s = this.listeners.get(e)) == null || s.forEach((n) => n(i));
   }
   setState(e) {
     this.state = e, this.emit("stateChange", e);
@@ -4785,7 +4825,7 @@ class Nl {
    * Clean up all resources to prevent memory leaks
    */
   cleanup() {
-    this.stopHeartbeat(), this.ws && (this.ws.onopen = null, this.ws.onmessage = null, this.ws.onerror = null, this.ws.onclose = null, (this.ws.readyState === WebSocket.OPEN || this.ws.readyState === WebSocket.CONNECTING) && this.ws.close(1e3, "Cleanup"), this.ws = null), this.abortController && (this.abortController.abort(), this.abortController = null), this.cleanupFunctions.forEach((e) => {
+    this.stopHeartbeat(), this.pendingPongTimeout && (clearTimeout(this.pendingPongTimeout), this.pendingPongTimeout = null), this.ws && (this.ws.onopen = null, this.ws.onmessage = null, this.ws.onerror = null, this.ws.onclose = null, (this.ws.readyState === WebSocket.OPEN || this.ws.readyState === WebSocket.CONNECTING) && this.ws.close(1e3, "Cleanup"), this.ws = null), this.abortController && (this.abortController.abort(), this.abortController = null), this.cleanupFunctions.forEach((e) => {
       try {
         e();
       } catch (i) {
@@ -4833,8 +4873,8 @@ class Nl {
     ), this.messageQueue = [], this.reconnectAttempts = 0, this.sessionId = null, this.listeners.clear();
   }
 }
-var Ul = /* @__PURE__ */ K('<header class="chat-header svelte-g5m62x"><div class="header-content svelte-g5m62x"><div role="status"></div> <h2 class="header-title svelte-g5m62x"> </h2></div> <button class="close-button svelte-g5m62x" aria-label="Close chat" type="button"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="svelte-g5m62x"><path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="currentColor" class="svelte-g5m62x"></path></svg></button></header>');
-const Hl = {
+var Hl = /* @__PURE__ */ K('<header class="chat-header svelte-g5m62x"><div class="header-content svelte-g5m62x"><div role="status"></div> <h2 class="header-title svelte-g5m62x"> </h2></div> <button class="close-button svelte-g5m62x" aria-label="Close chat" type="button"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="svelte-g5m62x"><path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="currentColor" class="svelte-g5m62x"></path></svg></button></header>');
+const Gl = {
   hash: "svelte-g5m62x",
   code: `.chat-header.svelte-g5m62x {display:flex;align-items:center;justify-content:space-between;padding:var(--widget-space-sm) var(--widget-space-md);background:var(--widget-surface-elevated);color:var(--widget-text);border-radius:var(--widget-radius-xl) var(--widget-radius-xl) 0 0;border-bottom:1px solid var(--widget-border);position:relative;box-shadow:var(--widget-shadow-sm);min-height:48px;gap:var(--widget-space-md);}
 
@@ -4875,37 +4915,37 @@ const Hl = {
 
   /* Dark theme adjustments - Use CSS variables for maintainability */[data-theme="dark"] .chat-header.svelte-g5m62x {background:var(--widget-surface);border-color:var(--widget-border);}`
 };
-function $n(t, e) {
-  pt(e, !0), Ht(t, Hl);
-  let i = gt(e, "onclose", 7), s = gt(e, "connectionState", 23, () => te.DISCONNECTED), r = gt(e, "connectionFailed", 7, !1);
-  const n = /* @__PURE__ */ Se(() => {
-    if (r()) return "var(--widget-error)";
+function ea(t, e) {
+  vt(e, !0), Ht(t, Gl);
+  let i = ut(e, "onclose", 7), s = ut(e, "connectionState", 23, () => ie.DISCONNECTED), n = ut(e, "connectionFailed", 7, !1);
+  const r = /* @__PURE__ */ Se(() => {
+    if (n()) return "var(--widget-error)";
     switch (s()) {
-      case te.CONNECTED:
+      case ie.CONNECTED:
         return "var(--widget-success)";
-      case te.CONNECTING:
+      case ie.CONNECTING:
         return "var(--widget-warning, #ca8a04)";
       case /* Darker yellow for WCAG AA */
-      te.ERROR:
+      ie.ERROR:
         return "var(--widget-error)";
       default:
         return "var(--widget-text-secondary)";
     }
   }), a = /* @__PURE__ */ Se(() => {
-    if (r()) return "Connection lost";
+    if (n()) return "Connection lost";
     switch (s()) {
-      case te.CONNECTED:
+      case ie.CONNECTED:
         return "Connected";
-      case te.CONNECTING:
+      case ie.CONNECTING:
         return "Connecting";
-      case te.ERROR:
+      case ie.ERROR:
         return "Connection error";
-      case te.DISCONNECTED:
+      case ie.DISCONNECTED:
         return "Disconnected";
       default:
         return "";
     }
-  }), o = /* @__PURE__ */ Se(() => s() === te.CONNECTING ? "pulse-slow" : s() === te.ERROR ? "blink-slow" : "");
+  }), o = /* @__PURE__ */ Se(() => s() === ie.CONNECTING ? "pulse-slow" : s() === ie.ERROR ? "blink-slow" : "");
   function l() {
     var v;
     j.close(), (v = i()) == null || v();
@@ -4920,26 +4960,26 @@ function $n(t, e) {
     get connectionState() {
       return s();
     },
-    set connectionState(v = te.DISCONNECTED) {
+    set connectionState(v = ie.DISCONNECTED) {
       s(v), Fe();
     },
     get connectionFailed() {
-      return r();
+      return n();
     },
     set connectionFailed(v = !1) {
-      r(v), Fe();
+      n(v), Fe();
     }
-  }, g = Ul(), h = q(g), f = q(h), p = V(f, 2), u = q(p, !0);
+  }, g = Hl(), h = q(g), f = q(h), p = J(f, 2), u = q(p, !0);
   W(p), W(h);
-  var w = V(h, 2);
-  return w.__click = l, W(g), ut(() => {
-    dr(f, 1, `status-dot ${m(o) ?? ""}`, "svelte-g5m62x"), Xo(f, `--status-color: ${m(n) ?? ""}`), Ke(f, "aria-label", m(a)), Ke(f, "title", m(a)), us(u, ft.title);
-  }), N(t, g), vt(d);
+  var b = J(h, 2);
+  return b.__click = l, W(g), ft(() => {
+    gn(f, 1, `status-dot ${w(o) ?? ""}`, "svelte-g5m62x"), Vo(f, `--status-color: ${w(r) ?? ""}`), Ke(f, "aria-label", w(a)), Ke(f, "title", w(a)), gs(u, ht.title);
+  }), N(t, g), mt(d);
 }
 Cs(["click"]);
-Gt($n, { onclose: {}, connectionState: {}, connectionFailed: {} }, [], [], !0);
-var Gl = /* @__PURE__ */ K('<span class="sending-indicator svelte-1uqoiy7" aria-label="Sending message" role="status"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svelte-1uqoiy7"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="currentColor" opacity="0.3"></path><path d="M12 2C6.48 2 2 6.48 2 12H4C4 7.58 7.58 4 12 4V2Z" fill="currentColor"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"></animateTransform></path></svg></span>'), jl = /* @__PURE__ */ K('<span class="failed-indicator svelte-1uqoiy7" aria-label="Message failed to send" role="alert"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svelte-1uqoiy7"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="#ef4444"></path><path d="M11 7H13V13H11V7ZM11 15H13V17H11V15Z" fill="#ef4444"></path></svg></span>'), Yl = /* @__PURE__ */ K('<div role="listitem"><div class="message-bubble svelte-1uqoiy7"><span class="message-content"> </span> <!> <!></div> <div class="message-time svelte-1uqoiy7"> </div></div>');
-const Fl = {
+Gt(ea, { onclose: {}, connectionState: {}, connectionFailed: {} }, [], [], !0);
+var jl = /* @__PURE__ */ K('<span class="sending-indicator svelte-1uqoiy7" aria-label="Sending message" role="status"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svelte-1uqoiy7"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="currentColor" opacity="0.3"></path><path d="M12 2C6.48 2 2 6.48 2 12H4C4 7.58 7.58 4 12 4V2Z" fill="currentColor"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"></animateTransform></path></svg></span>'), Yl = /* @__PURE__ */ K('<span class="failed-indicator svelte-1uqoiy7" aria-label="Message failed to send" role="alert"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svelte-1uqoiy7"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="#ef4444"></path><path d="M11 7H13V13H11V7ZM11 15H13V17H11V15Z" fill="#ef4444"></path></svg></span>'), Fl = /* @__PURE__ */ K('<div role="listitem"><div class="message-bubble svelte-1uqoiy7"><span class="message-content"> </span> <!> <!></div> <div class="message-time svelte-1uqoiy7"> </div></div>');
+const Wl = {
   hash: "svelte-1uqoiy7",
   code: `.message.svelte-1uqoiy7 {max-width:85%;display:flex;flex-direction:column;gap:var(--widget-space-xs);
     /* Subtle entrance animation */
@@ -4966,38 +5006,38 @@ const Fl = {
 
   /* Dark theme adjustments - Use CSS variables for maintainability */[data-theme="dark"] .message.assistant.svelte-1uqoiy7 .message-bubble:where(.svelte-1uqoiy7) {background:var(--widget-surface);border-color:var(--widget-border);}`
 };
-function ea(t, e) {
-  pt(e, !0), Ht(t, Fl);
-  let i = gt(e, "message", 7);
+function ta(t, e) {
+  vt(e, !0), Ht(t, Wl);
+  let i = ut(e, "message", 7);
   function s(A) {
     return new Intl.DateTimeFormat("en-US", { hour: "numeric", minute: "2-digit", hour12: !0 }).format(A);
   }
-  const r = /* @__PURE__ */ Se(() => i().role === "user");
-  var n = {
+  const n = /* @__PURE__ */ Se(() => i().role === "user");
+  var r = {
     get message() {
       return i();
     },
     set message(A) {
       i(A), Fe();
     }
-  }, a = Yl();
+  }, a = Fl();
   let o;
   var l = q(a), d = q(l), g = q(d, !0);
   W(d);
-  var h = V(d, 2);
+  var h = J(d, 2);
   {
     var f = (A) => {
-      var O = Gl();
+      var O = jl();
       N(A, O);
     };
     ke(h, (A) => {
       i().status === "sending" && A(f);
     });
   }
-  var p = V(h, 2);
+  var p = J(h, 2);
   {
     var u = (A) => {
-      var O = jl();
+      var O = Yl();
       N(A, O);
     };
     ke(p, (A) => {
@@ -5005,21 +5045,21 @@ function ea(t, e) {
     });
   }
   W(l);
-  var w = V(l, 2), v = q(w, !0);
-  return W(w), W(a), ut(
+  var b = J(l, 2), v = q(b, !0);
+  return W(b), W(a), ft(
     (A, O) => {
-      o = dr(a, 1, "message svelte-1uqoiy7", null, o, { user: m(r), assistant: !m(r) }), Ke(a, "aria-label", m(r) ? "Your message" : "Assistant message"), us(g, i().content), Ke(w, "aria-label", A), us(v, O);
+      o = gn(a, 1, "message svelte-1uqoiy7", null, o, { user: w(n), assistant: !w(n) }), Ke(a, "aria-label", w(n) ? "Your message" : "Assistant message"), gs(g, i().content), Ke(b, "aria-label", A), gs(v, O);
     },
     [
       () => `Sent at ${s(i().timestamp)}`,
       () => s(i().timestamp)
     ]
-  ), N(t, a), vt(n);
+  ), N(t, a), mt(r);
 }
-Gt(ea, { message: {} }, [], [], !0);
-so();
-var Wl = /* @__PURE__ */ K('<div class="typing-indicator svelte-ej4x60" role="status" aria-live="polite" aria-label="Assistant is typing"><span aria-hidden="true" class="svelte-ej4x60"></span> <span aria-hidden="true" class="svelte-ej4x60"></span> <span aria-hidden="true" class="svelte-ej4x60"></span> <span class="sr-only svelte-ej4x60">Assistant is typing a response</span></div>');
-const ql = {
+Gt(ta, { message: {} }, [], [], !0);
+no();
+var ql = /* @__PURE__ */ K('<div class="typing-indicator svelte-ej4x60" role="status" aria-live="polite" aria-label="Assistant is typing"><span aria-hidden="true" class="svelte-ej4x60"></span> <span aria-hidden="true" class="svelte-ej4x60"></span> <span aria-hidden="true" class="svelte-ej4x60"></span> <span class="sr-only svelte-ej4x60">Assistant is typing a response</span></div>');
+const Kl = {
   hash: "svelte-ej4x60",
   code: `.typing-indicator.svelte-ej4x60 {display:inline-flex;align-items:center;justify-content:center;gap:var(--widget-space-xs);padding:var(--widget-space-sm) var(--widget-space-md);background:var(--widget-surface-elevated);border:1px solid var(--widget-border-subtle);border-radius:var(--widget-radius-2xl);box-shadow:var(--widget-shadow-card);margin-bottom:var(--widget-space-md);width:fit-content;
     animation: svelte-ej4x60-fadeInScale 0.3s ease-out;}
@@ -5042,23 +5082,23 @@ const ql = {
 
   /* Dark theme adjustments - Use CSS variables for maintainability */[data-theme="dark"] .typing-indicator.svelte-ej4x60 {background:var(--widget-surface);border-color:var(--widget-border);}[data-theme="dark"] .typing-indicator.svelte-ej4x60 span:where(.svelte-ej4x60) {background:var(--widget-accent-gold); /* Warm gold dots for brand consistency */}`
 };
-function ta(t, e) {
-  pt(e, !1), Ht(t, ql), tl();
-  var i = Po(), s = rs(i);
+function ia(t, e) {
+  vt(e, !1), Ht(t, Kl), il();
+  var i = zo(), s = ss(i);
   {
-    var r = (n) => {
-      var a = Wl();
-      N(n, a);
+    var n = (r) => {
+      var a = ql();
+      N(r, a);
     };
-    ke(s, (n) => {
-      S.isTyping && n(r);
+    ke(s, (r) => {
+      k.isTyping && r(n);
     });
   }
-  N(t, i), vt();
+  N(t, i), mt();
 }
-Gt(ta, {}, [], [], !0);
-var Kl = /* @__PURE__ */ K('<div class="empty-state svelte-qha2j" role="status" aria-label="BotBrewers assistant ready"><div class="empty-icon svelte-qha2j" aria-hidden="true"><img alt="" class="brand-logo svelte-qha2j" width="68" height="68"/></div> <span class="brand-name svelte-qha2j">BotBrewers</span></div>'), Jl = /* @__PURE__ */ K('<div class="messages-container svelte-qha2j" role="list" aria-label="Messages"><!> <!></div>'), Xl = /* @__PURE__ */ K('<div class="error-message svelte-qha2j"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svelte-qha2j"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="#ef4444"></path><path d="M11 7H13V13H11V7ZM11 15H13V17H11V15Z" fill="#ef4444"></path></svg> <p class="svelte-qha2j"> </p></div>'), Vl = /* @__PURE__ */ K('<div class="message-list svelte-qha2j" role="log" aria-live="polite" aria-label="Chat conversation"><!> <!></div>');
-const Zl = {
+Gt(ia, {}, [], [], !0);
+var Jl = /* @__PURE__ */ K('<div class="empty-state svelte-qha2j" role="status" aria-label="BotBrewers assistant ready"><div class="empty-icon svelte-qha2j" aria-hidden="true"><img alt="" class="brand-logo svelte-qha2j" width="68" height="68"/></div> <span class="brand-name svelte-qha2j">BotBrewers</span></div>'), Xl = /* @__PURE__ */ K('<div class="messages-container svelte-qha2j" role="list" aria-label="Messages"><!> <!></div>'), Vl = /* @__PURE__ */ K('<div class="error-message svelte-qha2j"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svelte-qha2j"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="#ef4444"></path><path d="M11 7H13V13H11V7ZM11 15H13V17H11V15Z" fill="#ef4444"></path></svg> <p class="svelte-qha2j"> </p></div>'), Zl = /* @__PURE__ */ K('<div class="message-list svelte-qha2j" role="log" aria-live="polite" aria-label="Chat conversation"><!> <!></div>');
+const _l = {
   hash: "svelte-qha2j",
   code: `.message-list.svelte-qha2j {flex:1;overflow-y:auto;padding:var(--widget-space-lg);display:flex;flex-direction:column;background:var(--widget-gradient-subtle);position:relative;
     /* iOS momentum scrolling */-webkit-overflow-scrolling:touch;}.empty-state.svelte-qha2j {display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;text-align:center;padding:var(--widget-space-3xl) var(--widget-space-lg);
@@ -5078,64 +5118,64 @@ const Zl = {
   /* Note: .empty-icon stays white in dark mode to match logo's baked-in white background.
      This creates a clean, intentional "logo badge" appearance. */[data-theme="dark"] .empty-icon.svelte-qha2j {box-shadow:var(--widget-shadow-md);}[data-theme="dark"] .brand-name.svelte-qha2j {color:var(--widget-text-muted);}`
 };
-function ia(t, e) {
-  pt(e, !0), Ht(t, Zl);
+function sa(t, e) {
+  vt(e, !0), Ht(t, _l);
   let i, s = !0;
-  Ot(() => {
-    S.messages, s && r();
-  }), Ot(() => {
-    S.isTyping, s && r();
-  }), Ot(() => {
-    S.streamingUpdateSignal, s && S.isStreaming && r();
+  ct(() => {
+    k.messages, s && n();
+  }), ct(() => {
+    k.isTyping, s && n();
+  }), ct(() => {
+    k.streamingUpdateSignal, s && k.isStreaming && n();
   });
-  async function r() {
-    await Bn(), i && (i.scrollTop = i.scrollHeight);
+  async function n() {
+    await Qr(), i && (i.scrollTop = i.scrollHeight);
   }
-  function n() {
+  function r() {
     if (i) {
       const { scrollTop: f, scrollHeight: p, clientHeight: u } = i;
       s = p - f - u < 100;
     }
   }
-  gr(() => {
-    r();
+  fn(() => {
+    n();
   });
-  var a = Vl(), o = q(a);
+  var a = Zl(), o = q(a);
   {
     var l = (f) => {
-      var p = Kl(), u = q(p), w = q(u);
-      W(u), Vr(2), W(p), ut(() => Ke(w, "src", Il)), N(f, p);
+      var p = Jl(), u = q(p), b = q(u);
+      W(u), sn(2), W(p), ft(() => Ke(b, "src", Cl)), N(f, p);
     }, d = (f) => {
-      var p = Jl(), u = q(p);
-      Ho(u, 17, () => S.messages, (v) => v.id, (v, A) => {
-        ea(v, {
+      var p = Xl(), u = q(p);
+      Go(u, 17, () => k.messages, (v) => v.id, (v, A) => {
+        ta(v, {
           get message() {
-            return m(A);
+            return w(A);
           }
         });
       });
-      var w = V(u, 2);
-      ta(w, {}), W(p), N(f, p);
+      var b = J(u, 2);
+      ia(b, {}), W(p), N(f, p);
     };
     ke(o, (f) => {
-      S.messages.length === 0 ? f(l) : f(d, !1);
+      k.messages.length === 0 ? f(l) : f(d, !1);
     });
   }
-  var g = V(o, 2);
+  var g = J(o, 2);
   {
     var h = (f) => {
-      var p = Xl(), u = V(q(p), 2), w = q(u, !0);
-      W(u), W(p), ut(() => us(w, S.error)), N(f, p);
+      var p = Vl(), u = J(q(p), 2), b = q(u, !0);
+      W(u), W(p), ft(() => gs(b, k.error)), N(f, p);
     };
     ke(g, (f) => {
-      S.error && f(h);
+      k.error && f(h);
     });
   }
-  W(a), cr(a, (f) => i = f, () => i), Bo("scroll", a, n), N(t, a), vt();
+  W(a), un(a, (f) => i = f, () => i), Qo("scroll", a, r), N(t, a), mt();
 }
-Gt(ia, {}, [], [], !0);
-var _l = /* @__PURE__ */ K('<div class="input-bar svelte-1a8gd73"><div class="input-container svelte-1a8gd73"><textarea class="input-field svelte-1a8gd73" rows="1" aria-label="Message input"></textarea> <button class="send-button svelte-1a8gd73" aria-label="Send message"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svelte-1a8gd73"><path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor"></path></svg></button></div></div>');
-const $l = {
+Gt(sa, {}, [], [], !0);
+var $l = /* @__PURE__ */ K('<div class="input-bar svelte-1a8gd73"><div class="input-container svelte-1a8gd73"><textarea class="input-field svelte-1a8gd73" rows="1" aria-label="Message input"></textarea> <button class="send-button svelte-1a8gd73" aria-label="Send message"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svelte-1a8gd73"><path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor"></path></svg></button></div> <div class="ai-disclaimer svelte-1a8gd73">AI can make mistakes. Please double-check responses.</div></div>');
+const ed = {
   hash: "svelte-1a8gd73",
   code: `.input-bar.svelte-1a8gd73 {padding:var(--widget-space-sm) var(--widget-space-md);background:var(--widget-surface-elevated);border-top:1px solid var(--widget-border);border-radius:0 0 var(--widget-radius-xl) var(--widget-radius-xl);position:relative;}
 
@@ -5175,52 +5215,57 @@ const $l = {
   }
 
   /* Dark theme adjustments - Use CSS variables for maintainability */[data-theme="dark"] .input-container.svelte-1a8gd73 {background:var(--widget-background);border-color:var(--widget-border);}[data-theme="dark"] .input-container.svelte-1a8gd73:focus-within {border-color:var(--widget-accent-gold);box-shadow:var(--widget-shadow-inner),
-                0 0 0 3px rgba(var(--widget-accent-gold-rgb), 0.2); /* Gold accent glow */}`
+                0 0 0 3px rgba(var(--widget-accent-gold-rgb), 0.2); /* Gold accent glow */}
+
+  /* AI Disclaimer */.ai-disclaimer.svelte-1a8gd73 {padding:var(--widget-space-xs) var(--widget-space-sm);text-align:center;font-size:var(--widget-font-size-xs);color:var(--widget-text-subtle);opacity:0.8;user-select:none;pointer-events:none;margin-top:var(--widget-space-xs);}[data-theme="dark"] .ai-disclaimer.svelte-1a8gd73 {color:var(--widget-text-muted);opacity:0.7;}
+
+  @media (max-width: 767px) {.ai-disclaimer.svelte-1a8gd73 {font-size:0.6875rem; /* 11px */}
+  }`
 };
-function sa(t, e) {
-  pt(e, !0), Ht(t, $l);
-  let i = gt(e, "onsend", 7), s = gt(e, "disabled", 7, !1), r = /* @__PURE__ */ M(""), n;
+function na(t, e) {
+  vt(e, !0), Ht(t, ed);
+  let i = ut(e, "onsend", 7), s = ut(e, "disabled", 7, !1), n = /* @__PURE__ */ M(""), r;
   function a() {
-    var O, H, B, Q;
+    var O, H, Q, L;
     const v = Ye().generate();
     P.log("InputBar", "handleSend() called", {
       correlationId: v,
-      rawInputValue: m(r),
-      rawLength: ((O = m(r)) == null ? void 0 : O.length) || 0,
-      rawType: typeof m(r),
+      rawInputValue: w(n),
+      rawLength: ((O = w(n)) == null ? void 0 : O.length) || 0,
+      rawType: typeof w(n),
       disabled: s(),
-      isTyping: S.isTyping
+      isTyping: k.isTyping
     });
-    const A = m(r).trim();
+    const A = w(n).trim();
     P.log("InputBar", "After trimming", {
       correlationId: v,
-      original: m(r),
+      original: w(n),
       trimmed: A,
-      originalLength: ((H = m(r)) == null ? void 0 : H.length) || 0,
+      originalLength: ((H = w(n)) == null ? void 0 : H.length) || 0,
       trimmedLength: (A == null ? void 0 : A.length) || 0,
       wasEmptyAfterTrim: !A,
-      hadWhitespaceOnly: (((B = m(r)) == null ? void 0 : B.length) || 0) > 0 && !A
-    }), A && !s() && !S.isTyping ? (P.log("InputBar", "Conditions met, calling onsend", {
+      hadWhitespaceOnly: (((Q = w(n)) == null ? void 0 : Q.length) || 0) > 0 && !A
+    }), A && !s() && !k.isTyping ? (P.log("InputBar", "Conditions met, calling onsend", {
       correlationId: v,
       trimmedValue: A,
       trimmedLength: A.length,
       willSend: !0
-    }), Ye().setCurrent(v), (Q = i()) == null || Q(A), C(r, ""), l()) : P.log("InputBar", "Send blocked", {
+    }), Ye().setCurrent(v), (L = i()) == null || L(A), E(n, ""), l()) : P.log("InputBar", "Send blocked", {
       correlationId: v,
       hasContent: !!A,
       disabled: s(),
-      isTyping: S.isTyping,
+      isTyping: k.isTyping,
       trimmedValue: A || "(empty)",
-      reason: A ? s() ? "disabled" : S.isTyping ? "typing in progress" : "unknown" : "empty content"
+      reason: A ? s() ? "disabled" : k.isTyping ? "typing in progress" : "unknown" : "empty content"
     });
   }
   function o(v) {
     v.key === "Enter" && !v.shiftKey && (v.preventDefault(), a());
   }
   function l() {
-    n && (n.style.height = "auto", n.style.height = Math.min(n.scrollHeight, 120) + "px");
+    r && (r.style.height = "auto", r.style.height = Math.min(r.scrollHeight, 120) + "px");
   }
-  const d = /* @__PURE__ */ Se(() => s() || S.isTyping || S.error !== null), g = /* @__PURE__ */ Se(() => S.isTyping ? "Waiting for response..." : S.error ? "Error occurred" : ft.placeholder);
+  const d = /* @__PURE__ */ Se(() => s() || k.isTyping || k.error !== null), g = /* @__PURE__ */ Se(() => k.isTyping ? "Waiting for response..." : k.error ? "Error occurred" : ht.placeholder);
   var h = {
     get onsend() {
       return i();
@@ -5234,30 +5279,30 @@ function sa(t, e) {
     set disabled(v = !1) {
       s(v), Fe();
     }
-  }, f = _l(), p = q(f), u = q(p);
-  vo(u), u.__keydown = o, u.__input = l, cr(u, (v) => n = v, () => n);
-  var w = V(u, 2);
-  return w.__click = a, W(p), W(f), ut(
+  }, f = $l(), p = q(f), u = q(p);
+  mo(u), u.__keydown = o, u.__input = l, un(u, (v) => r = v, () => r);
+  var b = J(u, 2);
+  return b.__click = a, W(p), sn(2), W(f), ft(
     (v) => {
-      Ke(u, "placeholder", m(g)), u.disabled = m(d), w.disabled = v;
+      Ke(u, "placeholder", w(g)), u.disabled = w(d), b.disabled = v;
     },
-    [() => m(d) || !m(r).trim()]
-  ), el(u, () => m(r), (v) => C(r, v)), N(t, f), vt(h);
+    [() => w(d) || !w(n).trim()]
+  ), tl(u, () => w(n), (v) => E(n, v)), N(t, f), mt(h);
 }
 Cs(["keydown", "input", "click"]);
-Gt(sa, { onsend: {}, disabled: {} }, [], [], !0);
-class ed {
+Gt(na, { onsend: {}, disabled: {} }, [], [], !0);
+class td {
   constructor(e, i) {
-    this.sessionId = null, this.config = e, this.visitor = i, this.debugLogger = fr(e.getAll());
+    this.sessionId = null, this.config = e, this.visitor = i, this.debugLogger = pn(e.getAll());
   }
   /**
    * Initialize widget session with backend
    */
   async initialize() {
     try {
-      const e = new AbortController(), i = setTimeout(() => e.abort(), ae.API_TIMEOUT), s = Qi.getApiUrl("init", {
+      const e = new AbortController(), i = setTimeout(() => e.abort(), Z.API_TIMEOUT), s = Qi.getApiUrl("init", {
         clientId: this.config.clientId
-      }), r = {
+      }), n = {
         client_id: this.config.clientId,
         visitor_id: this.visitor.getVisitorId(),
         page_url: window.location.href,
@@ -5266,16 +5311,16 @@ class ed {
       this.config.debug && this.debugLogger.log("APIClient", "Initializing with", {
         endpoint: "init",
         fullUrl: s,
-        payload: r
+        payload: n
       });
-      const n = Ye().getCurrent(), a = await fetch(s, {
+      const r = Ye().getCurrent(), a = await fetch(s, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Origin: window.location.origin,
-          "X-Correlation-ID": n
+          "X-Correlation-ID": r
         },
-        body: JSON.stringify({ body: r }),
+        body: JSON.stringify({ body: n }),
         signal: e.signal
       });
       if (clearTimeout(i), !a.ok) {
@@ -5319,7 +5364,7 @@ class ed {
    * Send chat message (HTTP fallback)
    */
   async sendMessage(e) {
-    var s, r;
+    var s, n;
     const i = Ye().getCurrent();
     try {
       this.debugLogger.log("APIClient", "sendMessage() called", {
@@ -5330,24 +5375,24 @@ class ed {
         sessionId: this.sessionId,
         clientId: this.config.clientId
       });
-      const n = Tl.validate(e);
+      const r = Ol.validate(e);
       if (this.debugLogger.log("APIClient", "Message validation result", {
         correlationId: i,
         input: e,
-        isValid: n.isValid,
-        error: n.error,
-        sanitizedValue: n.sanitizedValue,
-        sanitizedLength: ((s = n.sanitizedValue) == null ? void 0 : s.length) || 0,
-        contentChanged: e !== n.sanitizedValue
-      }), !n.isValid)
-        throw this.debugLogger.error("APIClient", "Validation failed", { correlationId: i, error: n.error }), new zi(n.error || "Validation failed", "message", e);
+        isValid: r.isValid,
+        error: r.error,
+        sanitizedValue: r.sanitizedValue,
+        sanitizedLength: ((s = r.sanitizedValue) == null ? void 0 : s.length) || 0,
+        contentChanged: e !== r.sanitizedValue
+      }), !r.isValid)
+        throw this.debugLogger.error("APIClient", "Validation failed", { correlationId: i, error: r.error }), new zi(r.error || "Validation failed", "message", e);
       this.sessionId || (this.debugLogger.log("APIClient", "No session ID, attempting to resume or initialize...", { correlationId: i }), await this.resumeSession() || await this.initialize());
-      const a = new AbortController(), o = setTimeout(() => a.abort(), ae.API_TIMEOUT), l = {
+      const a = new AbortController(), o = setTimeout(() => a.abort(), Z.API_TIMEOUT), l = {
         body: {
           client_id: this.config.clientId,
           visitor_id: this.visitor.getVisitorId(),
           session_id: this.sessionId,
-          message: n.sanitizedValue
+          message: r.sanitizedValue
         }
       }, d = Qi.getApiUrl("chat", {
         clientId: this.config.clientId
@@ -5357,7 +5402,7 @@ class ed {
         url: d,
         payload: l,
         messageContent: l.body.message,
-        messageLength: ((r = l.body.message) == null ? void 0 : r.length) || 0
+        messageLength: ((n = l.body.message) == null ? void 0 : n.length) || 0
       });
       const g = await fetch(d, {
         method: "POST",
@@ -5390,10 +5435,10 @@ class ed {
       }
       const h = await g.json();
       return this.debugLogger.log("APIClient", "HTTP response data", { correlationId: i, result: h }), h;
-    } catch (n) {
-      if (this.debugLogger.error("APIClient", "sendMessage() error", { correlationId: i, error: n }), n instanceof zi || n instanceof qt || n instanceof Kt)
-        throw n;
-      const a = Ni.handle(n, {
+    } catch (r) {
+      if (this.debugLogger.error("APIClient", "sendMessage() error", { correlationId: i, error: r }), r instanceof zi || r instanceof qt || r instanceof Kt)
+        throw r;
+      const a = Ni.handle(r, {
         component: "APIClient",
         action: "sendMessage",
         sessionId: this.sessionId || void 0
@@ -5423,26 +5468,26 @@ class ed {
     if (!this.sessionId)
       return !1;
     try {
-      const e = new AbortController(), i = setTimeout(() => e.abort(), ae.API_TIMEOUT), s = Qi.getApiUrl("sessionHealth", {
+      const e = new AbortController(), i = setTimeout(() => e.abort(), Z.API_TIMEOUT), s = Qi.getApiUrl("sessionHealth", {
         clientId: this.config.clientId,
         sessionId: this.sessionId
-      }), r = {
+      }), n = {
         client_id: this.config.clientId,
         visitor_id: this.visitor.getVisitorId()
       };
       this.config.debug && this.debugLogger.log("APIClient", "Validating session health", {
         sessionId: this.sessionId,
         fullUrl: s,
-        payload: r
+        payload: n
       });
-      const n = Ye().getCurrent(), a = await fetch(s, {
+      const r = Ye().getCurrent(), a = await fetch(s, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Origin: window.location.origin,
-          "X-Correlation-ID": n
+          "X-Correlation-ID": r
         },
-        body: JSON.stringify({ body: r }),
+        body: JSON.stringify({ body: n }),
         signal: e.signal
       });
       if (clearTimeout(i), a.ok) {
@@ -5461,20 +5506,20 @@ class ed {
     if (!this.sessionId)
       return null;
     try {
-      const e = new AbortController(), i = setTimeout(() => e.abort(), ae.API_TIMEOUT), s = Qi.getApiUrl("sessionHealth", {
+      const e = new AbortController(), i = setTimeout(() => e.abort(), Z.API_TIMEOUT), s = Qi.getApiUrl("sessionHealth", {
         clientId: this.config.clientId,
         sessionId: this.sessionId
-      }), r = {
+      }), n = {
         client_id: this.config.clientId,
         visitor_id: this.visitor.getVisitorId()
-      }, n = Ye().getCurrent(), a = await fetch(s, {
+      }, r = Ye().getCurrent(), a = await fetch(s, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Origin: window.location.origin,
-          "X-Correlation-ID": n
+          "X-Correlation-ID": r
         },
-        body: JSON.stringify({ body: r }),
+        body: JSON.stringify({ body: n }),
         signal: e.signal
       });
       return clearTimeout(i), a.ok ? await a.json() : a.status === 404 ? {
@@ -5497,9 +5542,9 @@ class ed {
     return this.sessionId;
   }
 }
-class td {
+class id {
   constructor(e, i, s) {
-    this.typingTimeout = null, this.hasHiddenTypingForCurrentStream = !1, this.lastCompletionTimestamp = null, this.lastMessageSentTimestamp = null, this.COMPLETION_GRACE_PERIOD_MS = ae.COMPLETION_GRACE_PERIOD, this.chatStore = e, this.uiStore = i, this.debugLogger = s;
+    this.typingTimeout = null, this.hasHiddenTypingForCurrentStream = !1, this.lastCompletionTimestamp = null, this.lastMessageSentTimestamp = null, this.COMPLETION_GRACE_PERIOD_MS = Z.COMPLETION_GRACE_PERIOD, this.chatStore = e, this.uiStore = i, this.debugLogger = s;
   }
   /**
    * Reset state for a new message stream
@@ -5560,21 +5605,21 @@ class td {
     }), this.typingTimeout && (clearTimeout(this.typingTimeout), this.typingTimeout = null), this.chatStore.isStreaming && this.chatStore.finishStreamingMessage(), this.hasHiddenTypingForCurrentStream = !1, this.lastCompletionTimestamp = Date.now(), this.chatStore.setTyping(!1), this.uiStore.isOpen || this.uiStore.markUnread();
   }
   handleConnectionEstablished(e) {
-    const i = ft.initialMessage, s = e.data.initial_message;
-    let r;
-    i !== void 0 ? r = i || void 0 : r = s, r && !this.chatStore.hasMessages && (this.chatStore.addMessage(r, "assistant"), this.debugLogger.log("ChatController", "Initial message added", {
+    const i = ht.initialMessage, s = e.data.initial_message;
+    let n;
+    i !== void 0 ? n = i || void 0 : n = s, n && !this.chatStore.hasMessages && (this.chatStore.addMessage(n, "assistant"), this.debugLogger.log("ChatController", "Initial message added", {
       source: i !== void 0 ? "client" : "server"
     }));
   }
   handleTypingIndicator() {
     const e = this.lastCompletionTimestamp ? Date.now() - this.lastCompletionTimestamp : 1 / 0, i = this.lastMessageSentTimestamp ? Date.now() - this.lastMessageSentTimestamp : 1 / 0;
-    if (e < this.COMPLETION_GRACE_PERIOD_MS && i > ae.CONNECTION_DELAY) {
+    if (e < this.COMPLETION_GRACE_PERIOD_MS && i > Z.CONNECTION_DELAY) {
       this.debugLogger.log("ChatController", "Ignoring typing indicator - grace period");
       return;
     }
     !this.hasHiddenTypingForCurrentStream && !this.chatStore.isStreaming ? (this.debugLogger.log("ChatController", "Processing typing indicator"), this.chatStore.setTyping(!0), this.typingTimeout && clearTimeout(this.typingTimeout), this.typingTimeout = window.setTimeout(() => {
       this.debugLogger.log("ChatController", "Typing indicator timeout"), this.chatStore.setTyping(!1), this.typingTimeout = null;
-    }, ae.TYPING_INDICATOR_TIMEOUT)) : this.debugLogger.log("ChatController", "Ignoring typing indicator - already streaming");
+    }, Z.TYPING_INDICATOR_TIMEOUT)) : this.debugLogger.log("ChatController", "Ignoring typing indicator - already streaming");
   }
   handleError(e) {
     this.debugLogger.error("ChatController", "Error message received", e.data.message), this.typingTimeout && (clearTimeout(this.typingTimeout), this.typingTimeout = null), this.chatStore.isStreaming && this.chatStore.finishStreamingMessage(), this.hasHiddenTypingForCurrentStream = !1;
@@ -5585,7 +5630,7 @@ class td {
    * Set typing indicator with timeout fallback
    * Used when sending messages over HTTP (non-WebSocket)
    */
-  setTypingWithTimeout(e = ae.TYPING_FALLBACK_TIMEOUT) {
+  setTypingWithTimeout(e = Z.TYPING_FALLBACK_TIMEOUT) {
     this.chatStore.setTyping(!0), this.typingTimeout = window.setTimeout(() => {
       this.debugLogger.warn("ChatController", "Typing indicator timeout after HTTP send"), this.chatStore.setTyping(!1), this.chatStore.isStreaming && this.chatStore.finishStreamingMessage(), this.typingTimeout = null;
     }, e);
@@ -5597,11 +5642,12 @@ class td {
     this.typingTimeout && (clearTimeout(this.typingTimeout), this.typingTimeout = null);
   }
 }
-var id = /* @__PURE__ */ K('<span class="error-message svelte-zsv8oa" id="error-message">Connection lost. Unable to reconnect.</span> <button class="restart-button svelte-zsv8oa" aria-describedby="error-message">Retry Connection</button>', 1), sd = /* @__PURE__ */ K('<span class="error-message svelte-zsv8oa" id="error-message">Something went wrong. Please try again.</span> <button class="restart-button svelte-zsv8oa" aria-describedby="error-message">Retry Connection</button>', 1), rd = /* @__PURE__ */ K('<div class="error-banner svelte-zsv8oa" role="alert" aria-live="polite"><!></div>'), nd = /* @__PURE__ */ K('<button class="backdrop svelte-zsv8oa" aria-label="Close chat overlay" tabindex="-1"></button>'), ad = /* @__PURE__ */ K('<div class="chat-container svelte-zsv8oa" role="dialog" aria-label="Chat assistant" aria-modal="true" tabindex="-1"><!> <!> <!> <!></div> <!>', 1), od = /* @__PURE__ */ K('<div class="widget-container svelte-zsv8oa"><!> <!></div>');
-const ld = {
+var sd = /* @__PURE__ */ K('<span class="error-message svelte-zsv8oa" id="error-message">Connection lost. Unable to reconnect.</span> <button class="restart-button svelte-zsv8oa" aria-describedby="error-message">Retry Connection</button>', 1), nd = /* @__PURE__ */ K('<span class="error-message svelte-zsv8oa" id="error-message">Something went wrong. Please try again.</span> <button class="restart-button svelte-zsv8oa" aria-describedby="error-message">Retry Connection</button>', 1), rd = /* @__PURE__ */ K('<div class="error-banner svelte-zsv8oa" role="alert" aria-live="polite"><!></div>'), ad = /* @__PURE__ */ K('<button class="backdrop svelte-zsv8oa" aria-label="Close chat overlay" tabindex="-1"></button>'), od = /* @__PURE__ */ K('<div role="status" aria-live="polite" class="sr-only svelte-zsv8oa">Chat assistant opened</div> <div class="chat-container svelte-zsv8oa" role="dialog" aria-label="Chat assistant" aria-modal="true" tabindex="-1"><!> <!> <!> <!></div> <!>', 1), ld = /* @__PURE__ */ K('<div class="widget-container svelte-zsv8oa"><!> <!></div>');
+const dd = {
   hash: "svelte-zsv8oa",
-  code: `.widget-container.svelte-zsv8oa {position:fixed;bottom:var(--widget-space-lg);z-index:var(--widget-z-base);font-family:var(--widget-font-family);}.widget-container[data-position="bottom-right"].svelte-zsv8oa {right:var(--widget-space-lg);}.widget-container[data-position="bottom-left"].svelte-zsv8oa {left:var(--widget-space-lg);}.chat-container.svelte-zsv8oa {
-    /* Mobile-first: Full-screen takeover */position:fixed;top:0;left:0;width:100%;height:100%;background:var(--widget-background);border-radius:0;box-shadow:none;border:none;display:flex;flex-direction:column;overflow:hidden;z-index:var(--widget-z-modal);}.backdrop.svelte-zsv8oa {display:block;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0, 0, 0, 0.5);z-index:calc(var(--widget-z-modal) - 1);}.error-banner.svelte-zsv8oa {position:absolute;bottom:75px;left:50%;transform:translateX(-50%);background:var(--widget-background);padding:var(--widget-space-md) var(--widget-space-lg);border-radius:var(--widget-radius-lg);box-shadow:var(--widget-shadow-lg);border:1px solid var(--widget-error);z-index:10;
+  code: `.sr-only.svelte-zsv8oa {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0;}.widget-container.svelte-zsv8oa {position:fixed;bottom:var(--widget-space-lg);z-index:var(--widget-z-base);font-family:var(--widget-font-family);}.widget-container[data-position="bottom-right"].svelte-zsv8oa {right:var(--widget-space-lg);}.widget-container[data-position="bottom-left"].svelte-zsv8oa {left:var(--widget-space-lg);}.chat-container.svelte-zsv8oa {
+    /* Mobile-first: Full-screen takeover */position:fixed;top:0;left:0;width:100%;
+    /* Dynamic viewport height - adjusts when mobile keyboard appears */height:100vh;  /* Fallback for older browsers */height:100dvh; /* Modern browsers: updates with keyboard */background:var(--widget-background);border-radius:0;box-shadow:none;border:none;display:flex;flex-direction:column;overflow:hidden;z-index:var(--widget-z-modal);}.backdrop.svelte-zsv8oa {display:block;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0, 0, 0, 0.5);z-index:calc(var(--widget-z-modal) - 1);}.error-banner.svelte-zsv8oa {position:absolute;bottom:75px;left:50%;transform:translateX(-50%);background:var(--widget-background);padding:var(--widget-space-md) var(--widget-space-lg);border-radius:var(--widget-radius-lg);box-shadow:var(--widget-shadow-lg);border:1px solid var(--widget-error);z-index:10;
     /* Stack text above button */display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--widget-space-sm);
     /* Prevent overflow on mobile */max-width:calc(100% - 2 * var(--widget-space-lg));width:max-content;min-width:200px;box-sizing:border-box;}
 
@@ -5620,284 +5666,296 @@ const ld = {
 
   /* Landscape mobile: Full-screen with optimizations */
   @media (max-width: 767px) and (orientation: landscape) {.chat-container.svelte-zsv8oa {
-      /* Maintain full-screen but optimize for landscape */height:100%;width:100%;}
+      /* Maintain full-screen but optimize for landscape */width:100%;height:100vh;  /* Fallback */height:100dvh; /* Dynamic viewport for keyboard */}
   }
 
   /* Portrait: Default full-screen (already handled by base mobile styles) */
   @media (max-width: 767px) and (orientation: portrait) {.chat-container.svelte-zsv8oa {
-      /* Full-screen takeover */height:100%;width:100%;}
+      /* Full-screen takeover - dynamic height for keyboard */width:100%;height:100vh;  /* Fallback */height:100dvh; /* Dynamic viewport for keyboard */}
   }
 
   /* Dark theme adjustments - Use CSS variables for maintainability */[data-theme="dark"] .chat-container.svelte-zsv8oa {background:var(--widget-background);border-color:var(--widget-border);}[data-theme="dark"] .error-banner.svelte-zsv8oa {background:var(--widget-surface);border-color:var(--widget-error);}`
 };
 function ra(t, e) {
-  pt(e, !0), Ht(t, ld);
-  let i = gt(e, "hostElement", 7), s, r, n, a, o, l;
+  vt(e, !0), Ht(t, dd);
+  let i = ut(e, "hostElement", 7), s, n, r, a, o, l;
   const d = Ye();
-  let g = !1, h = !1, f = null, p = /* @__PURE__ */ M(X(te.DISCONNECTED)), u = /* @__PURE__ */ M(
+  let g = !1, h = !1, f = null, p = /* @__PURE__ */ M(V(ie.DISCONNECTED)), u = /* @__PURE__ */ M(
     !1
     // Track if max reconnection attempts exhausted
-  ), w = /* @__PURE__ */ M(null), v = null;
+  ), b = /* @__PURE__ */ M(null), v = null;
   function A() {
-    var L;
-    if ((L = i()) != null && L.hasAttribute("data-theme")) return;
+    var R;
+    if ((R = i()) != null && R.hasAttribute("data-theme")) return;
     window.matchMedia("(prefers-color-scheme: dark)").matches && i() && i().setAttribute("data-theme", "dark");
   }
-  function O(b) {
-    const L = [
+  function O(m) {
+    const R = [
       "button:not([disabled])",
       "textarea:not([disabled])",
       "input:not([disabled])",
       '[tabindex]:not([tabindex="-1"])',
       "a[href]"
-    ].join(", "), E = b.querySelectorAll(L);
-    if (E.length === 0) return;
-    const $ = E[0], wt = E[E.length - 1];
-    return requestAnimationFrame(() => $.focus()), { firstFocusable: $, lastFocusable: wt };
+    ].join(", "), C = m.querySelectorAll(R);
+    if (C.length === 0) return;
+    const ee = C[0], bt = C[C.length - 1];
+    return requestAnimationFrame(() => ee.focus()), { firstFocusable: ee, lastFocusable: bt };
   }
-  function H(b) {
-    if (b.key === "Escape" && j.isOpen) {
-      b.preventDefault(), j.close(), Q();
+  function H(m) {
+    if (m.key === "Escape" && j.isOpen) {
+      m.preventDefault(), j.close(), L();
       return;
     }
-    if (b.key === "Tab" && m(w)) {
-      const L = [
+    if (m.key === "Tab" && w(b)) {
+      const R = [
         "button:not([disabled])",
         "textarea:not([disabled])",
         "input:not([disabled])",
         '[tabindex]:not([tabindex="-1"])',
         "a[href]"
-      ].join(", "), E = m(w).querySelectorAll(L);
-      if (E.length === 0) return;
-      const $ = E[0], wt = E[E.length - 1];
-      b.shiftKey && document.activeElement === $ ? (b.preventDefault(), wt.focus()) : !b.shiftKey && document.activeElement === wt && (b.preventDefault(), $.focus());
+      ].join(", "), C = w(b).querySelectorAll(R);
+      if (C.length === 0) return;
+      const ee = C[0], bt = C[C.length - 1];
+      m.shiftKey && document.activeElement === ee ? (m.preventDefault(), bt.focus()) : !m.shiftKey && document.activeElement === bt && (m.preventDefault(), ee.focus());
     }
   }
-  function B() {
+  function Q() {
     v = document.activeElement;
   }
-  function Q() {
+  function L() {
     v && typeof v.focus == "function" && requestAnimationFrame(() => v == null ? void 0 : v.focus()), v = null;
   }
   function de() {
-    m(w) && O(m(w));
+    w(b) && O(w(b));
   }
-  gr(async () => {
+  fn(async () => {
     try {
-      if (s = new Bl(i()), l = fr(s.getAll()), r = new Xs(), n = new ed(s, r), a = new Nl(s, r), o = new td(S, j, l), i()) {
-        const { configStore: b } = await Promise.resolve().then(() => wl);
-        b.loadFromAttributes(i());
+      if (s = new Ql(i()), l = pn(s.getAll()), n = new Xs(), r = new td(s, n), a = new Ul(s, n), o = new id(k, j, l), i()) {
+        const { configStore: m } = await Promise.resolve().then(() => bl);
+        m.loadFromAttributes(i());
       }
-      J(), A(), l.log("ChatWidget", "Attaching WebSocket listeners"), a.on("message", ks), a.on("stateChange", (b) => {
+      X(), A(), l.log("ChatWidget", "Attaching WebSocket listeners"), a.on("message", xs), a.on("stateChange", (m) => {
         l.log("ChatWidget", "WebSocket state changed", {
-          oldState: m(p),
-          newState: b,
+          oldState: w(p),
+          newState: m,
           timestamp: Date.now()
-        }), C(p, b, !0);
-      }), a.on("error", (b) => {
-        l.error("ChatWidget", "WebSocket error event", b), f = b.error, S.setError(b.error);
-      }), a.on("connectionFailed", (b) => {
-        l.error("ChatWidget", "WebSocket connection failed after max attempts", b), C(u, !0), f = b.error, S.setError(b.error);
-      }), l.log("ChatWidget", "WebSocket listeners attached successfully"), j.isOpen && await ue(), l.log("ChatWidget", "Services initialized successfully");
-    } catch (b) {
-      l.error("ChatWidget", "Initialization failed", b), f = b instanceof Error ? b.message : "Failed to initialize chat";
+        }), E(p, m, !0);
+      }), a.on("error", (m) => {
+        l.error("ChatWidget", "WebSocket error event", m), f = m.error, k.setError(m.error);
+      }), a.on("connectionFailed", (m) => {
+        l.error("ChatWidget", "WebSocket connection failed after max attempts", m), E(u, !0), f = m.error, k.setError(m.error);
+      }), l.log("ChatWidget", "WebSocket listeners attached successfully"), j.isOpen && await ue(), i() && typeof i().setOnOpenChangeCallback == "function" && i().setOnOpenChangeCallback((m) => {
+        mn(m);
+      }), l.log("ChatWidget", "Services initialized successfully");
+    } catch (m) {
+      l.error("ChatWidget", "Initialization failed", m), f = m instanceof Error ? m.message : "Failed to initialize chat";
     }
-  }), al(() => {
-    const b = n == null ? void 0 : n.getSessionId();
-    b && r.markSessionInactive(b), a == null || a.disconnect(), o == null || o.cleanup();
+  }), ct(() => {
+    const m = j.isOpen;
+    if (i()) {
+      const R = i().hasAttribute("open");
+      m && !R ? i().setAttribute("open", "") : !m && R && i().removeAttribute("open");
+    }
+  }), ol(() => {
+    const m = r == null ? void 0 : r.getSessionId();
+    m && n.markSessionInactive(m), a == null || a.disconnect(), o == null || o.cleanup();
   });
   async function ue() {
-    var b;
+    var m;
     if (!(g || h)) {
       h = !0;
       try {
-        if (j.setLoading(!0), await n.resumeSession()) {
-          const E = n.getSessionId();
-          E && (await a.connect(E), setTimeout(
+        if (j.setLoading(!0), await r.resumeSession()) {
+          const C = r.getSessionId();
+          C && (await a.connect(C), setTimeout(
             () => {
               l.log("ChatWidget", "Testing WebSocket connection after session resumption..."), a.testConnection();
             },
-            ae.CONNECTION_DELAY
+            Z.CONNECTION_DELAY
           ));
         } else {
-          const E = await n.initialize();
-          (b = E.assistant_info) != null && b.assistant_name && ft.setBackendTitle(E.assistant_info.assistant_name), await a.connect(E.session_id), setTimeout(
+          const C = await r.initialize();
+          (m = C.assistant_info) != null && m.assistant_name && ht.setBackendTitle(C.assistant_info.assistant_name), await a.connect(C.session_id), setTimeout(
             () => {
               l.log("ChatWidget", "Testing WebSocket connection after initialization..."), a.testConnection();
             },
-            ae.CONNECTION_DELAY
-          ), E.settings && re(E.settings);
+            Z.CONNECTION_DELAY
+          ), C.settings && re(C.settings);
         }
         g = !0;
-      } catch (L) {
-        f = L instanceof Error ? L.message : "Failed to initialize", S.setError(f);
+      } catch (R) {
+        f = R instanceof Error ? R.message : "Failed to initialize", k.setError(f);
       } finally {
         j.setLoading(!1), h = !1;
       }
     }
   }
-  function J() {
-    const b = s.getAll();
+  function X() {
+    const m = s.getAll();
     requestAnimationFrame(() => {
-      if (i() && (i().setAttribute("data-theme", b.theme || "modern"), b.primary_color || b.accent_color)) {
-        const L = b.accent_color || b.primary_color;
-        if (L) {
-          const E = ur(L, "#6b46c1");
-          i().style.setProperty("--widget-primary", E), i().style.setProperty("--widget-primary-hover", Re(E, -20)), i().style.setProperty("--widget-primary-light", Re(E, 20)), i().style.setProperty("--widget-primary-dark", Re(E, -30)), i().style.setProperty("--widget-gradient", `linear-gradient(135deg, ${E} 0%, ${Re(E, 20)} 100%)`), i().style.setProperty("--widget-gradient-hover", `linear-gradient(135deg, ${Re(E, -20)} 0%, ${E} 100%)`);
+      if (i() && (i().setAttribute("data-theme", m.theme || "modern"), m.primary_color || m.accent_color)) {
+        const R = m.accent_color || m.primary_color;
+        if (R) {
+          const C = hn(R, "#6b46c1");
+          i().style.setProperty("--widget-primary", C), i().style.setProperty("--widget-primary-hover", Be(C, -20)), i().style.setProperty("--widget-primary-light", Be(C, 20)), i().style.setProperty("--widget-primary-dark", Be(C, -30)), i().style.setProperty("--widget-gradient", `linear-gradient(135deg, ${C} 0%, ${Be(C, 20)} 100%)`), i().style.setProperty("--widget-gradient-hover", `linear-gradient(135deg, ${Be(C, -20)} 0%, ${C} 100%)`);
         }
       }
     });
   }
-  function re(b) {
+  function re(m) {
     requestAnimationFrame(() => {
-      i() && (b.theme && typeof b.theme == "string" && i().setAttribute("data-theme", b.theme), b.primary_color && typeof b.primary_color == "string" && i().style.setProperty("--widget-primary", b.primary_color));
+      i() && (m.theme && typeof m.theme == "string" && i().setAttribute("data-theme", m.theme), m.primary_color && typeof m.primary_color == "string" && i().style.setProperty("--widget-primary", m.primary_color));
     });
   }
-  function ks(b) {
-    o.handleMessage(b);
+  function xs(m) {
+    o.handleMessage(m);
   }
-  async function aa(b) {
-    const L = d.getCurrent();
+  async function oa(m) {
+    const R = d.getCurrent();
     l.log("ChatWidget", "handleSendMessage called with content", {
-      correlationId: L,
-      content: b,
-      length: (b == null ? void 0 : b.length) || 0,
-      trimmed: (b == null ? void 0 : b.trim()) || "",
-      type: typeof b
+      correlationId: R,
+      content: m,
+      length: (m == null ? void 0 : m.length) || 0,
+      trimmed: (m == null ? void 0 : m.trim()) || "",
+      type: typeof m
     });
-    const E = S.addMessage(b, "user");
+    const C = k.addMessage(m, "user");
     if (o.resetForNewMessage(), l.log("ChatWidget", "Message added to store", {
-      correlationId: L,
-      messageId: E.id,
-      content: E.content,
-      length: E.content.length
-    }), g || (l.log("ChatWidget", "Widget not initialized, initializing...", { correlationId: L }), await ue()), l.log("ChatWidget", "Connection state", {
-      correlationId: L,
-      connectionState: m(p),
-      isConnected: m(p) === te.CONNECTED,
-      routingTo: m(p) === te.CONNECTED ? "WebSocket" : "HTTP API"
-    }), m(p) === te.CONNECTED) {
-      l.log("ChatWidget", "Sending via WebSocket", { correlationId: L, content: b });
+      correlationId: R,
+      messageId: C.id,
+      content: C.content,
+      length: C.content.length
+    }), g || (l.log("ChatWidget", "Widget not initialized, initializing...", { correlationId: R }), await ue()), l.log("ChatWidget", "Connection state", {
+      correlationId: R,
+      connectionState: w(p),
+      isConnected: w(p) === ie.CONNECTED,
+      routingTo: w(p) === ie.CONNECTED ? "WebSocket" : "HTTP API"
+    }), w(p) === ie.CONNECTED) {
+      l.log("ChatWidget", "Sending via WebSocket", { correlationId: R, content: m });
       try {
-        a.send(b), S.updateMessageStatus(E.id, "sent"), l.log("ChatWidget", "User message marked as sent", { messageId: E.id });
-      } catch ($) {
-        l.error("ChatWidget", "WebSocket send error", $), S.updateMessageStatus(E.id, "failed"), S.setError("Failed to send message. Please try again.");
+        o.setTypingWithTimeout(), a.send(m), k.updateMessageStatus(C.id, "sent"), l.log("ChatWidget", "User message marked as sent", { messageId: C.id });
+      } catch (ee) {
+        l.error("ChatWidget", "WebSocket send error", ee), k.updateMessageStatus(C.id, "failed"), k.setError("Failed to send message. Please try again."), k.setTyping(!1);
         return;
       }
     } else
       try {
-        l.log("ChatWidget", "Sending via HTTP API", { correlationId: L, content: b }), o.setTypingWithTimeout();
-        const $ = await n.sendMessage(b);
+        l.log("ChatWidget", "Sending via HTTP API", { correlationId: R, content: m }), o.setTypingWithTimeout();
+        const ee = await r.sendMessage(m);
         l.log("ChatWidget", "HTTP API response received", {
-          correlationId: L,
-          response: $.response,
-          sessionId: $.session_id
-        }), S.addMessage($.response, "assistant"), S.setTyping(!1), j.isOpen || j.markUnread();
-      } catch ($) {
-        l.error("ChatWidget", "HTTP API error", $), f = "Failed to send message. Please try again.", S.setError(f), S.updateMessageStatus(E.id, "failed"), S.setTyping(!1);
+          correlationId: R,
+          response: ee.response,
+          sessionId: ee.session_id
+        }), k.addMessage(ee.response, "assistant"), k.setTyping(!1), j.isOpen || j.markUnread();
+      } catch (ee) {
+        l.error("ChatWidget", "HTTP API error", ee), f = "Failed to send message. Please try again.", k.setError(f), k.updateMessageStatus(C.id, "failed"), k.setTyping(!1);
       }
   }
-  async function oa() {
-    l.log("ChatWidget", "Toggle clicked, current state", m(Zi)), j.isOpen || B(), j.toggle(), await new Promise((b) => setTimeout(b, 0)), l.log("ChatWidget", "New state", j.isOpen), j.isOpen && !g && s && await ue(), j.isOpen ? requestAnimationFrame(() => de()) : Q();
+  async function mn(m) {
+    const R = j.isOpen;
+    R !== m && (l.log("ChatWidget", "Setting open state", { from: R, to: m }), m && !R && !v && Q(), m ? j.open() : j.close(), await new Promise((C) => setTimeout(C, 0)), m && !g && s && await ue(), m ? requestAnimationFrame(() => de()) : L());
   }
-  function la() {
-    S.clearMessages(), S.setError(null), f = null;
+  async function la() {
+    await mn(!j.isOpen);
   }
   function da() {
-    l.log("ChatWidget", "Manual retry connection requested"), C(u, !1), f = null, S.setError(null), a == null || a.retryConnection();
+    k.clearMessages(), k.setError(null), f = null;
   }
-  const Zi = /* @__PURE__ */ Se(() => j.isOpen), ca = /* @__PURE__ */ Se(() => j.isLoading), ga = /* @__PURE__ */ Se(() => (s == null ? void 0 : s.position) || "bottom-right");
-  var ua = {
+  function ca() {
+    l.log("ChatWidget", "Manual retry connection requested"), E(u, !1), f = null, k.setError(null), a == null || a.retryConnection();
+  }
+  const ks = /* @__PURE__ */ Se(() => j.isOpen), ga = /* @__PURE__ */ Se(() => j.isLoading), ua = /* @__PURE__ */ Se(() => (s == null ? void 0 : s.position) || "bottom-right");
+  var fa = {
     get hostElement() {
       return i();
     },
-    set hostElement(b) {
-      i(b), Fe();
+    set hostElement(m) {
+      i(m), Fe();
     }
-  }, Mi = od(), pr = q(Mi);
+  }, Mi = ld(), wn = q(Mi);
   {
-    var fa = (b) => {
-      qn(b, { onclick: oa });
+    var ha = (m) => {
+      Kr(m, { onclick: la });
     };
-    ke(pr, (b) => {
-      m(Zi) || b(fa);
+    ke(wn, (m) => {
+      w(ks) || m(ha);
     });
   }
-  var ha = V(pr, 2);
+  var pa = J(wn, 2);
   {
-    var pa = (b) => {
-      var L = ad(), E = rs(L);
-      E.__keydown = H;
-      var $ = q(E);
-      $n($, {
+    var va = (m) => {
+      var R = od(), C = J(ss(R), 2);
+      C.__keydown = H;
+      var ee = q(C);
+      ea(ee, {
         onclose: () => {
-          j.close(), Q();
+          j.close(), L();
         },
         get connectionState() {
-          return m(p);
+          return w(p);
         },
         get connectionFailed() {
-          return m(u);
+          return w(u);
         }
       });
-      var wt = V($, 2);
-      ia(wt, {});
-      var vr = V(wt, 2);
+      var bt = J(ee, 2);
+      sa(bt, {});
+      var bn = J(bt, 2);
       {
-        let Me = /* @__PURE__ */ Se(() => S.error !== null || m(ca));
-        sa(vr, {
-          onsend: aa,
+        let Me = /* @__PURE__ */ Se(() => k.error !== null || w(ga));
+        na(bn, {
+          onsend: oa,
           get disabled() {
-            return m(Me);
+            return w(Me);
           }
         });
       }
-      var va = V(vr, 2);
+      var ma = J(bn, 2);
       {
-        var ma = (Me) => {
-          var bt = rd(), Aa = q(bt);
+        var wa = (Me) => {
+          var At = rd(), ya = q(At);
           {
-            var ya = (jt) => {
-              var Ti = id(), Ss = V(rs(Ti), 2);
+            var Ia = (jt) => {
+              var Ti = sd(), Ss = J(ss(Ti), 2);
+              Ss.__click = ca, N(jt, Ti);
+            }, Ca = (jt) => {
+              var Ti = nd(), Ss = J(ss(Ti), 2);
               Ss.__click = da, N(jt, Ti);
-            }, Ia = (jt) => {
-              var Ti = sd(), Ss = V(rs(Ti), 2);
-              Ss.__click = la, N(jt, Ti);
             };
-            ke(Aa, (jt) => {
-              m(u) ? jt(ya) : jt(Ia, !1);
+            ke(ya, (jt) => {
+              w(u) ? jt(Ia) : jt(Ca, !1);
             });
           }
-          W(bt), N(Me, bt);
+          W(At), N(Me, At);
         };
-        ke(va, (Me) => {
-          S.error && Me(ma);
+        ke(ma, (Me) => {
+          k.error && Me(wa);
         });
       }
-      W(E), cr(E, (Me) => C(w, Me), () => m(w));
-      var wa = V(E, 2);
+      W(C), un(C, (Me) => E(b, Me), () => w(b));
+      var ba = J(C, 2);
       {
-        var ba = (Me) => {
-          var bt = nd();
-          bt.__click = () => j.close(), Mr(3, bt, () => gl, () => ({ duration: 200 })), N(Me, bt);
+        var Aa = (Me) => {
+          var At = ad();
+          At.__click = () => j.close(), Dn(3, At, () => ul, () => ({ duration: 200 })), N(Me, At);
         };
-        ke(wa, (Me) => {
-          m(Zi) && Me(ba);
+        ke(ba, (Me) => {
+          w(ks) && Me(Aa);
         });
       }
-      Mr(3, E, () => ul, () => ({ y: 20, duration: 300 })), N(b, L);
+      Dn(3, C, () => fl, () => ({ y: 20, duration: 300 })), N(m, R);
     };
-    ke(ha, (b) => {
-      m(Zi) && b(pa);
+    ke(pa, (m) => {
+      w(ks) && m(va);
     });
   }
-  return W(Mi), ut(() => {
-    Ke(Mi, "data-position", m(ga)), Ke(Mi, "data-theme", ft.theme);
-  }), N(t, Mi), vt(ua);
+  return W(Mi), ft(() => {
+    Ke(Mi, "data-position", w(ua)), Ke(Mi, "data-theme", ht.theme);
+  }), N(t, Mi), mt(fa);
 }
 Cs(["keydown", "click"]);
 Gt(ra, { hostElement: {} }, [], [], !0);
-const hr = {
+const vn = {
   brand: "generic",
   primary: "#6b46c1",
   primaryHover: "#5a3aa8",
@@ -5942,7 +6000,7 @@ const hr = {
   borderLight: "#f1f5f9",
   borderSubtle: "#f8fafc"
 };
-function dd(t = hr) {
+function cd(t = vn) {
   var e;
   return `/* ============================================
    Premium Design System - ${t.brand === "bot-brewers" ? "Bot Brewers Brand" : "Generic"}
@@ -6347,10 +6405,10 @@ function dd(t = hr) {
   }
 }`;
 }
-function cd(t = hr) {
-  return dd(t);
+function gd(t = vn) {
+  return cd(t);
 }
-const na = {
+const aa = {
   brand: "bot-brewers",
   primary: "#1e5ba8",
   // Bot Blue
@@ -6370,7 +6428,7 @@ const na = {
   textSecondary: "#475569",
   textMuted: "#64748b",
   textInverse: "#ffffff"
-}, zr = na, Nr = {
+}, Hn = aa, Gn = {
   brand: "generic",
   primary: "#f97316",
   primaryHover: "#ea580c",
@@ -6385,7 +6443,7 @@ const na = {
   textSecondary: "#6b7280",
   textMuted: "#9ca3af",
   textInverse: "#ffffff"
-}, gd = {
+}, ud = {
   brand: "generic",
   primary: "#6b7280",
   primaryHover: "#4b5563",
@@ -6400,7 +6458,7 @@ const na = {
   textSecondary: "#6b7280",
   textMuted: "#9ca3af",
   textInverse: "#ffffff"
-}, ud = {
+}, fd = {
   brand: "bot-brewers",
   primary: "#f4a932",
   // Bot Gold - warm primary for dark mode
@@ -6435,7 +6493,7 @@ const na = {
   // Medium gray
   borderSubtle: "#1c2128"
   // Very subtle
-}, fd = {
+}, hd = {
   brand: "generic",
   primary: "#14b8a6",
   primaryHover: "#0d9488",
@@ -6450,7 +6508,7 @@ const na = {
   textSecondary: "#0f766e",
   textMuted: "#14b8a6",
   textInverse: "#ffffff"
-}, hd = {
+}, pd = {
   brand: "generic",
   primary: "#dc2626",
   primaryHover: "#b91c1c",
@@ -6466,36 +6524,35 @@ const na = {
   textMuted: "#9ca3af",
   textInverse: "#ffffff"
 };
-function pd(t) {
+function vd(t) {
   return {
     "bot-brewers": Vs,
-    modern: na,
-    professional: zr,
-    corporate: zr,
+    modern: aa,
+    professional: Hn,
+    corporate: Hn,
     // Alias for backward compatibility
-    friendly: Nr,
-    playful: Nr,
+    friendly: Gn,
+    playful: Gn,
     // Alias
-    minimal: gd,
-    dark: ud,
-    elegant: fd,
-    bold: hd,
-    generic: hr,
+    minimal: ud,
+    dark: fd,
+    elegant: hd,
+    bold: pd,
+    generic: vn,
     default: Vs
   }[t.toLowerCase()] || null;
 }
-class Ur extends HTMLElement {
+class jn extends HTMLElement {
   constructor() {
-    super(), this._app = null, this._currentTheme = "bot-brewers", this._shadowRoot = this.attachShadow({ mode: "open" });
+    super(), this._app = null, this._currentTheme = "bot-brewers", this._onOpenChangeCallback = null, this._pendingOpenState = null, this._shadowRoot = this.attachShadow({ mode: "open" });
   }
-  // Default to Bot Brewers theme
   // Define which attributes we should observe for changes
   static get observedAttributes() {
-    return ["theme", "data-theme", "accent-color", "position", "title", "client-id", "initial-message"];
+    return ["theme", "data-theme", "accent-color", "position", "title", "client-id", "initial-message", "open"];
   }
   async connectedCallback() {
-    var r, n;
-    const e = this.getAttribute("client-id"), i = window, s = ((r = i.AIChat) == null ? void 0 : r.clientId) || ((n = i.ChatWidget) == null ? void 0 : n.clientId);
+    var n, r;
+    const e = this.getAttribute("client-id"), i = window, s = ((n = i.AIChat) == null ? void 0 : n.clientId) || ((r = i.ChatWidget) == null ? void 0 : r.clientId);
     if (!e && !s) {
       P.error("ChatWidget", 'Configuration missing. Please set client-id attribute or window.AIChat = { clientId: "your_client_id" }');
       return;
@@ -6506,7 +6563,13 @@ class Ur extends HTMLElement {
     this._app && (Ws(this._app), this._app = null);
   }
   attributeChangedCallback(e, i, s) {
-    i !== s && ((e === "theme" || e === "data-theme") && s && (this._currentTheme = s, ft.updateConfig({ theme: s }, "user"), this.updateStyles()), e === "accent-color" && s && this.updateAccentColor(s), e === "client-id" && s && this._app && (P.log("ChatWidget", `Client ID changed from ${i} to ${s}, remounting widget`), Ws(this._app), this._app = null, this.mountApp()), e === "title" && s && ft.setUserTitle(s));
+    if (i !== s && ((e === "theme" || e === "data-theme") && s && (this._currentTheme = s, ht.updateConfig({ theme: s }, "user"), this.updateStyles()), e === "accent-color" && s && this.updateAccentColor(s), e === "client-id" && s && this._app && (P.log("ChatWidget", `Client ID changed from ${i} to ${s}, remounting widget`), Ws(this._app), this._app = null, this.mountApp()), e === "title" && s && ht.setUserTitle(s), e === "open")) {
+      const n = s !== null;
+      this._onOpenChangeCallback ? this._onOpenChangeCallback(n) : this._pendingOpenState = n;
+    }
+  }
+  setOnOpenChangeCallback(e) {
+    this._onOpenChangeCallback = e, this._pendingOpenState !== null && (e(this._pendingOpenState), this._pendingOpenState = null);
   }
   mountApp() {
     const e = this.getAttribute("theme") || this.getAttribute("data-theme") || "bot-brewers";
@@ -6514,7 +6577,7 @@ class Ur extends HTMLElement {
     const i = document.createElement("div");
     i.className = "widget-root";
     const s = document.createElement("style");
-    s.textContent = this.getStyles(), this._shadowRoot.innerHTML = "", this._shadowRoot.appendChild(s), this._shadowRoot.appendChild(i), this._app = lr(ra, {
+    s.textContent = this.getStyles(), this._shadowRoot.innerHTML = "", this._shadowRoot.appendChild(s), this._shadowRoot.appendChild(i), this._app = cn(ra, {
       target: i,
       props: {
         hostElement: this
@@ -6526,8 +6589,8 @@ class Ur extends HTMLElement {
     return this.getThemeStyles(e);
   }
   getThemeStyles(e) {
-    const i = pd(e) || Vs;
-    return cd(i);
+    const i = vd(e) || Vs;
+    return gd(i);
   }
   updateStyles() {
     const e = this._shadowRoot.querySelector("style");
@@ -6535,14 +6598,31 @@ class Ur extends HTMLElement {
   }
   updateAccentColor(e) {
     const i = this._shadowRoot.querySelector(".widget-root");
-    i && Promise.resolve().then(() => vl).then(({ adjustColor: s }) => {
+    i && Promise.resolve().then(() => ml).then(({ adjustColor: s }) => {
       i.style.setProperty("--widget-primary", e), i.style.setProperty("--widget-primary-hover", s(e, -20)), i.style.setProperty("--widget-primary-light", s(e, 20)), i.style.setProperty("--widget-primary-dark", s(e, -30));
     });
   }
+  // Public API methods for programmatic control
+  open() {
+    this.setAttribute("open", ""), queueMicrotask(() => {
+      this.dispatchEvent(new CustomEvent("opening", { bubbles: !0, composed: !0 }));
+    });
+  }
+  close() {
+    this.removeAttribute("open"), queueMicrotask(() => {
+      this.dispatchEvent(new CustomEvent("closing", { bubbles: !0, composed: !0 }));
+    });
+  }
+  toggle() {
+    this.hasAttribute("open") ? this.close() : this.open();
+  }
+  get isOpen() {
+    return this.hasAttribute("open");
+  }
 }
-customElements.get("assistant-widget") ? customElements.get("chat-widget") || customElements.define("chat-widget", Ur) : customElements.define("assistant-widget", Ur);
-document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", Hr) : Hr();
-function Hr() {
+customElements.get("assistant-widget") ? customElements.get("chat-widget") || customElements.define("chat-widget", jn) : customElements.define("assistant-widget", jn);
+document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", Yn) : Yn();
+function Yn() {
   if (document.querySelector("assistant-widget, chat-widget"))
     return;
   const t = window, e = t.AIChat || t.ChatWidget;
@@ -6556,5 +6636,5 @@ function Hr() {
   }
 }
 export {
-  Ur as ChatWidgetElement
+  jn as ChatWidgetElement
 };
