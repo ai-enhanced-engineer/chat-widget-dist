@@ -1,6 +1,6 @@
 {
   "name": "@bot-brewers/chat-widget",
-  "version": "1.15.0",
+  "version": "1.16.0",
   "description": "Embeddable AI Assistant Widget - Zero-code integration",
   "main": "dist/assistant-widget.js",
   "files": [
